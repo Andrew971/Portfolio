@@ -1,0 +1,28 @@
+.card {
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.52);
+  border-radius: 5vh;
+  padding: 5vh;
+  margin: auto;
+  margin-top: 3rem;
+  font-size: 1.5em; }
+
+.photo {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  border: 0.5em solid #B6D8FF;
+  background-image: url("../../Assets/img/profile.jpg");
+  background-position: center;
+  background-size: cover; }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@media only screen and (max-width: 600px) {
+  main {
+    text-align: justify;
+    margin-bottom: 6rem; } }
