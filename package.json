@@ -22,7 +22,7 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "npm-run-all": "^4.1.2",
-    "vhost": "^3.0.2"
+    "cors": "^2.8.4"
   },
   "description": "this is my boilerplate user express + create-react-app + redux",
   "main": "index.js",

@@ -2,7 +2,7 @@ const express = require('express');
 const client = express.Router();
 const path = require('path');
 
-client.use(express.static(path.join(__dirname, '../../client/build')));
+client.use('/',express.static(path.join(__dirname, '../../client/build')));
 
 /* GET home page. */
 client.get('/*', function (req, res) {
