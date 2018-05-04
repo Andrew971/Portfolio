@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div `
-background:rgba(6,6,6,.65);
+background:rgba(6,6,6,.38);
 height:100%;
 width:100%;
 padding:10vh 0rem;
