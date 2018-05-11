@@ -1,8 +1,9 @@
 {
-  "main.css": "static/css/main.3830531d.css",
-  "main.css.map": "static/css/main.3830531d.css.map",
-  "main.js": "static/js/main.31cd7c80.js",
-  "main.js.map": "static/js/main.31cd7c80.js.map",
+  "main.css": "static/css/main.649dd406.css",
+  "main.css.map": "static/css/main.649dd406.css.map",
+  "main.js": "static/js/main.8f2078f1.js",
+  "main.js.map": "static/js/main.8f2078f1.js.map",
   "static/media/background1.jpg": "static/media/background1.5b9bdb06.jpg",
-  "static/media/profile.jpg": "static/media/profile.348b9212.jpg"
+  "static/media/logo.svg": "static/media/logo.1ca03a8a.svg",
+  "static/media/test.png": "static/media/test.9cf42800.png"
 }

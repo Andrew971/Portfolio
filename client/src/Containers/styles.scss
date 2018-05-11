@@ -3,6 +3,11 @@
 body{
   margin:0;
 }
+
+.App-logo {
+  // animation: App-logo-spin infinite 20s linear;
+  height: 60px;
+}
 .container-fluid{
   padding-right:0;
   padding-left: 0;
@@ -46,5 +51,5 @@ footer {
 @media (max-width: 600px) {
 main{
   margin-bottom:0;
-}  
+}
   }

@@ -7,4 +7,5 @@ import {Route} from 'react-router-dom';
 
 ReactDOM.render(<Providers><Route path="/" component={Containers} />
 </Providers>, document.getElementById('root'));
+
 registerServiceWorker();

@@ -11,6 +11,7 @@ import {UIReducer} from './UI';
 
 //List of Watchers
 import {Watcher} from './UI/saga';
+import {contactWatcher} from './Contact/saga';
 
 
 export function rootReducer(asyncReducers) {
@@ -25,6 +26,7 @@ export function* rootSaga (){
 
   yield all([
     Watcher(),
+    contactWatcher(),
 
   ])
 

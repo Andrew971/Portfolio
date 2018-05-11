@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= subject %></title>
+    <link rel='stylesheet' href='/stylesheets/css/email.css' />
+  </head>
+  <body>
+    <h1 style="color:blue"><%= subject %></h1>
+
+    <p>Welcome to <%= otherProperty %></p>
+    <tr style="margin: 0; padding: 0; font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">
+  <td class="content-block" style="margin: 0; padding: 0 0 20px; font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top;">
+    We may need to send you critical information about our service and it is important that we have an accurate email address.
+  </td>
+</tr>
+<tr style="margin: 0; padding: 0; font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;">
+  <td class="content-block" style="margin: 0; padding: 0 0 20px; font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top;">
+    <a href="{{ url }}" class="btn-primary" style="margin: 0; padding: 0; font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; color: #FFF; text-decoration: none; background-color: #348eda; border: solid #348eda; border-width: 10px 20px; line-height: 2; font-weight: bold; text-align: center; cursor: pointer; display: inline-block; border-radius: 5px; text-transform: capitalize;">Confirm your email address</a>
+  </td>
+</tr>
+  </body>
+</html>

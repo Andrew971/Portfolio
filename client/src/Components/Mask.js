@@ -4,19 +4,12 @@ export default styled.div `
 background:rgba(6,6,6,.38);
 height:100%;
 width:100%;
-padding:10vh 0rem;
+padding:${props => (props.primary ? '5rem 5rem' : '10vh 0rem')};
 
-h1{
-  margin-bottom:1rem;
-  margin-top:1rem;
-}
 
-@media (min-width: 670px) {
+@media (max-width: 670px) {
+  padding:${props => (props.primary ? '2rem 2rem' : '0vh 0rem')};
 
-  align-content: center;
-  h1{
-    margin-bottom:10rem;
-  }
 }
 
 

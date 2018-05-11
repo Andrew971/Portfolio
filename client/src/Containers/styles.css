@@ -1,6 +1,9 @@
 body {
   margin: 0; }
 
+.App-logo {
+  height: 60px; }
+
 .container-fluid {
   padding-right: 0;
   padding-left: 0; }
