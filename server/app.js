@@ -10,7 +10,7 @@ const app = express();
 const mailer = require('express-mailer');
 
 mailer.extend(app, {
-  from: 'noreply.andrew971@gmail.com',
+  from: 'My Portfolio <noreply.andrew971@gmail.com>',
   host: 'smtp.gmail.com', // hostname
   secureConnection: true, // use SSL
   port: 465, // port for secure SMTP

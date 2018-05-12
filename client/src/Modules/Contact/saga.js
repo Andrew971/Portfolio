@@ -6,7 +6,7 @@ import {apiURL} from "../../js/api";
 export function* Worker(action) {
   try {
     const res = yield call(axios.post, apiURL+'contact', action.payload);
-    yield put({type:'SEARCH_RESULT', payload:res.data})
+    yield put({type:'CONTACT_INFO_RESULT', payload:res.data})
   } catch (e) {
     console.log('error network');
   }

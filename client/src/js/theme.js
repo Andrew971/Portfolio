@@ -6,6 +6,12 @@ export default {
     color: "white",
     background_primary: "rgb(185,185,185)",
     background_secondary: "white",
+    modal:{
+      primary: "rgb(31,196,17)",
+      secondary: "rgb(165,165,166)",
+      color: "rgb(165,165,166)",
+
+    }
   },
   blue: {
     primary: "rgb(64,134,187)",

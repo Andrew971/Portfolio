@@ -5,7 +5,8 @@ const initialState = {
   Language: 'En',
   Theme: theme.main,
   modalDisplay: false,
-  Modal:"Contact"
+  Modal:"Contact",
+  modalSAtatus:null,
 };
 
 export function UIReducer(state = initialState, action) {
@@ -30,6 +31,12 @@ export function UIReducer(state = initialState, action) {
           return  {
               ...state,
               modalDisplay: action.payload
+          };
+      case 'CONTACT_INFO_RESULT':
+          return  {
+              ...state,
+              Modal: action.payload.status?"Confirmation": state.Modal,
+              modalSAtatus:action.payload.status
           };
       default:
           return state;

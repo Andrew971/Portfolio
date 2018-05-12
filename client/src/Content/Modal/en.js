@@ -1,97 +1,206 @@
 import React, {Component} from "react";
-import {withRouter,NavLink} from 'react-router-dom'
+import {withRouter, NavLink} from 'react-router-dom'
 import {connect} from 'react-redux';
 import {UIAction} from '../../Modules/UI'
 import {contactAction} from '../../Modules/Contact'
 import ModalWrapper from '../../Components/ModalWrapper'
 import ModalContent from '../../Components/ModalContent'
 import ModalClose from '../../Components/ModalClose'
+import ModalHeader from '../../Components/ModalHeader'
+import ModalFooter from '../../Components/ModalFooter'
+import ModalButton from '../../Components/ModalButton'
+import ModalError from '../../Components/ModalError'
+import ModalConfirm from '../../Components/ModalConfirm'
 
-export const ContactEn = ({dispatch}) => (<ModalWrapper>
+export const ContactEn = ({dispatch, modalSAtatus}) => (<ModalWrapper>
   <ModalContent>
     <ModalClose onClick={() => {
         dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
       }}>&times;</ModalClose>
-    <form ref={(self) => {
-        this.contactForm = self
-      }}>
-      <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">Title</h5>
-            </div>
+
+    <ModalHeader>
+      <h5>I want a website</h5>
+    </ModalHeader>
+    <form ref={self => this.contactForm = self}>
       <div className="form-row">
-        <div className="col-12">
-          <input type="text" className="form-control" placeholder="Name" name="username"/>
+        <div className="col-12 col-md-6">
+          <label>First Name</label>
+          <input type="text" placeholder="Name" name="firstname"/>
+        </div>
+        <div className="col-12 col-md-6">
+          <label>Last Name</label>
+          <input type="text" placeholder="Name" name="lastname"/>
+        </div>
+        <div className="col-12 col-md-6">
+          <label>Phone Number</label>
+          <input type="text" placeholder="Phone" name="phone"/>
+        </div>
+        <div className="col-12 col-md-6">
+          <label>Prefered Language</label>
+          <select name="language" defaultValue="English">
+            <option>English</option>
+            <option>French</option>
+          </select>
+        </div>
+        <div className="col-12 col-md-12">
+          <label>E-mail</label>
+          <input type="email" placeholder="Name" name="email"/>
         </div>
         <div className="col-12">
-          <input type="text" className="form-control" placeholder="Age" name="age"/>
+          <label>Message</label>
+          <textarea rows="4" placeholder="Tell me the headlines of your project" name="message"></textarea>
         </div>
-        <div className="col-12">
-          <input type="text" className="form-control" placeholder="Email" name="email"/>
-        </div>
-        <div className="col-12">
-          <input type="text" className="form-control" placeholder="Phone Number (including country and area code)" name="phone"/>
-        </div>
-        <div className="col-12">
-          <input type="text" className="form-control" placeholder="Preferred Language (if you do not speak English)" name="language"/>
-        </div>
-
-        <div className="col-12">
-          <textarea className="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Questions/Comments: Where is your dream school? What do you want to be when grow up? The more information you provide us, the better we can be prepared to help." name="comments"></textarea>
-        </div>
-
-        <div className="col-11">
-          <NavLink to="/privacy-policy" onClick={(e) => {
-              e.dismiss()
-            }}>Privacy Policy</NavLink>
-        </div>
-        <div className="col-11">
-          <h6>
-            Or contact us by email:
-            <a href="mailto:info@pandahug.ca" alt="email" target="_top" rel="noopener noreferrer" style={{
-                marginLeft: '0.5rem'
-              }}>
-              info@pandahug.ca
-            </a>
-          </h6>
-        </div>
+        {
+          modalSAtatus === false && <ModalError className="col-12">
+              Sorry...A problem occured when we tried to send your email. Please check your internet connection and try again.
+            </ModalError>
+        }
       </div>
+
     </form>
-    <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter" onClick={() => {
-                const {
-                  username,
-                  age,
-                  email,
-                  phone,
-                  language,
-                  comments
-                } = this.contactForm;
+    <ModalFooter className="row">
+      <div className="col-12 col-md-6" align="center">
+        <ModalButton onClick={() => {
+            dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
+          }}>&times; Close</ModalButton>
+      </div>
+      <div className="col-12 col-md-6" align="center">
+        <ModalButton onClick={() => {
+            const {
+              firstname,
+              lastname,
+              email,
+              phone,
+              language,
+              message
+            } = this.contactForm;
 
-                  dispatch(contactAction({
-                    type: 'SEND_CONTACT_INFO',
-                    payload: {
-                      userName: username.value,
-                      age: age.value,
-                      email: email.value,
-                      phone: phone.value,
-                      language: language.value,
-                      comments: comments.value
-                    }
-                  }))
+            dispatch(contactAction({
+              type: 'SEND_CONTACT_INFO',
+              payload: {
+                subject: "I want a website",
+                firstname: firstname.value,
+                lastname: lastname.value,
+                email: email.value,
+                phone: phone.value,
+                language: language.value,
+                message: message.value
+              }
+            }))
 
-                }}>Save changes</button>
-            </div>
+          }} primary="primary">Send</ModalButton>
+      </div>
+    </ModalFooter>
   </ModalContent>
 
 </ModalWrapper>);
-export const HireEn = ({dispatch}) => (<ModalWrapper>
 
+
+
+
+export const HireEn = ({dispatch,modalSAtatus}) => (<ModalWrapper>
   <ModalContent>
     <ModalClose onClick={() => {
         dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
       }}>&times;</ModalClose>
-    <p>Some text in the Hire Modal..</p>
+
+    <ModalHeader>
+      <h5>I am hiring</h5>
+    </ModalHeader>
+    <form ref={self => this.contactForm = self}>
+      <div className="form-row">
+        <div className="col-12 col-md-6">
+          <label>First Name</label>
+          <input type="text" placeholder="Name" name="firstname"/>
+        </div>
+        <div className="col-12 col-md-6">
+          <label>Last Name</label>
+          <input type="text" placeholder="Name" name="lastname"/>
+        </div>
+        <div className="col-12 col-md-6">
+          <label>Phone Number</label>
+          <input type="text" placeholder="Phone" name="phone"/>
+        </div>
+        <div className="col-12 col-md-6">
+          <label>Prefered Language</label>
+          <select name="language" defaultValue="English">
+            <option>English</option>
+            <option>French</option>
+          </select>
+        </div>
+        <div className="col-12 col-md-6">
+          <label>Company</label>
+          <input type="text" placeholder="Name" name="company"/>
+        </div>
+        <div className="col-12 col-md-6">
+          <label>E-mail</label>
+          <input type="email" placeholder="Name" name="email"/>
+        </div>
+        <div className="col-12">
+          <label>Message</label>
+          <textarea rows="4" placeholder="Please give me more information on the role your are offering" name="message"></textarea>
+        </div>
+        {
+          modalSAtatus === false && <ModalError className="col-12">
+              Sorry...A problem occured when we tried to send your email. Please check your internet connection and try again.
+            </ModalError>
+        }
+      </div>
+
+    </form>
+    <ModalFooter className="row">
+      <div className="col-12 col-md-6" align="center">
+        <ModalButton onClick={() => {
+            dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
+          }}>&times; Close</ModalButton>
+      </div>
+      <div className="col-12 col-md-6" align="center">
+        <ModalButton onClick={() => {
+            const {
+              firstname,
+              lastname,
+              email,
+              phone,
+              language,
+              message,
+              company
+            } = this.contactForm;
+
+            dispatch(contactAction({
+              type: 'SEND_CONTACT_INFO',
+              payload: {
+                subject: "I want to hire",
+                firstname: firstname.value,
+                lastname: lastname.value,
+                email: email.value,
+                phone: phone.value,
+                language: language.value,
+                message: message.value,
+                company: company.value
+              }
+            }))
+
+          }} primary="primary">Send</ModalButton>
+      </div>
+    </ModalFooter>
+  </ModalContent>
+
+</ModalWrapper>);
+
+export const Confirmation = ({dispatch}) => (<ModalWrapper>
+
+  <ModalContent>
+    <ModalConfirm>
+      Congratulation ! We successfully sent your email.
+      <p>I will contact you back within 48h.
+      </p>
+      <p>Thank you.</p>
+    </ModalConfirm>
+    <div className="col-12" align="center">
+      <ModalButton onClick={() => {
+          dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
+        }}>&times; Close</ModalButton>
+    </div>
   </ModalContent>
 
 </ModalWrapper>);
@@ -99,21 +208,23 @@ export const HireEn = ({dispatch}) => (<ModalWrapper>
 class ModalEn extends Component {
 
   render() {
-    const {Modal, dispatch} = this.props
+    const {Modal, dispatch, modalSAtatus} = this.props
     switch (Modal) {
       case 'Contact':
-        return (<ContactEn dispatch={dispatch}/>)
+        return (<ContactEn dispatch={dispatch} modalSAtatus={modalSAtatus}/>)
       case 'Hire':
-        return (<HireEn dispatch={dispatch}/>)
+        return (<HireEn dispatch={dispatch} modalSAtatus={modalSAtatus}/>)
+      case 'Confirmation':
+        return (<Confirmation dispatch={dispatch}/>)
       default:
-        return (<ContactEn dispatch={dispatch}/>);
+        return (<ContactEn dispatch={dispatch} modalSAtatus={modalSAtatus}/>);
     }
   }
 }
 
 const mapStateToProps = (state) => {
 
-  return {Modal: state.UI.Modal}
+  return {Modal: state.UI.Modal, modalSAtatus: state.UI.modalSAtatus}
 
 }
 export default withRouter(connect(mapStateToProps)(ModalEn));

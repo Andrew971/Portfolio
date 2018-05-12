@@ -7,21 +7,36 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/contact', (req, res, next) => {
-  const{userName, age, email, phone, comments} =req.body
-console.log(req.body)
+  const {
+    subject,
+    firstname,
+    lastname,
+    email,
+    phone,
+    language,
+    message,
+    company
+  } = req.body;
+  console.log(req.body)
 
   res.mailer.send('email', {
       to: 'sordier.andrew@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
-      subject: 'Test Email', // REQUIRED.
-      otherProperty: userName // All additional properties are also passed to the template as local variables.
+      subject, // REQUIRED.
+      firstname,
+      lastname,
+      email,
+      phone,
+      language,
+      message,
+      company // All additional properties are also passed to the template as local variables.
     }, function (err) {
       if (err) {
         // handle error
         console.log(err);
-        res.send('There was an error sending the email');
+        res.json({status:false});
         return;
       }
-      res.send('Email Sent');
+      res.json({status:true});
 })
 });
 
