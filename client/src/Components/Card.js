@@ -11,11 +11,7 @@ background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-h1{
-  margin-bottom:1rem;
-  margin-top:1rem;
-  text-align:center;
-}
+
 color:${props => (props.src ? 'white' : 'black')};
 
 @media (max-width: 660px) {

@@ -1,76 +1,50 @@
-import test from '../../Assets/img/test.png';
+import Default from '../../Assets/img/default.png';
+import sales from '../../Assets/img/sales.svg';
+import marketing from '../../Assets/img/marketing.svg';
+import code from '../../Assets/img/code.svg';
+import pandahug from '../../Assets/img/pandahug.png';
 
 export default {
-  contact: [
-    {
-      test: 'testfr',
-      name: 'test-name fr',
-      sub: 'test-sub',
-      url: '',
-      img: test,
-      description: 'test-description',
-      key: 0
-    },],
-  product: [
-    {
-      test: 'testfr',
-      name: 'test-name fr',
-      sub: 'test-sub',
-      url: '',
-      img: test,
-      description: 'test-description',
-      key: 0
-    }, {
-      test: 'test2',
-      name: 'test-name2',
-      sub: 'test-sub2',
-      url: '',
-      img: test,
-      description: 'test-description2',
-      key: 1
-    }, {
-      test: 'test3',
-      name: 'test-name3',
-      sub: 'test-sub3',
-      url: '',
-      img: test,
-      description: 'test-description3',
-      key: 2
-    }, {
-      test: 'test3',
-      name: 'test-name3',
-      sub: 'test-sub3',
-      url: '',
-      img: test,
-      description: 'test-description3',
-      key: 3
-    }
-  ],
   services: [
     {
-      test: 'test',
-      name: 'test-name',
-      sub: 'test-sub',
+      name: 'Sales',
       url: '',
-      img: test,
-      description: 'test-description',
+      img: sales,
+      description: 'Because a website is a matter for your business development',
       key: 0
     }, {
-      test: 'test2',
-      name: 'test-name2',
-      sub: 'test-sub2',
+      name: 'Marketing',
       url: '',
-      img: test,
-      description: 'test-description2',
+      img: marketing,
+      description: 'I value good content that gonna show the best of your idea',
       key: 1
     }, {
-      test: 'test3',
-      name: 'test-name3',
-      sub: 'test-sub3',
+      name: 'Code',
       url: '',
-      img: test,
-      description: 'test-description3',
+      img: code,
+      description: 'Clean code, creativity and learning are my key words',
       key: 2
     }
-  ]
+  ],
+  product: [
+    {
+      name: 'Pandaguh',
+      sub: 'ReactJs, PostgreSQL, Bootstrap, Redux, AWS',
+      url: 'https://pandahug.ca',
+      img: pandahug,
+      description: 'test-description',
+      key: 0
+    },
+  ],
+  lab: [
+    {
+      name: 'WebSite&Admin Page',
+      sub: 'ReactJs, PostgreSQL, MongoDb, Material UI, Bootstrap, Redux, AWS',
+      url: '',
+      img: Default,
+      description: 'Project en cours...',
+      key: 0
+    },
+  ],
+
 }

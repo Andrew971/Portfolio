@@ -1,67 +1,50 @@
-import test from '../../Assets/img/test.png';
-import sales from '../../Assets/img/marketing.svg';
+import Default from '../../Assets/img/default.png';
+import sales from '../../Assets/img/sales.svg';
 import marketing from '../../Assets/img/marketing.svg';
 import code from '../../Assets/img/code.svg';
+import pandahug from '../../Assets/img/pandahug.png';
 
 export default {
-
-  product: [
-    {
-      test: 'test',
-      name: 'test-name',
-      sub: 'test-sub',
-      url: '',
-      img: test,
-      description: 'test-description',
-      key: 0
-    }, {
-      test: 'test2',
-      name: 'test-name2',
-      sub: 'test-sub2',
-      url: '',
-      img: test,
-      description: 'test-description2',
-      key: 1
-    }, {
-      test: 'test3',
-      name: 'test-name3',
-      sub: 'test-sub3',
-      url: '',
-      img: test,
-      description: 'test-description3',
-      key: 2
-    }, {
-      test: 'test3',
-      name: 'test-name3',
-      sub: 'test-sub3',
-      url: '',
-      img: test,
-      description: 'test-description3',
-      key: 3
-    }
-  ],
   services: [
     {
       name: 'Sales',
-      sub: 'test-sub',
       url: '',
       img: sales,
-      description: 'test-description',
+      description: 'Because a website is a matter for your business development',
       key: 0
     }, {
       name: 'Marketing',
-      sub: 'test-sub2',
       url: '',
       img: marketing,
-      description: 'test-description2',
+      description: 'I value good content that gonna show the best of your idea',
       key: 1
     }, {
-      name: 'code',
-      sub: 'test-sub3',
+      name: 'Code',
       url: '',
       img: code,
-      description: 'test-description3',
+      description: 'Clean code, creativity and learning are my key words',
       key: 2
     }
-  ]
+  ],
+  product: [
+    {
+      name: 'Pandaguh',
+      sub: 'ReactJs, PostgreSQL, Bootstrap, Redux, AWS',
+      url: 'https://pandahug.ca',
+      img: pandahug,
+      description: 'Prepare. Apply. Succeed.Aspire for Happiness in Education. Find your dream school. Hit the ground running. Lead with excellence.',
+      key: 0
+    },
+  ],
+  lab: [
+    {
+      name: 'WebSite&Admin Page',
+      sub: 'ReactJs, PostgreSQL, MongoDb, Material UI, Bootstrap, Redux, AWS',
+      url: '',
+      img: Default,
+      description: 'Project in progress...',
+      key: 0
+    },
+  ],
+
 }

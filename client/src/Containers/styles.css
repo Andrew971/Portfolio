@@ -11,6 +11,10 @@ body {
 .row {
   margin: 0; }
 
+.card-img-top {
+  width: 5rem;
+  height: 5rem; }
+
 form textarea, form select, form input {
   display: block;
   width: 100%;

@@ -4,28 +4,32 @@ import Data from '../../js/Projects/en'
 import background from '../../Assets/img/background1.jpg';
 import Mask from "../../Components/Mask";
 import Button from "../../Components/Button";
+import Title from "../../Components/Title";
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
 
 const Expertise = () => (
-<Card  className="row align-items-center justify-content-center">
-  <h1 className="col-12">Services</h1>
+<Card>
+  <Title className="col-12">Services</Title>
+  <div className="row align-items-center justify-content-center" style={{margin:'2rem 0rem'}}>
   {
     Data.services.map(project =>
     <Fragment key={project.key}>
-      <div className="col-md-4" style={{margin:'0rem 0rem'}} align="center">
-    <div className="col-md-12" style={{margin:'2rem 0'}}>
-    <img className="img-fluid card-img-top" src={project.img} alt="Card cap"/>
+      <div className="col-md-4" align="center">
+        <div className="row">
+    <div className="col-md-12">
+    <img className="img-fluid card-img-top" src={project.img} alt="Card cap" style={{fill:'green'}}/>
   </div>
   <div className="col-md-12 card-body">
     <h2 className="card-title">{project.name}</h2>
-    <h6 className="card-text">{project.sub}</h6>
     <p>{project.description}</p>
   </div>
+</div>
 </div>
   </Fragment>
     )
   }
+</div>
 </Card>
 );
 
@@ -38,12 +42,6 @@ const Aboutme = () => (
             <div className="col-12 col-md-12" align="center">
               <div className="photo"></div>
             </div>
-            <div className="col-12 col-md-12" style={{
-                textAlign: 'center'
-              }}>
-              <h1>ANDREW SORDIER</h1>
-            </div>
-
           </div>
         </div>
         <div className="col-12 col-md-7">
@@ -63,18 +61,21 @@ const Aboutme = () => (
 
 const MyWork = () => (
   <Card  className="row align-items-center justify-content-center">
-    <h1 className="col-12">My Work</h1>
+    <Title className="col-12">My Works</Title>
     {
       Data.product.map(project =>
-      <div className='row' key={project.key}>
+      <div className="row align-items-center" key={project.key}>
       <div className={(project.key%2)?'col-md-6 order-md-last':'col-md-6'} style={{margin:'2rem 0'}}>
-      <img className="img-fluid card-img-top" src={project.img} alt="Card cap"/>
+      <img className="img-fluid card-img" src={project.img} alt="Card cap"/>
     </div>
-    <div className="col-md-6 card-body">
+    <div className="col-md-6 card-body" align="center">
       <h2 className="card-title">{project.name}</h2>
       <h6 className="card-text">{project.sub}</h6>
       <p>{project.description}</p>
-        <Button primary>test</Button>
+        {project.url&&<Button onClick={()=>{
+          window.open(project.url,'_blank')
+        }}
+          primary>Visit the website</Button>}
     </div>
   </div>
       )
@@ -85,18 +86,22 @@ const MyWork = () => (
 
 const Lab = () => (
   <Card  className="row align-items-center justify-content-center" primary>
-    <h1 className="col-12">My Work</h1>
+    <Title className="col-12">My Labs</Title>
     {
-      Data.product.map(project =>
-      <div className='row' key={project.key}>
+      Data.lab.map(project =>
+      <div className="row align-items-center" key={project.key}>
       <div className={(project.key%2)?'col-md-6 order-md-last':'col-md-6'} style={{margin:'2rem 0'}}>
-      <img className="img-fluid card-img-top" src={project.img} alt="Card cap"/>
+      <img className="img-fluid card-img" src={project.img} alt="Card cap"/>
     </div>
-    <div className="col-md-6 card-body">
+    <div className="col-md-6 card-body" align="center">
       <h2 className="card-title">{project.name}</h2>
       <h6 className="card-text">{project.sub}</h6>
       <p>{project.description}</p>
-      <Button primary>test</Button>
+      {project.url&&<Button onClick={()=>{
+        console.log(window.location)
+        window.open(project.url,'_blank')
+      }}
+        primary>Visit the website</Button>}
     </div>
   </div>
       )

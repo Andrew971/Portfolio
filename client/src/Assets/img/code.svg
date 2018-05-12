@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 640" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><path d="M0,0v85.3h512V0H0z M309.3,53.3h-256V32h256V53.3z M384,53.3h-21.3V32H384V53.3z M426.7,53.3h-21.3V32h21.3V53.3z    M469.3,53.3H448V32h21.3V53.3z"/><path d="M0,512h512V106.6H0V512z M333.8,220.9l15.1-15.1l82.2,82.2l-82.2,82.2l-15.1-15.1l67.1-67.1L333.8,220.9z M288.8,177.3   l19.8,8.1l-96,234.7l-19.8-8.1L288.8,177.3z M163.1,205.8l15.1,15.1L111.1,288l67.1,67.1l-15.1,15.1L80.9,288L163.1,205.8z"/></g><text x="0" y="527" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Dinosoft Labs</text><text x="0" y="532" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="code" fill="#4186BC" fill-rule="nonzero">
+            <path d="M0,0 L0,83 L500,83 L500,0 L0,0 Z M302.050781,51.862837 L52.0507812,51.862837 L52.0507812,31.137163 L302.050781,31.137163 L302.050781,51.862837 Z M375,51.862837 L354.199219,51.862837 L354.199219,31.137163 L375,31.137163 L375,51.862837 Z M416.699219,51.862837 L395.898437,51.862837 L395.898437,31.137163 L416.699219,31.137163 L416.699219,51.862837 Z M458.300781,51.862837 L437.5,51.862837 L437.5,31.137163 L458.300781,31.137163 L458.300781,51.862837 Z" id="Shape"></path>
+            <path d="M0,500 L500,500 L500,104 L0,104 L0,500 Z M325.976562,215.649729 L340.722656,200.899852 L420.996094,281.193883 L340.722656,361.487913 L325.976562,346.738037 L391.503906,281.193883 L325.976562,215.649729 Z M282.03125,173.060681 L301.367187,180.972866 L207.617187,410.230883 L188.28125,402.318698 L282.03125,173.060681 Z M159.277344,200.899852 L174.023437,215.649729 L108.496094,281.193883 L174.023437,346.738037 L159.277344,361.487913 L79.0039062,281.193883 L159.277344,200.899852 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
