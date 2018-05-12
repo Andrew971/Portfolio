@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import About from '../../Content/About';
 import Skills from '../../Content/Skills';
-import Projects from '../../Content/Projects';
+import Home from '../../Content/Home';
 import {withRouter, Switch, Route} from 'react-router-dom'
 import {connect} from 'react-redux';
 import './styles.css'
@@ -12,11 +12,9 @@ class MainContainer extends Component {
 
       <Switch>
         <Route exact path='/' render={(routeProps) =>
-            <Projects {...routeProps}/>}/>
-        <Route path='/skills' render={(routeProps) => <Skills {...routeProps}/>}/>
-        <Route path='/about' render={(routeProps) => <About {...routeProps}/>}/>
-        <Route path='/education' render={(routeProps) => <Projects {...routeProps}/>}/>
-        <Route path='/work_experience' render={(routeProps) => <Projects {...routeProps}/>}/>
+            <Home {...routeProps}/>}/>
+        <Route path='/skills' render={(routeProps) =>
+            <Skills {...routeProps}/>}/>
       </Switch>
     </main>)
   }

@@ -1,25 +1,27 @@
 import React, {Component} from "react";
+import HomeEn from './en'
+import HomeFr from './fr'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
 
-class About extends Component {
+class Home extends Component {
 
   render() {
-    const {state} = this.props
-    switch (state) {
+    const {Language} = this.props
+    switch (Language) {
       case 'En':
-        return (<div>one</div>)
+        return (<HomeEn/>)
       case 'Fr':
-        return (<div>two</div>)
+        return (<HomeFr/>)
       default:
-        return (<div>one</div>);
+        return (<HomeEn/>);
     }
   }
 }
 
 const mapStateToProps = (state) => {
 
-  return {state: state.state}
+  return {Language: state.UI.Language}
 
 }
-export default withRouter(connect(mapStateToProps)(About));
+export default withRouter(connect(mapStateToProps)(Home));

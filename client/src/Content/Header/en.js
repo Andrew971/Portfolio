@@ -11,10 +11,10 @@ export const HeaderEn = ({history,dispatch}) => (
       <div className="col-12" align="center">
         <Button onClick={() => {
             dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Contact"}}))
-         }} primary>About me</Button>
+         }} primary>I need a website</Button>
       <Button onClick={() => {
-          dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Hire"}})) 
-        }}>My skills</Button>
+          dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Hire"}}))
+        }}>I am looking to hire</Button>
       </div>
   </Mask>
 );

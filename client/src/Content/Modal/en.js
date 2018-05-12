@@ -105,7 +105,7 @@ export const HireEn = ({dispatch,modalSAtatus}) => (<ModalWrapper>
       }}>&times;</ModalClose>
 
     <ModalHeader>
-      <h5>I am hiring</h5>
+      <h5>I am looking to hire</h5>
     </ModalHeader>
     <form ref={self => this.contactForm = self}>
       <div className="form-row">

@@ -14,9 +14,6 @@ export const NavContentFr = ({dispatch,Language}) => (
         <NavLink to="/skills">Compétences</NavLink>
       </li>
       <li>
-        <NavLink to="/about">A propos</NavLink>
-      </li>
-      <li>
         {Language === 'Fr'
         ?'Français'
       :'English'}

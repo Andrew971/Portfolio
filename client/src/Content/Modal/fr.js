@@ -19,7 +19,7 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
       }}>&times;</ModalClose>
 
     <ModalHeader>
-      <h5>I want a website</h5>
+      <h5>J'ai besoin d'un site internet</h5>
     </ModalHeader>
     <form ref={self => this.contactForm = self}>
       <div className="form-row">
@@ -106,7 +106,7 @@ export const HireFr = ({dispatch,modalSAtatus}) => (<ModalWrapper>
       }}>&times;</ModalClose>
 
     <ModalHeader>
-      <h5>I am hiring</h5>
+      <h5>J'embauche</h5>
     </ModalHeader>
     <form ref={self => this.contactForm = self}>
       <div className="form-row">

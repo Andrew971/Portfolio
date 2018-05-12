@@ -10,9 +10,9 @@ export const HeaderFr = ({history,dispatch}) => (<Mask className="row">
   <div className="col-12" align="center">
     <Button onClick={() => {
         dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Contact"}}))
-     }} primary="primary">Biographie</Button>
+     }} primary="primary">J'ai besoin d'un site</Button>
     <Button onClick={() => {
         dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Hire"}}))
-      }}>Mes competences</Button>
+      }}>J'embauche</Button>
   </div>
 </Mask>);
