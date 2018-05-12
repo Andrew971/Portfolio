@@ -20,7 +20,7 @@ const MobileNavLink = ({dispatch,Language,toggleHide}) => (
   <NavLink to='/skills' onClick={()=>{
     toggleHide()
     }}>Skills</NavLink>
-    <li>
+  <li onClick={()=>{void(0)}}>
       {Language === 'Fr'
       ?'Français'
     :'English'}
