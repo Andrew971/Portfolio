@@ -5,7 +5,9 @@ import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
 
 class Skills extends Component {
-
+  componentDidMount=()=>{
+    window.scrollTo(0,0)
+  }
   render() {
     const {Language} = this.props
     switch (Language) {

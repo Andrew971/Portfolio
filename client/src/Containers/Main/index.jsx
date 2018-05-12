@@ -3,7 +3,6 @@ import Skills from '../../Content/Skills';
 import Home from '../../Content/Home';
 import {withRouter, Switch, Route} from 'react-router-dom'
 import {connect} from 'react-redux';
-import './styles.css'
 
 class MainContainer extends Component {
 
