@@ -7,7 +7,7 @@ import Title from "../../Components/Title";
 
 const Focus = () => (
 <Card  className="row align-items-center justify-content-center">
-  <Title className="col-12">Focus</Title>
+  <Title className="col-12">What i Focus on</Title>
   {
     Data.focus.map(project =>
       <Fragment key={project.key}>

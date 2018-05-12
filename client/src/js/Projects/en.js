@@ -14,21 +14,21 @@ export default {
       url: '',
       img1: sales0,
       img2: sales,
-      description: 'Because a website is a matter for your business development',
+      description: 'Because a website is the first step for your business development',
       key: 0
     }, {
       name: 'Marketing',
       url: '',
       img1: marketing0,
       img2: marketing,
-      description: 'I value good content that gonna show the best of your idea',
+      description: 'I value good content that gonna show the best out of your idea',
       key: 1
     }, {
       name: 'Code',
       url: '',
       img1: code0,
       img2: code,
-      description: 'Clean code, creativity and learning are my key words',
+      description: 'Clean code, creativity and learning are my keywords',
       key: 2
     }
   ],

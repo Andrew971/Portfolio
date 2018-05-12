@@ -14,21 +14,21 @@ export default {
       url: '',
       img1: sales0,
       img2: sales,
-      description: 'Because a website is a matter for your business development',
+      description: `Parce qu'un site internet est la premiére etape pour le developpement de votre Business.`,
       key: 0
     }, {
       name: 'Marketing',
       url: '',
       img1: marketing0,
       img2: marketing,
-      description: 'I value good content that gonna show the best of your idea',
+      description: `Je fournis un contenu qui mettra en valeur votre idée et votre commerce.`,
       key: 1
     }, {
       name: 'Code',
       url: '',
       img1: code0,
       img2: code,
-      description: 'Clean code, creativity and learning are my key words',
+      description: 'Code quality, créativité et apprentissage sont mes mots-clés.',
       key: 2
     }
   ],
@@ -38,7 +38,7 @@ export default {
       sub: 'ReactJs, PostgreSQL, Bootstrap, Redux, AWS',
       url: 'https://pandahug.ca',
       img: pandahug,
-      description: 'Prepare. Apply. Succeed.Aspire for Happiness in Education. Find your dream school. Hit the ground running. Lead with excellence.',
+      description: `Preparer. S'inscrir. Réussir. Aspir au bonheur dans l'education.Trouve l'université de tes rêves. Cours vers l'excellence.`,
       key: 0
     },
   ],
@@ -48,7 +48,7 @@ export default {
       sub: 'ReactJs, PostgreSQL, MongoDb, Material UI, Bootstrap, Redux, AWS',
       url: '',
       img: Default,
-      description: 'Project in progress...',
+      description: 'Project en cours...',
       key: 0
     },
   ],

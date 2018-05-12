@@ -19,7 +19,7 @@ export default {
     }
   },
   blue: {
-    label: 'blue',
+    label: 'Blue',
     primary: "rgb(64,134,187)",
     secondary: "rgb(245,166,35)",
     tiers: "rgb(74,74,74)",

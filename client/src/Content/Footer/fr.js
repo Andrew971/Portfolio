@@ -25,7 +25,7 @@ const Contact = ({dispatch}) => (
             }}>J'embauche</Button>
         </div>
         <div className="col-12" style={{marginTop:'2rem', color:'white'}} align="center">
-          <h5>try and change Theme</h5>
+          <h5>Essaye et change de Theme</h5>
             <div className="col-12 col-md" align="center"><select
                         onChange={e => {
                         dispatch(UIAction({type: "CHANGE_THEME", payload: e.target.value}));
