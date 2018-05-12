@@ -18,7 +18,7 @@ const Expertise = () => (
       <div className="col-md-4" align="center">
         <div className="row">
     <div className="col-md-12">
-    <img className="img-fluid card-img-top" src={project.img} alt="Card cap" style={{fill:'green'}}/>
+    <img className="img-fluid card-img-top" src={project.img} alt="Card cap"/>
   </div>
   <div className="col-md-12 card-body">
     <h2 className="card-title">{project.name}</h2>
