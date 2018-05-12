@@ -4,8 +4,6 @@ import Data from '../../js/Projects/en'
 import background from '../../Assets/img/background1.jpg';
 import Mask from "../../Components/Mask";
 import Button from "../../Components/Button";
-import HeadTitle from '../../Components/HeadTitle'
-import {UIAction} from '../../Modules/UI'
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
 const Expertise = () => (
@@ -75,6 +73,7 @@ const MyWork = () => (
       <h2 className="card-title">{project.name}</h2>
       <h6 className="card-text">{project.sub}</h6>
       <p>{project.description}</p>
+        <Button primary>test</Button>
     </div>
   </div>
       )
@@ -96,6 +95,7 @@ const Lab = () => (
       <h2 className="card-title">{project.name}</h2>
       <h6 className="card-text">{project.sub}</h6>
       <p>{project.description}</p>
+      <Button primary>test</Button>
     </div>
   </div>
       )
@@ -113,7 +113,7 @@ export class HomeEn extends Component {
   }
 
   render() {
-const {dispatch} = this.props
+
     return (
       <Fragment>
         <Expertise/>

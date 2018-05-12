@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import About from '../../Content/About';
 import Skills from '../../Content/Skills';
 import Home from '../../Content/Home';
 import {withRouter, Switch, Route} from 'react-router-dom'

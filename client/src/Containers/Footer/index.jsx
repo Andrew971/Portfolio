@@ -1,12 +1,11 @@
 import React, {Component,Fragment} from 'react';
 import {connect} from 'react-redux';
-import {UIAction} from "../../Modules/UI";
 import {SocialMedia} from '../../Content/socialMedia'
 import FooterContent from '../../Content/Footer'
+
 class footer extends Component {
 
   render() {
-    const {dispatch} = this.props;
 
     return (
       <Fragment>

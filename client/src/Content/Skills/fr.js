@@ -1,9 +1,6 @@
 import React, {Component, Fragment} from "react";
 import Card from "../../Components/Card";
 import Data from '../../js/Projects/en'
-import background from '../../Assets/img/background1.jpg';
-import Mask from "../../Components/Mask";
-import Button from "../../Components/Button";
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
 

@@ -1,8 +1,6 @@
 import React, {Component, Fragment} from "react";
 import Card from "../../Components/Card";
 import Data from '../../js/Projects/en'
-import background from '../../Assets/img/background1.jpg';
-import Mask from "../../Components/Mask";
 import Button from "../../Components/Button";
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
@@ -21,6 +19,8 @@ const Expertise = () => (
     <h2 className="card-title">{project.name}</h2>
     <h6 className="card-text">{project.sub}</h6>
     <p>{project.description}</p>
+      <Button primary>test</Button>
+
   </div>
 </div>
   </Fragment>
@@ -42,6 +42,8 @@ const MyWork = () => (
       <h2 className="card-title">{project.name}</h2>
       <h6 className="card-text">{project.sub}</h6>
       <p>{project.description}</p>
+        <Button primary>test</Button>
+
     </div>
   </div>
       )
