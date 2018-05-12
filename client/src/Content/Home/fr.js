@@ -76,7 +76,7 @@ const MyWork = () => (
 
 const Lab = () => (
   <Card  className="row align-items-center justify-content-center" primary>
-    <Title className="col-12">My Labs</Title>
+    <Title className="col-12" primary>My Labs</Title>
     {
       Data.lab.map(project =>
       <div className="row align-items-center" key={project.key}>

@@ -27,7 +27,7 @@ export const SocialMedia = (className) => {
   </div>
       <div className="col">
 
-  <a href="https://www.youtube.com/channel/UCGFLYDt_1qyCxEF6MeRqGHA/" target="_blank" rel="noopener noreferrer">  <i className="fab fa-youtube" style={{
+  <a href="skype:littledavis971?call" target="_blank" rel="noopener noreferrer">  <i className="fab fa-skype" style={{
         fontSize: '1.5rem',
         color:'white',
         margin:'auto',

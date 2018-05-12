@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component,Fragment} from "react";
 import {connect} from "react-redux";
 import {withRouter,NavLink} from "react-router-dom";
 import NavBar from "../../Components/NavBar";
@@ -9,6 +9,31 @@ import MobileNav from "../../Components/MobileNav";
 import logo from '../../Assets/img/logo.svg';
 import NavContent from '../../Content/NavLink'
 import {UIAction} from "../../Modules/UI";
+
+const MobileNavLink = ({dispatch,Language,toggleHide}) => (
+  <Fragment><div style={{fontSize:'3rem', position:'absolute', top:0,right:'25px'}} onClick={()=>{
+    toggleHide()
+  }}>&times;</div>
+<NavLink to='/' onClick={()=>{
+  toggleHide()
+  }}>Portfollio</NavLink>
+  <NavLink to='/skills' onClick={()=>{
+    toggleHide()
+    }}>Skills</NavLink>
+    <li>
+      {Language === 'Fr'
+      ?'Français'
+    :'English'}
+      <div className="dropdown-content">
+        <span onClick={e => {
+            dispatch(UIAction({type: "CHANGE_LANG", payload: "Fr"}));
+          }}>Français</span>
+        <span onClick={e => {
+            dispatch(UIAction({type: "CHANGE_LANG", payload: "En"}));
+          }}>English</span>
+      </div>
+    </li></Fragment>
+);
 
 class Nav extends Component {
 constructor(props) {
@@ -43,24 +68,7 @@ toggleHide=()=>{
             }}><i className={(visible)?"fa fa-window-close":"fa fa-bars"}></i></div>
 
         <MobileNav width={this.state.width}>
-          <div style={{fontSize:'3rem', position:'absolute', top:0,right:'25px'}} onClick={()=>{
-            this.toggleHide()
-          }}>&times;</div>
-        <NavLink to='/'>Portfollio</NavLink>
-          <NavLink to='/skills'>Skills</NavLink>
-            <li>
-              {Language === 'Fr'
-              ?'Français'
-            :'English'}
-              <div className="dropdown-content">
-                <span onClick={e => {
-                    dispatch(UIAction({type: "CHANGE_LANG", payload: "Fr"}));
-                  }}>Français</span>
-                <span onClick={e => {
-                    dispatch(UIAction({type: "CHANGE_LANG", payload: "En"}));
-                  }}>English</span>
-              </div>
-            </li>
+<MobileNavLink Language={Language} dispatch={dispatch} toggleHide={this.toggleHide}/>
         </MobileNav>
 
       </MobileView>

@@ -43,7 +43,8 @@ const Aboutme = () => (
         </div>
         <div className="col-12 col-md-7">
           <Headlines>
-              Mr. Crow, sitting in a tree, Held a piece of cheese in his beak. Mr. Fox, mouth watering from the scent, Uttered almost precisely this to him: “Hey! Good morning, Mr. Crow. How lovely you are! You look so beautiful! Without lying, if your songs Are in keeping with your feathers, You are the Phoenix of the inhabitants of these woods.”
+            <h1>Hello! My name is Andrew</h1><h3> I am a Full Stack Web Developer</h3>
+              <p>Mr. Crow, sitting in a tree, Held a piece of cheese in his beak. Mr. Fox, mouth watering from the scent, Uttered almost precisely this to him: “Hey! Good morning, Mr. Crow. How lovely you are! You look so beautiful! Without lying, if your songs Are in keeping with your feathers, You are the Phoenix of the inhabitants of these woods.”</p>
           </Headlines>
         </div>
   </Card>
@@ -76,7 +77,7 @@ const MyWork = () => (
 
 const Lab = () => (
   <Card  className="row align-items-center justify-content-center" primary>
-    <Title className="col-12">My Labs</Title>
+    <Title className="col-12" primary>My Labs</Title>
     {
       Data.lab.map(project =>
       <div className="row align-items-center" key={project.key}>

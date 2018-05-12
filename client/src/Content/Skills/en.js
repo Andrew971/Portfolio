@@ -26,7 +26,7 @@ const Focus = () => (
 );
 const Knowledge = () => (
 <Card  className="row align-items-center justify-content-center" primary>
-  <Title className="col-12">What I know</Title>
+  <Title className="col-12" primary>What I know</Title>
   {
     Data.other.map(project =>
       <Fragment key={project.key}>
