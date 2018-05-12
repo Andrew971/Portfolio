@@ -1,7 +1,10 @@
 import Default from '../../Assets/img/default.png';
 import sales from '../../Assets/img/sales.svg';
+import sales0 from '../../Assets/img/salesO.svg';
 import marketing from '../../Assets/img/marketing.svg';
+import marketing0 from '../../Assets/img/marketingO.svg';
 import code from '../../Assets/img/code.svg';
+import code0 from '../../Assets/img/codeO.svg';
 import pandahug from '../../Assets/img/pandahug.png';
 
 export default {
@@ -9,19 +12,22 @@ export default {
     {
       name: 'Sales',
       url: '',
-      img: sales,
+      img1: sales0,
+      img2: sales,
       description: 'Because a website is a matter for your business development',
       key: 0
     }, {
       name: 'Marketing',
       url: '',
-      img: marketing,
+      img1: marketing0,
+      img2: marketing,
       description: 'I value good content that gonna show the best of your idea',
       key: 1
     }, {
       name: 'Code',
       url: '',
-      img: code,
+      img1: code0,
+      img2: code,
       description: 'Clean code, creativity and learning are my key words',
       key: 2
     }

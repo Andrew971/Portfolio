@@ -1,14 +1,14 @@
 import React, {Component, Fragment} from "react";
 import Card from "../../Components/Card";
 import Data from '../../js/Projects/en'
-import background from '../../Assets/img/background1.jpg';
-import Mask from "../../Components/Mask";
 import Button from "../../Components/Button";
 import Title from "../../Components/Title";
+import Avatar from "../../Components/Avatar";
+import Headlines from "../../Components/Headlines";
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
 
-const Expertise = () => (
+const Expertise = ({Theme}) => (
 <Card>
   <Title className="col-12">Services</Title>
   <div className="row align-items-center justify-content-center" style={{margin:'2rem 0rem'}}>
@@ -18,7 +18,10 @@ const Expertise = () => (
       <div className="col-md-4" align="center">
         <div className="row">
     <div className="col-md-12">
-    <img className="img-fluid card-img-top" src={project.img} alt="Card cap"/>
+    <img className="img-fluid card-img-top" src={Theme.label ==='Main'
+      ?project.img2
+    :project.img1
+  } alt="Card cap"/>
   </div>
   <div className="col-md-12 card-body">
     <h2 className="card-title">{project.name}</h2>
@@ -34,28 +37,15 @@ const Expertise = () => (
 );
 
 const Aboutme = () => (
-  <Card  className="row align-items-center justify-content-center" src={background}>
-    <Mask primary>
-      <div className="row">
-        <div className="col-12 order-first order-md-last col-md-5" style={{margin:'auto'}}>
-          <div className="row align-items-center justify-content-center">
-            <div className="col-12 col-md-12" align="center">
-              <div className="photo"></div>
-            </div>
-          </div>
+  <Card  className="row align-items-center justify-content-center" primary>
+        <div className="col-12 order-first order-md-last col-md-5" style={{margin:'auto'}} align="center">
+              <Avatar />
         </div>
         <div className="col-12 col-md-7">
-          <div className="card">
-            <p>
-              Mr. Crow, sitting in a tree, Held a piece of cheese in his beak. Mr. Fox, mouth watering from the scent, Uttered almost precisely this to him: “Hey! Good morning, Mr. Crow. How lovely you are! You look so beautiful! Without lying, if your songs Are in keeping with your feathers, You are the Phoenix of the inhabitants of these woods.” </p>
-
-              <p>With these words the Crow feels nothing but delight. And to show off his beautiful voice, He opens a wide beak and lets his prey fall. The Fox grabs it and said: “My dear sir Learn that every flatterer Lives at the expense of the one who listens to him. This lesson is worth a piece of cheese, no doubt.” The Crow, ashamed and embarrassed, Swore, but a bit late, that he would never be fooled again.
-
-            </p>
-          </div>
+          <Headlines>
+              Mr. Crow, sitting in a tree, Held a piece of cheese in his beak. Mr. Fox, mouth watering from the scent, Uttered almost precisely this to him: “Hey! Good morning, Mr. Crow. How lovely you are! You look so beautiful! Without lying, if your songs Are in keeping with your feathers, You are the Phoenix of the inhabitants of these woods.”
+          </Headlines>
         </div>
-      </div>
-    </Mask>
   </Card>
 );
 
@@ -97,7 +87,7 @@ const Lab = () => (
       <h2 className="card-title">{project.name}</h2>
       <h6 className="card-text">{project.sub}</h6>
       <p>{project.description}</p>
-      {project.url&&<Button onClick={()=>{
+      {!project.url&&<Button onClick={()=>{
         console.log(window.location)
         window.open(project.url,'_blank')
       }}
@@ -119,10 +109,10 @@ export class HomeEn extends Component {
   }
 
   render() {
-
+const { Theme } = this.props
     return (
       <Fragment>
-        <Expertise/>
+        <Expertise Theme={Theme}/>
         <Aboutme/>
         <MyWork/>
         <Lab />
@@ -132,7 +122,11 @@ export class HomeEn extends Component {
 }
 const mapStateToProps = (state) => {
 
-  return {Modal: state.UI.Modal, modalSAtatus: state.UI.modalSAtatus}
+  return {
+    Theme:state.UI.Theme,
+    Modal: state.UI.Modal,
+    modalSAtatus: state.UI.modalSAtatus
+  }
 
 }
 export default withRouter(connect(mapStateToProps)(HomeEn));

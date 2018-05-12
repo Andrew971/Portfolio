@@ -8,7 +8,7 @@ import Title from "../../Components/Title";
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
 
-const Expertise = () => (
+const Expertise = ({Theme}) => (
 <Card>
   <Title className="col-12">Services</Title>
   <div className="row align-items-center justify-content-center" style={{margin:'2rem 0rem'}}>
@@ -18,7 +18,10 @@ const Expertise = () => (
       <div className="col-md-4" align="center">
         <div className="row">
     <div className="col-md-12">
-    <img className="img-fluid card-img-top" src={project.img} alt="Card cap"/>
+    <img className="img-fluid card-img-top" src={Theme.label ==='Main'
+      ?project.img1
+    :project.img2
+  } alt="Card cap"/>
   </div>
   <div className="col-md-12 card-body">
     <h2 className="card-title">{project.name}</h2>
@@ -119,10 +122,11 @@ export class HomeFr extends Component {
   }
 
   render() {
+    const { Theme } = this.props
 
     return (
       <Fragment>
-        <Expertise/>
+        <Expertise Theme={Theme} />
         <Aboutme/>
         <MyWork/>
         <Lab />
@@ -132,7 +136,11 @@ export class HomeFr extends Component {
 }
 const mapStateToProps = (state) => {
 
-  return {Modal: state.UI.Modal, modalSAtatus: state.UI.modalSAtatus}
+  return {
+    Theme:state.UI.Theme,
+    Modal: state.UI.Modal,
+    modalSAtatus: state.UI.modalSAtatus
+  }
 
 }
 export default withRouter(connect(mapStateToProps)(HomeFr));

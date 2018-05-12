@@ -4,9 +4,9 @@ export default styled.div`
 
   width: 100%;
   height: 10vh;
-  background:transparent;
+  background:rgba(0,0,0,.63);
   z-index: 1;
-  position: absolute;
+  position: fixed;
   top: 0;
   padding: 0 5rem;
   font-size:1.2em;
@@ -16,5 +16,6 @@ export default styled.div`
 
     @media (max-width: 670px) {
       padding: 0;
+      color:white;
 }
   `;

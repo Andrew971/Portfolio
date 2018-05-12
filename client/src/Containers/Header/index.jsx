@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
 import HeaderContent from '../../Content/Header'
+import Header from '../../Components/Header'
 
 class HeaderContainer extends Component {
 
   render() {
-    return (<header>
+    return (<Header>
     <HeaderContent/>
-    </header>);
+    </Header>);
   }
 }
 const mapStateToProps = (state) => {
