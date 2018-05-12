@@ -49,7 +49,10 @@ main {
 footer {
   height: 10vh;
   width: 100%;
-  background-color: #4086bb; }
+  background-color: #4086bb;
+  padding: '0 2rem'; }
+  footer h6 {
+    margin: auto; }
 
 @keyframes App-logo-spin {
   from {
@@ -59,4 +62,10 @@ footer {
 
 @media (max-width: 600px) {
   main {
-    margin-bottom: 0; } }
+    margin-bottom: 0; }
+  footer {
+    height: auto;
+    text-align: center; }
+    footer h6 {
+      margin: 0.2rem 0;
+      text-align: center; } }

@@ -11,21 +11,11 @@ class footer extends Component {
     return (
       <Fragment>
       <FooterContent />
-    <footer className="row align-items-center justify-content-center" style={{padding:'0 5rem'}}>
-      <div className="col"><select
-                  onChange={e => {
-                  dispatch(UIAction({type: "CHANGE_THEME", payload: e.target.value}));
-                }}
-                  style={{
-                  backgroundColor: 'transparent',
-                  border: 0,
-                  color: 'white'
-                }}
-                  >
-                  <option value="Main">Main</option>
-                  <option value="Blue">Blue</option>
-                </select></div>
+    <footer className="row align-items-center justify-content-center">
 
+              <div className="col-12 order-last order-md-first col-md" style={{margin:'1rem 0',color:'white'}}>
+                <h6>Copyright © 2018 "Andrew Sordier". All rights reserved</h6>
+              </div>
               <SocialMedia/>
     </footer>
     </Fragment>
@@ -34,7 +24,8 @@ class footer extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    Theme: state.UI.Theme};
+    Theme: state.UI.Theme
+  };
 };
 
 export default connect(mapStateToProps)(footer);

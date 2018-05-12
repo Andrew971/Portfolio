@@ -89,9 +89,13 @@ export class HomeFr extends Component {
     );
   }
 }
+
 const mapStateToProps = (state) => {
 
-  return {Modal: state.UI.Modal, modalSAtatus: state.UI.modalSAtatus}
+  return {
+    Modal: state.UI.Modal,
+    modalSAtatus: state.UI.modalSAtatus
+  }
 
 }
 export default withRouter(connect(mapStateToProps)(HomeFr));

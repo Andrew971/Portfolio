@@ -24,6 +24,16 @@ const Contact = ({dispatch}) => (
               dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Hire"}}))
             }}>J'embauche</Button>
         </div>
+        <div className="col-12" style={{marginTop:'2rem', color:'white'}} align="center">
+          <h5>try and change Theme</h5>
+            <div className="col-12 col-md" align="center"><select
+                        onChange={e => {
+                        dispatch(UIAction({type: "CHANGE_THEME", payload: e.target.value}));
+                      }} style={{backgroundColor:'white',color:'black',textAlign:'center'}}>
+                        <option value="Main">Main</option>
+                        <option value="Blue">Blue</option>
+                      </select></div>
+        </div>
     </Mask>
   </Card>
 );

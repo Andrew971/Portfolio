@@ -1,56 +1,54 @@
-import React, {Component, Children, Fragment} from 'react';
-import Main from '../../Components/Card'
+import React, {Component, Fragment} from "react";
+import Card from "../../Components/Card";
+import Data from '../../js/Projects/en'
+import background from '../../Assets/img/background1.jpg';
+import Mask from "../../Components/Mask";
+import Button from "../../Components/Button";
+import {withRouter,} from 'react-router-dom'
+import {connect} from 'react-redux';
 
-export class Title extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const Focus = () => (
+<Card  className="row align-items-center justify-content-center">
+  <h1 className="col-12">Focus</h1>
+  {
+    Data.services.map(project =>
+    <Fragment key={project.key}>
+      <div className="col-md-4" style={{margin:'0rem 0rem'}} align="center">
+    <div className="col-md-12" style={{margin:'2rem 0'}}>
+    <img className="img-fluid card-img-top" src={project.img} alt="Card cap"/>
+  </div>
+  <div className="col-md-12 card-body">
+    <h2 className="card-title">{project.name}</h2>
+    <h6 className="card-text">{project.sub}</h6>
+    <p>{project.description}</p>
+  </div>
+</div>
+  </Fragment>
+    )
   }
-
-  render() {
-    const {children, current} = this.props
-    const prev = (current === 0)
-      ? Children.toArray(children).length - 1
-      : current - 1;
-    const next = (current === 2)
-      ? 0
-      : current + 1;
-
-    return (<Fragment>
-      <div className="col-12 col-md-4" style={{
-          textAlign: 'center'
-        }}><h2>{Children.toArray(children)[prev]}</h2>
-      </div>
-      <div className="col-12 col-md-4" style={{
-          textAlign: 'center'
-        }}><h1>{Children.toArray(children)[current]}</h1>
-      </div>
-      <div className="col-12 col-md-4" style={{
-          textAlign: 'center'
-        }}><h2>{Children.toArray(children)[next]}</h2>
-      </div>
-    </Fragment>);
+</Card>
+);
+const Knowledge = () => (
+<Card  className="row align-items-center justify-content-center" primary>
+  <h1 className="col-12">What i know</h1>
+  {
+    Data.services.map(project =>
+    <Fragment key={project.key}>
+      <div className="col-md-4" style={{margin:'0rem 0rem'}} align="center">
+    <div className="col-md-12" style={{margin:'2rem 0'}}>
+    <img className="img-fluid card-img-top" src={project.img} alt="Card cap"/>
+  </div>
+  <div className="col-md-12 card-body">
+    <h2 className="card-title">{project.name}</h2>
+    <h6 className="card-text">{project.sub}</h6>
+    <p>{project.description}</p>
+  </div>
+</div>
+  </Fragment>
+    )
   }
-
-}
-
-
-const Frontend = () => (
-    <div className="card">
-      <p>
-        Maître Front, sur un arbre perché, Tenait en son bec un fromage. Maître Renard, par l’odeur alléché, Lui tint à peu près ce langage : « Hé ! bonjour, Monsieur du Corbeau. Que vous êtes joli ! Que vous me semblez beau ! Sans mentir, si votre ramage Se rapporte à votre plumage, Vous êtes le Phénix des hôtes de ces bois. » A ces mots le Corbeau ne se sent pas de joie ; Et pour montrer sa belle voix, Il ouvre un large bec, laisse tomber sa proie. Le Renard s’en saisit, et dit : « Mon bon Monsieur, Apprenez que tout flatteur Vit aux dépens de celui qui l’écoute : Cette leçon vaut bien un fromage, sans doute. » Le Corbeau, honteux et confus, Jura, mais un peu tard, qu’on ne l’y prendrait plus.</p>
-  </div>);
-
-const Backend = () => (
-    <div className="card">
-      <p>
-        Maître Back, sur un arbre perché, Tenait en son bec un fromage. Maître Renard, par l’odeur alléché, Lui tint à peu près ce langage : « Hé ! bonjour, Monsieur du Corbeau. Que vous êtes joli ! Que vous me semblez beau ! Sans mentir, si votre ramage Se rapporte à votre plumage, Vous êtes le Phénix des hôtes de ces bois. » A ces mots le Corbeau ne se sent pas de joie ; Et pour montrer sa belle voix, Il ouvre un large bec, laisse tomber sa proie. Le Renard s’en saisit, et dit : « Mon bon Monsieur, Apprenez que tout flatteur Vit aux dépens de celui qui l’écoute : Cette leçon vaut bien un fromage, sans doute. » Le Corbeau, honteux et confus, Jura, mais un peu tard, qu’on ne l’y prendrait plus.</p>
-  </div>);
-const DevOps = () => (
-    <div className="card">
-      <p>
-        Maître DevOps, sur un arbre perché, Tenait en son bec un fromage. Maître Renard, par l’odeur alléché, Lui tint à peu près ce langage : « Hé ! bonjour, Monsieur du Corbeau. Que vous êtes joli ! Que vous me semblez beau ! Sans mentir, si votre ramage Se rapporte à votre plumage, Vous êtes le Phénix des hôtes de ces bois. » A ces mots le Corbeau ne se sent pas de joie ; Et pour montrer sa belle voix, Il ouvre un large bec, laisse tomber sa proie. Le Renard s’en saisit, et dit : « Mon bon Monsieur, Apprenez que tout flatteur Vit aux dépens de celui qui l’écoute : Cette leçon vaut bien un fromage, sans doute. » Le Corbeau, honteux et confus, Jura, mais un peu tard, qu’on ne l’y prendrait plus.</p>
-  </div>);
+</Card>
+);
 
 
 
@@ -58,37 +56,26 @@ export class SkillEn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: 1
     };
   }
 
   render() {
-    const { current} = this.state
-    return (<Main className="col-12 order-md-last col-md-11">
-      <div className="row">
-        <div className="col-12">
-          <div className="row align-items-center justify-content-center">
-            <Title current={current}>
-              <span onClick={() => {
-                  this.setState({current: 0})
-                }}>Back-End</span>
-              <span onClick={() => {
-                  this.setState({current: 1})
-                }}>Front-End</span>
-              <span onClick={() => {
-                  this.setState({current: 2})
-                }}>DevOps</span>
-            </Title>
-          </div>
-        </div>
-        <div className="col-12">
-{current===0 && <Backend/>}
-{current===1 && <Frontend/>}
-{current===2 && <DevOps/>}
 
-
-      </div>
-      </div>
-    </Main>);
+    return (
+      <Fragment>
+        <Focus/>
+        <Knowledge/>
+      </Fragment>
+    );
   }
 }
+
+const mapStateToProps = (state) => {
+
+  return {
+    Modal: state.UI.Modal,
+    modalSAtatus: state.UI.modalSAtatus
+  }
+
+}
+export default withRouter(connect(mapStateToProps)(SkillEn));

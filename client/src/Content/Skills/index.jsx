@@ -1,10 +1,10 @@
 import React, {Component} from "react";
-import {SkillEn} from './en'
-import {SkillFr} from './fr'
+import SkillEn from './en'
+import SkillFr from './fr'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
 
-class About extends Component {
+class Skills extends Component {
 
   render() {
     const {Language} = this.props
@@ -24,4 +24,4 @@ const mapStateToProps = (state) => {
   return {Language: state.UI.Language}
 
 }
-export default withRouter(connect(mapStateToProps)(About));
+export default withRouter(connect(mapStateToProps)(Skills));
