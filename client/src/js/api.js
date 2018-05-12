@@ -6,5 +6,5 @@ const setUrl = (REACT_APP_PROD_ENV === 'true')
 
 
 export const apiURL =(NODE_ENV ==='production')
-?setUrl+'ENDPOINT'
+?setUrl
 :REACT_APP_DEV_API_URL
