@@ -18,13 +18,13 @@ const Contact = ({dispatch}) => (
       <div className="col-12" align="center">
       <Button onClick={() => {
           dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Contact"}}))
-       }} primary>I need a website</Button>
+       }} primary>Need a website?</Button>
       <Button onClick={() => {
         dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Hire"}}))
-      }}>I am looking to hire</Button>
+      }}>Looking to hire?</Button>
       </div>
       <div className="col-12" style={{marginTop:'2rem', color:'white'}} align="center">
-        <h5>try and change Theme</h5>
+        <h5>Try and change Theme</h5>
           <div className="col-12 col-md" align="center"><select
                       onChange={e => {
                       dispatch(UIAction({type: "CHANGE_THEME", payload: e.target.value}));

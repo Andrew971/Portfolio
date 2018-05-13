@@ -14,14 +14,14 @@ export default {
       url: '',
       img1: sales0,
       img2: sales,
-      description: 'Because a website is the first step for your business development',
+      description: 'Because a website is the key for your business development',
       key: 0
     }, {
       name: 'Marketing',
       url: '',
       img1: marketing0,
       img2: marketing,
-      description: 'I value good content that gonna show the best out of your idea',
+      description: 'An unique and customized/perfectly adapted content to show your wonderful ideas',
       key: 1
     }, {
       name: 'Code',

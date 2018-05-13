@@ -58,9 +58,9 @@ const Aboutme = () => (
         <p>
           My journey started with small projects when I was a kid such as Forum
           and Website. However, only later on, I realize how passionate I was.
-          Learning is such a powerful feeling that I would like to share with
-          you. I love doing business in a way that I can connect and communicate
-          with others.
+        </p>
+        <p>Learning is such a powerful feeling that I would like to share with
+          you. Doing business in a way that allows everybody to connect and communicate with each others, is the goal that I want to achieve.
         </p>
       </Headlines>
     </div>

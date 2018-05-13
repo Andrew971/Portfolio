@@ -14,14 +14,14 @@ export default {
       url: '',
       img1: sales0,
       img2: sales,
-      description: `Parce qu'un site internet est la premiére etape pour le developpement de votre Business.`,
+      description: `Parce qu'un site internet est la clés pour le developpement de votre Business.`,
       key: 0
     }, {
       name: 'Marketing',
       url: '',
       img1: marketing0,
       img2: marketing,
-      description: `Je fournis un contenu qui mettra en valeur votre idée et votre commerce.`,
+      description: `Un contenu unique et personalisé, parfaitement adapté pour partager vos idées.`,
       key: 1
     }, {
       name: 'Code',
