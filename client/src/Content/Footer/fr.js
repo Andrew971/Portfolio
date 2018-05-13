@@ -14,7 +14,7 @@ const Contact = ({dispatch}) => (
     <Mask primary>
       <img src={logo} className="App-logo col-12" alt="logo"/>
 
-        <HeadTitle className="col-12">Il y toujours de la place pour l'amélioration.
+        <HeadTitle className="col-12">Il ya toujours de la place pour l'amélioration.
         </HeadTitle>
         <div className="col-12" align="center">
           <Button onClick={() => {

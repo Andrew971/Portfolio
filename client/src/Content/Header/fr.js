@@ -5,7 +5,7 @@ import HeadTitle from '../../Components/HeadTitle'
 import {UIAction} from '../../Modules/UI'
 
 export const HeaderFr = ({history,dispatch}) => (<Mask className="row" noneed>
-  <HeadTitle className="col-12">Il y toujours de la place pour l'amélioration.
+  <HeadTitle className="col-12">Il y a toujours de la place pour l'amélioration.
   </HeadTitle>
   <div className="col-12" align="center">
     <Button onClick={() => {
