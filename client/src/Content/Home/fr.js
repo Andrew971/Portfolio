@@ -51,9 +51,9 @@ const Aboutme = () => (
       <Headlines>
         <h1>Salut! Je m'appelle Andrew</h1>
         <h3> Je suis un Full Stack Web Developper</h3>
-        <p>Je viens d'une petite îles des Antilles Française. J'ai travaillé comme commercial and Consultant en web marketing pendant plus de cinq ans.</p>
-        <p>Tout à commencé, quand j'étais enfant, avec de petits projects comme des forums et site internet. Cependanst, ce n'est que plus tard que j'ai realisé à quelle point j'etais passioné.</p>
-        <p> Apprendre c'est avoir des superpouvoir. J'aimerais partager ce sentiment avec vous. Un business qui permet à tout le monde d'etre connecter est l'objectif que je me suis fixé.
+        <p>Je viens d'une petite île des Antilles Française. J'ai travaillé comme commercial and Consultant en web marketing pendant plus de cinq ans.</p>
+        <p>Tout à commencé, quand j'étais enfant, avec de petits projects comme des forums et sites internet. Cependant, ce n'est que plus tard que j'ai realisé à quel point j'etais passioné.</p>
+        <p> Apprendre c'est avoir des super-pouvoirs. J'aimerais partager cette ambition avec vous. Un business qui permet à tout le monde d'etre connecter est l'objectif que je me suis fixé.
         </p>
       </Headlines>
     </div>

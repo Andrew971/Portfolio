@@ -44,11 +44,11 @@ export const ContactEn = ({dispatch, modalSAtatus}) => (<ModalWrapper>
         </div>
         <div className="col-12 col-md-12">
           <label>E-mail</label>
-          <input type="email" placeholder="Name" name="email"/>
+          <input type="email" placeholder="exemple@xxxx.com" name="email"/>
         </div>
         <div className="col-12">
           <label>Message</label>
-          <textarea rows="4" placeholder="Tell me the headlines of your project" name="message"></textarea>
+          <textarea rows="4" placeholder="Tell me the headlines of your project." name="message"></textarea>
         </div>
         {
           modalSAtatus === false && <ModalError className="col-12">

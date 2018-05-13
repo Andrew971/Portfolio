@@ -5,7 +5,7 @@ import HeadTitle from '../../Components/HeadTitle'
 import {UIAction} from '../../Modules/UI'
 
 export const HeaderFr = ({history,dispatch}) => (<Mask className="row" noneed>
-  <HeadTitle className="col-12">Si tu n'y arrives pas la première fois;<br/>Appelle ça version 1.0
+  <HeadTitle className="col-12">Il y toujours de la place pour l'amélioration.
   </HeadTitle>
   <div className="col-12" align="center">
     <Button onClick={() => {
@@ -13,6 +13,6 @@ export const HeaderFr = ({history,dispatch}) => (<Mask className="row" noneed>
      }} primary="primary">Besoin d'un site?</Button>
     <Button onClick={() => {
         dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Hire"}}))
-      }}>Vous embauchez?</Button>
+      }}>Vous voulez embaucher?</Button>
   </div>
 </Mask>);

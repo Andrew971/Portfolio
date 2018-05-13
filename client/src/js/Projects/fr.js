@@ -14,7 +14,7 @@ export default {
       url: '',
       img1: sales0,
       img2: sales,
-      description: `Parce qu'un site internet est la clés pour le developpement de votre Business.`,
+      description: `Un bon site internet est la clé pour le developpement de votre Business.`,
       key: 0
     }, {
       name: 'Marketing',

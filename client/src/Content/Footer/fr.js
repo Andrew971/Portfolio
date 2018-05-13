@@ -14,7 +14,7 @@ const Contact = ({dispatch}) => (
     <Mask primary>
       <img src={logo} className="App-logo col-12" alt="logo"/>
 
-        <HeadTitle className="col-12">Si tu n'y arrives pas la première fois;<br/>Appelle ça version 1.0
+        <HeadTitle className="col-12">Il y toujours de la place pour l'amélioration.
         </HeadTitle>
         <div className="col-12" align="center">
           <Button onClick={() => {
@@ -22,7 +22,7 @@ const Contact = ({dispatch}) => (
            }} primary="primary">Besoin d'un site?</Button>
           <Button onClick={() => {
               dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:"Hire"}}))
-            }}>Vous embauchez?</Button>
+            }}>Vous voulez embaucher?</Button>
         </div>
         <div className="col-12" style={{marginTop:'2rem', color:'white'}} align="center">
           <h5>Essaye et change de Theme</h5>

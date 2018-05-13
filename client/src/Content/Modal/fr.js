@@ -19,22 +19,22 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
       }}>&times;</ModalClose>
 
     <ModalHeader>
-      <h5>J'ai besoin d'un site internet</h5>
+      <h5>J'ai besoin d'un site internet?</h5>
     </ModalHeader>
     <form ref={self => this.contactForm = self}>
       <div className="form-row">
         <div className="col-12 col-md-6">
           <label>Nom</label>
-          <input type="text" placeholder="Name" name="lastname"/>
+          <input type="text" placeholder="Nom" name="lastname"/>
         </div>
         <div className="col-12 col-md-6">
           <label>Prénom</label>
-          <input type="text" placeholder="Name" name="firstname"/>
+          <input type="text" placeholder="Prénom" name="firstname"/>
         </div>
 
         <div className="col-12 col-md-6">
           <label>Téléphone</label>
-          <input type="text" placeholder="Phone" name="phone"/>
+          <input type="text" placeholder="Téléphone" name="phone"/>
         </div>
         <div className="col-12 col-md-6">
           <label>Langue de préférence</label>
@@ -45,11 +45,11 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
         </div>
         <div className="col-12 col-md-12">
           <label>E-mail</label>
-          <input type="email" placeholder="Name" name="email"/>
+          <input type="email" placeholder="exemple@xxx.com" name="email"/>
         </div>
         <div className="col-12">
           <label>Message</label>
-          <textarea rows="4" placeholder="Ecrivez les informations clées de votre project" name="message"></textarea>
+          <textarea rows="4" placeholder="Ecrivez les informations clés de votre project" name="message"></textarea>
         </div>
         {
           modalSAtatus === false && <ModalError className="col-12">
@@ -63,7 +63,7 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
       <div className="col-12 col-md-6" align="center">
         <ModalButton onClick={() => {
             dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
-          }}>&times; Close</ModalButton>
+          }}>&times; Fermez</ModalButton>
       </div>
       <div className="col-12 col-md-6" align="center">
         <ModalButton onClick={() => {
@@ -89,7 +89,7 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
               }
             }))
 
-          }} primary="primary">Send</ModalButton>
+          }} primary="primary">Envoyer</ModalButton>
       </div>
     </ModalFooter>
   </ModalContent>
@@ -112,16 +112,16 @@ export const HireFr = ({dispatch,modalSAtatus}) => (<ModalWrapper>
       <div className="form-row">
         <div className="col-12 col-md-6">
           <label>Nom</label>
-          <input type="text" placeholder="Name" name="lastname"/>
+          <input type="text" placeholder="Nom" name="lastname"/>
         </div>
         <div className="col-12 col-md-6">
           <label>Prénom</label>
-          <input type="text" placeholder="Name" name="firstname"/>
+          <input type="text" placeholder="Prénom" name="firstname"/>
         </div>
 
         <div className="col-12 col-md-6">
           <label>Téléphone</label>
-          <input type="text" placeholder="Phone" name="phone"/>
+          <input type="text" placeholder="Téléphone" name="phone"/>
         </div>
         <div className="col-12 col-md-6">
           <label>Langue de préférence</label>
@@ -132,11 +132,11 @@ export const HireFr = ({dispatch,modalSAtatus}) => (<ModalWrapper>
         </div>
         <div className="col-12 col-md-6">
           <label>Entreprise</label>
-          <input type="text" placeholder="Name" name="company"/>
+          <input type="text" placeholder="Entreprise" name="company"/>
         </div>
         <div className="col-12 col-md-6">
           <label>E-mail</label>
-          <input type="email" placeholder="Name" name="email"/>
+          <input type="email" placeholder="exemple@xxx.com" name="email"/>
         </div>
         <div className="col-12">
           <label>Message</label>
@@ -194,14 +194,14 @@ export const Confirmation = ({dispatch}) => (<ModalWrapper>
   <ModalContent>
     <ModalConfirm>
       Félicitation ! Nous avons envoyé votre email avec succés.
-      <p>Je vous recontacterais sous 48h.
+      <p>Je vous recontacterai sous 48h.
       </p>
       <p>Merci.</p>
     </ModalConfirm>
     <div className="col-12" align="center">
       <ModalButton onClick={() => {
           dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
-        }}>&times; Close</ModalButton>
+        }}>&times; Fermer</ModalButton>
     </div>
   </ModalContent>
 

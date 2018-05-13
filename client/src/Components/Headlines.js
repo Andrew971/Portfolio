@@ -13,6 +13,7 @@ h3{
 
 }
     @media (max-width: 670px) {
+      text-align:center;
 
     }
   `;
