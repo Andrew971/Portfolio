@@ -6,7 +6,7 @@ width: 100%;
 height: 90vh;
 background-image: url(${background6});
 background-attachment: fixed;
-background-position: center;
+background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
 h1{
@@ -19,5 +19,9 @@ h1{
 
     @media (max-width: 670px) {
       padding: 3rem 0 0 0;
+    }
+
+    @media (max-width: @iphone-screen) {
+      background-attachment: scroll;
     }
   `;

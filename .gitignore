@@ -25,4 +25,6 @@ yarn-error.log*
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+# Ebextensions file
 !.elasticbeanstalk/nginx.conf
