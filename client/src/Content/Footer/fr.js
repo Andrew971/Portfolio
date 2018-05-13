@@ -30,8 +30,8 @@ const Contact = ({dispatch}) => (
                         onChange={e => {
                         dispatch(UIAction({type: "CHANGE_THEME", payload: e.target.value}));
                       }} style={{backgroundColor:'white',color:'black',textAlign:'center'}}>
-                        <option value="Main">Main</option>
-                        <option value="Blue">Blue</option>
+                        <option value="Main">Skyblue</option>
+                        <option value="Blue">OrangeWild</option>
                       </select></div>
         </div>
     </Mask>
