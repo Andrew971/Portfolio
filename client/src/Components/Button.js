@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export default styled.button`
-  background: ${props => (props.primary ? props.theme.primary : "transparent")};
-  color: ${props => (props.primary ? props.theme.color.primary : props.theme.color.primary)};
+  background: ${props => (props.primary ? props.theme.primary : 'white')};
+  color: ${props => (props.primary ? props.theme.color.primary : props.theme.color.secondary)};
   font-size: 1.5rem;
   margin: 0.5em;
   padding: 0.25em 1em;

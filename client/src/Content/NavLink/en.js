@@ -2,7 +2,7 @@ import React from "react";
 import NavItem from "../../Components/NavLink";
 import {NavLink} from "react-router-dom";
 import {UIAction} from "../../Modules/UI";
-
+import Icon from '../../Components/icon'
 
 export const NavContentEn = ({dispatch,Language}) => (
   <NavItem>
@@ -13,10 +13,8 @@ export const NavContentEn = ({dispatch,Language}) => (
       <li>
         <NavLink to="/skills">Skills</NavLink>
       </li>
-      <li>
-        {Language === 'Fr'
-        ?'Français'
-      :'English'}
+      <li style={{float:'right'}}>
+      <Icon/>
         <div className="dropdown-content">
           <span onClick={e => {
               dispatch(UIAction({type: "CHANGE_LANG", payload: "Fr"}));
@@ -27,5 +25,6 @@ export const NavContentEn = ({dispatch,Language}) => (
         </div>
       </li>
     </ul>
+
   </NavItem>
 );

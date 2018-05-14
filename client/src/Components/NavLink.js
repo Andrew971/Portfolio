@@ -42,7 +42,10 @@ export default styled.div`
          cursor:pointer;
      }
 
-     .dropdown-content span:hover {background-color: #ddd}
+     .dropdown-content span:hover {
+       background-color: #ddd
+     }
+
 
     @media (max-width: 660px) {
       height: auto;

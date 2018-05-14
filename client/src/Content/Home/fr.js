@@ -12,7 +12,7 @@ const Expertise = ({Theme}) => (
   <Card>
     <Title className="col-12">Expertise</Title>
     <div
-      className="row align-items-center justify-content-center"
+      className="row"
       style={{margin: "2rem 0rem"}}
     >
       {Data.services.map(project => (
@@ -61,8 +61,8 @@ const Aboutme = () => (
 );
 
 const MyWork = () => (
-  <Card className="row align-items-center justify-content-center">
-    <Title className="col-12">Ce sur quoi j'ai travaillé</Title>
+  <Card className="row align-items-center justify-content-center" primary>
+    <Title className="col-12" primary>Ce sur quoi j'ai travaillé</Title>
     {Data.product.map(project => (
       <div className="row align-items-center" key={project.key}>
         <div
@@ -96,8 +96,8 @@ const MyWork = () => (
 );
 
 const Lab = () => (
-  <Card className="row align-items-center justify-content-center" primary>
-    <Title className="col-12" primary>
+  <Card className="row align-items-center justify-content-center">
+    <Title className="col-12">
 Mes Autres Projects
     </Title>
     {Data.lab.map(project => (
@@ -143,8 +143,8 @@ export class HomeFr extends Component {
     const {Theme} = this.props;
     return (
       <Fragment>
-        <Expertise Theme={Theme} />
         <Aboutme />
+        <Expertise Theme={Theme} />
         <MyWork />
         <Lab />
       </Fragment>
