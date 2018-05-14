@@ -7,7 +7,9 @@ import Header from '../../Components/Header'
 class HeaderContainer extends Component {
 
   render() {
-    return (<Header>
+    const {pathname} = this.props.location
+    console.log(pathname)
+    return (<Header location={pathname}>
     <HeaderContent/>
     </Header>);
   }
