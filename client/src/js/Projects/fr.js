@@ -34,7 +34,7 @@ export default {
   ],
   product: [
     {
-      name: 'Pandaguh',
+      name: 'Pandahug.ca',
       sub: 'ReactJs, PostgreSQL, Bootstrap, Redux, AWS',
       url: 'https://pandahug.ca',
       img: pandahug,

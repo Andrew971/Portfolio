@@ -123,7 +123,7 @@ const Lab = () => (
           <h2 className="card-title">{project.name}</h2>
           <h6 className="card-text">{project.sub}</h6>
           <p>{project.description}</p>
-          {!project.url && (
+          {project.url && (
             <Button
               onClick={() => {
                 console.log(window.location);
