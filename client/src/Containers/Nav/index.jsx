@@ -1,6 +1,6 @@
-import React, {Component,Fragment} from "react";
+import React, {Component} from "react";
 import {connect} from "react-redux";
-import {withRouter,NavLink} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import NavBar from "../../Components/NavBar";
 import DesktopView from "../../Components/DesktopView";
 import MobileView from "../../Components/MobileView";
@@ -8,32 +8,7 @@ import BrandTitle from "../../Components/BrandTitle";
 import MobileNav from "../../Components/MobileNav";
 import logo from '../../Assets/img/logo.svg';
 import NavContent from '../../Content/NavLink'
-import {UIAction} from "../../Modules/UI";
-
-const MobileNavLink = ({dispatch,Language,toggleHide}) => (
-  <Fragment><div style={{fontSize:'3rem', position:'absolute', top:0,right:'25px'}} onClick={()=>{
-    toggleHide()
-  }}>&times;</div>
-<NavLink to='/' onClick={()=>{
-  toggleHide()
-  }}>Portfollio</NavLink>
-  <NavLink to='/skills' onClick={()=>{
-    toggleHide()
-    }}>Skills</NavLink>
-  <li onClick={()=>{void(0)}}>
-      {Language === 'Fr'
-      ?'Français'
-    :'English'}
-      <div className="dropdown-content">
-        <span onClick={e => {
-            dispatch(UIAction({type: "CHANGE_LANG", payload: "Fr"}));
-          }}>Français</span>
-        <span onClick={e => {
-            dispatch(UIAction({type: "CHANGE_LANG", payload: "En"}));
-          }}>English</span>
-      </div>
-    </li></Fragment>
-);
+import MobileNavLink from '../../Content/MobileNavLink';
 
 class Nav extends Component {
 constructor(props) {

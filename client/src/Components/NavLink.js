@@ -29,8 +29,11 @@ export default styled.div`
          display: none;
          position: absolute;
          background-color: #f1f1f1;
+         top:7rem;
+         right:-2rem;
          min-width: 160px;
          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+         // border-radius: 25%;
          z-index: 1;
      }
 

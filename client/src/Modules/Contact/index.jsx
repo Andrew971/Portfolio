@@ -11,6 +11,7 @@ export function contactReducer(state = initialState, action) {
               ...state,
               Language: action.payload
           };
+  
 
       default:
           return state;

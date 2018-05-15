@@ -11,7 +11,6 @@ background-color: #111; /* Black*/
 overflow-x: hidden; /* Disable horizontal scroll */
 padding-top: 60px; /* Place content 60px from the top */
 transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-border-radius: 0 0rem 0rem 5rem;
 a {
     padding: 1rem 2rem;
     text-decoration: none;
@@ -43,14 +42,14 @@ a:hover {
   .dropdown-content {
        display: none;
        position: relative;
-       background-color: #f1f1f1;
+       background-color: transparent;
        min-width: 160px;
        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
        z-index: 1;
    }
 
    .dropdown-content span {
-       color: black;
+       color: white;
        padding: 12px 16px;
        text-decoration: none;
        display: block;

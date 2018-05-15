@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 
 const Expertise = ({Theme}) => (
   <Card>
-    <Title className="col-12">Expertise</Title>
+    <Title className="col-12">Services</Title>
     <div
       className="row"
       style={{margin: "2rem 0rem"}}

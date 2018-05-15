@@ -30,12 +30,18 @@ export function UIReducer(state = initialState, action) {
       case 'MODAL_HIDE':
           return  {
               ...state,
-              modalDisplay: action.payload
+              modalDisplay: action.payload,
+              modalSAtatus:null
           };
       case 'CONTACT_INFO_RESULT':
           return  {
               ...state,
               Modal: action.payload.status?"Confirmation": state.Modal,
+              modalSAtatus:action.payload.status
+          };
+      case 'CONTACT_ERROR_NETWORK':
+          return  {
+              ...state,
               modalSAtatus:action.payload.status
           };
       default:

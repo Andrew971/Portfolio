@@ -9,6 +9,7 @@ export function* Worker(action) {
     yield put({type:'CONTACT_INFO_RESULT', payload:res.data})
   } catch (e) {
     console.log('error network');
+    yield put({type:'CONTACT_ERROR_NETWORK', payload:{status:false}})
   }
 }
 

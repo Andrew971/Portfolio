@@ -5,7 +5,7 @@ font-size:1.3rem;
 text-align:justify;
 margin: 4rem 0;
 h1,h2,h3{
-  text-align:center;
+  text-align:left;
   margin-bottom:1rem;
 }
 h3{
