@@ -8,7 +8,7 @@ export const NavContentEn = ({dispatch,Language}) => (
   <NavItem>
     <ul>
       <li>
-        <NavLink to="/">Portfollio</NavLink>
+        <NavLink to="/">Portfolio</NavLink>
       </li>
       <li>
         <NavLink to="/skills">Skills</NavLink>

@@ -14,7 +14,7 @@ export const MobileNavLinkEn = ({dispatch, Language, toggleHide, icon, iconToggl
     }}>&times;</div>
   <NavLink to='/' onClick={() => {
       toggleHide()
-    }}>Portfollio</NavLink>
+    }}>Portfolio</NavLink>
   <NavLink to='/skills' onClick={() => {
       toggleHide()
     }}>Skills</NavLink>
