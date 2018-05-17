@@ -27,7 +27,7 @@ toggleHide=()=>{
   render() {
     const {visible,Language,dispatch} = this.props
     return (<NavBar className="row align-content-center">
-      <BrandTitle to="/" className="col-9 col-md-2">
+      <BrandTitle to="/" className="col-10 col-md-2">
         {
           logo
             ? <img src={logo} className="App-logo" alt="logo"/>
@@ -37,8 +37,8 @@ toggleHide=()=>{
       <DesktopView className="col-sm col-md">
         <NavContent />
       </DesktopView>
-      <MobileView className="col" align="right">
-        <div style={{fontSize:'3rem'}} onClick={()=>{
+      <MobileView className="col-2" align="right">
+        <div style={{fontSize:'3rem',float:'right'}} onClick={()=>{
               this.toggleShow()
             }}><i className={(visible)?"fa fa-window-close":"fa fa-bars"}></i></div>
 

@@ -23,7 +23,9 @@ export default styled.div`
 }
     @media (max-width: 840px) {
       padding: 0 3rem;
-
       height:auto;
+}
+@media (max-width: @iphone-screen) {
+  height: auto;!important
 }
   `;

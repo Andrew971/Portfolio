@@ -4,7 +4,7 @@ import background2 from '../Assets/img/background2.png'
 
 export default styled.header`
 width: 100%;
-height: 90vh;
+height: 100vh;
 background-image: ${props =>(props.location ==='/'?`url(${background6})`:`url(${background2})`)};
 background-attachment: fixed;
 background-position: center center;
@@ -30,6 +30,14 @@ h1{
     }
 
     @media (max-width: @iphone-screen) {
-      background-attachment: scroll;
+      background-attachment: scroll !important;
     }
+    @media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {
+      background-attachment: scroll !important;
+}
+@media handheld, only screen and (max-width: 668px) {
+     background-attachment: scroll !important;
+}
   `;
