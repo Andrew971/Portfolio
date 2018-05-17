@@ -11,6 +11,7 @@
     "prod": "yarn build && NODE_ENV=production nodemon ./server/bin/www",
     "client": "cd client && yarn start",
     "build": "cd client && yarn build",
+    "deploy": "yarn build && eb deploy",
     "analyze": "cd ./client && yarn analyze",
     "client-i": "cd client && yarn install",
     "i-all": "yarn client-i && yarn install"
