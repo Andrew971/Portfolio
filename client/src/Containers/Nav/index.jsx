@@ -35,7 +35,7 @@ toggleHide=()=>{
         }
       </BrandTitle>
       <DesktopView className="col-sm col-md">
-        <NavContent/>
+        <NavContent />
       </DesktopView>
       <MobileView className="col" align="right">
         <div style={{fontSize:'3rem'}} onClick={()=>{

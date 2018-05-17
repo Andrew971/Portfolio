@@ -14,8 +14,16 @@ export default styled.div`
   align-items: center;
   flex: wrap;
 
-    @media (max-width: 670px) {
+    @media (max-width: 740px) {
       padding: 0;
       color:white;
+      height:auto;
+      padding: 0 3rem;
+
+}
+    @media (max-width: 840px) {
+      padding: 0 3rem;
+
+      height:auto;
 }
   `;

@@ -10,7 +10,7 @@ background-image: url(${profile});
 background-position: center;
 background-size: cover;
 
-    @media (max-width: 670px) {
+    @media (max-width: 740px) {
       width:15rem;
       height:15rem;
     }

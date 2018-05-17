@@ -8,7 +8,7 @@ class HeaderContainer extends Component {
 
   render() {
     const {pathname} = this.props.location
-    console.log(pathname)
+
     return (<Header location={pathname}>
     <HeaderContent/>
     </Header>);

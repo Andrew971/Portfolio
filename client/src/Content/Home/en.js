@@ -41,23 +41,22 @@ const Expertise = ({Theme}) => (
 const Aboutme = () => (
   <Card className="row align-items-center justify-content-center" primary>
     <div
-      className="col-12 order-first order-md-last col-md-5"
+      className="col-12 order-first order-lg-last col-lg-5"
       style={{margin: "auto"}}
       align="center"
     >
       <Avatar />
     </div>
-    <div className="col-12 col-md-7">
+    <div className="col-12 col-lg-7">
       <Headlines>
         <h1>Hello! My name is Andrew</h1>
         <h3> I am a Full Stack Web Developer</h3>
         <p>
           I am from a small island in the Caribbean. I worked as a Sales
-          Representative and acted as a Web Consultant for over five years now.
+          Representative and acted as a Web Consultant for over five years.
         </p>
         <p>
-          My journey started with small projects when I was a kid such as Forums
-          and Websites. However, later on, I realized how passionate I was.
+          My journey into development started with small projects when I was a kid such as Forums and Websites. However, later on, I realized how passionate I was.
         </p>
         <p>Learning is such a powerful feeling that I would like to share with
           you. Doing business in a way that allows everybody to connect and communicate with each others, is the goal that I want to achieve.

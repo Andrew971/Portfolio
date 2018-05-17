@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default styled.div`
 display: none;
 
-@media (min-width: 670px) {
+@media (min-width: 750px) {
 
   display: flex;
   flex-wrap: wrap;

@@ -12,8 +12,26 @@ h3{
   margin-bottom:2rem;
 
 }
-    @media (max-width: 670px) {
+    @media (max-width: 740px) {
       text-align:center;
+      h1,h2,h3{
+        text-align:center;
+        margin-bottom:1rem;
+      }
+      h3{
+        margin-bottom:2rem;
 
+      }
+    }
+    @media (max-width: 980px) {
+      text-align:justify;
+      h1,h2,h3{
+        text-align:center;
+        margin-bottom:1rem;
+      }
+      h3{
+        margin-bottom:2rem;
+
+      }
     }
   `;

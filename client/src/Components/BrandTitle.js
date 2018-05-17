@@ -14,7 +14,7 @@ export default styled(NavLink)`
 
 a:hover {
   text-decoration: none;
-@media (max-width: 660px) {
+@media (max-width: 740px) {
 color:white;
 align-content: center;
 

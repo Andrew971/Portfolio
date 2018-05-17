@@ -7,8 +7,12 @@ width:100%;
 padding:${props => (props.primary ? '5rem 5rem' : '10vh 0rem')};
 
 
-@media (max-width: 670px) {
+@media (max-width: 740px) {
   padding:${props => (props.primary ? '2rem 2rem' : '0vh 0rem')};
+
+}
+@media (max-width: 840px) {
+  padding:${props => (props.primary ? '5rem 5rem' : '0vh 0rem')};
 
 }
 

@@ -9,7 +9,15 @@ h6{
   margin:auto;
 }
 
-    @media (max-width: 670px) {
+    @media (max-width: 740px) {
+      height: auto;
+      text-align:center;
+      h6{
+        margin:0.2rem 0;
+        text-align:center;
+      }
+    }
+    @media (max-width: 840px) {
       height: auto;
       text-align:center;
       h6{

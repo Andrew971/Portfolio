@@ -1,10 +1,10 @@
-import React from "react";
+import React,{Fragment} from "react";
 import NavItem from "../../Components/NavLink";
 import {NavLink} from "react-router-dom";
 import {UIAction} from "../../Modules/UI";
 import Icon from '../../Components/icon'
 
-export const NavContentEn = ({dispatch,Language}) => (
+export const NavContentEn = ({dispatch,Language, icon, iconToggle}) => (
   <NavItem>
     <ul>
       <li>
@@ -13,8 +13,13 @@ export const NavContentEn = ({dispatch,Language}) => (
       <li>
         <NavLink to="/skills">Skills</NavLink>
       </li>
-      <li style={{float:'right'}}>
+      <li style={{float:'right'}} onClick={() => {
+          iconToggle()
+        }}>
       <Icon/>
+        {
+          icon &&
+          <Fragment>
         <div className="dropdown-content">
           <span onClick={e => {
               dispatch(UIAction({type: "CHANGE_LANG", payload: "Fr"}));
@@ -23,6 +28,8 @@ export const NavContentEn = ({dispatch,Language}) => (
               dispatch(UIAction({type: "CHANGE_LANG", payload: "En"}));
             }}>English</span>
         </div>
+      </Fragment>
+    }
       </li>
     </ul>
 

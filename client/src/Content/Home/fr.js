@@ -41,13 +41,13 @@ const Expertise = ({Theme}) => (
 const Aboutme = () => (
   <Card className="row align-items-center justify-content-center" primary>
     <div
-      className="col-12 order-first order-md-last col-md-5"
+      className="col-12 order-first order-lg-last col-lg-5"
       style={{margin: "auto"}}
       align="center"
     >
       <Avatar />
     </div>
-    <div className="col-12 col-md-7">
+    <div className="col-12 col-lg-7">
       <Headlines>
         <h1>Salut! Je m'appelle Andrew</h1>
         <h3> Je suis un Full Stack Web Developper</h3>

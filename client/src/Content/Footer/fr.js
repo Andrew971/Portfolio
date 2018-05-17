@@ -4,7 +4,7 @@ import Mask from '../../Components/Mask'
 import HeadTitle from '../../Components/HeadTitle'
 import {UIAction} from '../../Modules/UI'
 import Card from "../../Components/Card";
-import background from '../../Assets/img/background1.jpg';
+import background from '../../Assets/img/background1.png';
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
 import logo from '../../Assets/img/logo.svg';

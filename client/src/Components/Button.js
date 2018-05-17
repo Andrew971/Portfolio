@@ -12,4 +12,11 @@ export default styled.button`
   &:hover{
     border: ${props => (props.primary ? `2px solid ${props.theme.primary}` : `2px solid ${props.theme.color.primary}`)};
   }
+  @media (max-width: 740px) {
+    font-size: 1.3rem;
+    margin: 0.3em;
+    padding: 0.15em .5em;
+
+  }
+}
 `;

@@ -14,7 +14,7 @@ export default styled.div`
     display: inline-block;
     padding: 4rem 2rem;
   }
-  li:hover .dropdown-content {
+  li .dropdown-content {
       display: block;
   }
   a {
@@ -50,10 +50,20 @@ export default styled.div`
      }
 
 
-    @media (max-width: 660px) {
+    @media (max-width: 740px) {
       height: auto;
       flex-direction: column;
-      padding: 0;
     }
   }
+  @media (max-width: 840px) {
+
+li{
+  padding:0 2rem;
+}
+.dropdown-content {
+
+     top:3.3rem;
+
+ }
+}
 `;
