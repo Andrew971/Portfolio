@@ -16,5 +16,9 @@ color:${props => (props.src || props.primary ? props.theme.color.primary : props
   padding:${props => (props.src ? '0rem 0rem' : '2rem 2rem')};
 
 }
+@media (min-width: 1280px) {
+  background-attachment: fixed;
+}
+
 
 `

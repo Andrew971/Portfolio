@@ -6,7 +6,6 @@ export default styled.header`
 width: 100%;
 height: 100vh;
 background-image: ${props =>(props.location ==='/'?`url(${background6})`:`url(${background2})`)};
-background-attachment: fixed;
 background-position: center center;
 background-size: cover;
 h1{
@@ -24,7 +23,9 @@ h1{
     }
     @media (max-width: 840px) {
       padding: 4rem 0 0 0;
-
+    }
+    @media (min-width: 1280px) {
+      background-attachment: fixed;
     }
 
   `;
