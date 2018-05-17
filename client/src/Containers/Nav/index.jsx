@@ -38,7 +38,7 @@ toggleHide=()=>{
         <NavContent />
       </DesktopView>
       <MobileView className="col-2" align="right">
-        <div style={{fontSize:'3rem',float:'right'}} onClick={()=>{
+        <div style={{fontSize:'3rem'}} onClick={()=>{
               this.toggleShow()
             }}><i className={(visible)?"fa fa-window-close":"fa fa-bars"}></i></div>
 

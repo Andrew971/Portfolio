@@ -23,7 +23,7 @@ h3{
 
       }
     }
-    @media (max-width: 980px) {
+    @media (min-width: 750px) and (max-width: 980px) {
       text-align:justify;
       h1,h2,h3{
         text-align:center;

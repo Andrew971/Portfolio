@@ -14,18 +14,11 @@ export default styled.div`
   align-items: center;
   flex: wrap;
 
-    @media (max-width: 740px) {
-      padding: 0;
-      color:white;
-      height:auto;
-      padding: 0 3rem;
 
-}
     @media (max-width: 840px) {
-      padding: 0 3rem;
+      padding: 0 1rem;
       height:auto;
+      color:white;
 }
-@media (max-width: @iphone-screen) {
-  height: auto;!important
-}
+
   `;
