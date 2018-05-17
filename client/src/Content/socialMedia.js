@@ -5,7 +5,7 @@ export const SocialMedia = (className) => {
 
   return (<Fragment>
 
-  <div className="col order-md-last col-md-4" style={{margin:'1rem 0'}}>
+  <div className="col order-md-last col-md-5" style={{margin:'1rem 0'}}>
   <div className="row">
   <div className="col">
 
