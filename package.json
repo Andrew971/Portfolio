@@ -11,7 +11,7 @@
     "prod": "yarn build && NODE_ENV=production nodemon ./server/bin/www",
     "client": "cd client && yarn start",
     "build": "cd client && yarn build",
-    "pre-d": " yarn build && git add . && git commit -m 'update' &&git push",
+    "pre-d": " yarn build && git add . && git commit -m 'deployment' &&git push",
     "deploy": "yarn pre-d && eb deploy",
     "analyze": "cd ./client && yarn analyze",
     "client-i": "cd client && yarn install",

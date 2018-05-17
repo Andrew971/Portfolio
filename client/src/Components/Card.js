@@ -7,9 +7,7 @@ width:100%;
 height:auto;
 background:${props => (props.primary ? props.theme.background.primary : props.theme.background.secondary)};
 background-image: ${props => (props.src ? `url(${props.src})` : "")};
-background-attachment: fixed;
 background-position: center center;
-background-repeat: no-repeat;
 background-size: cover;
 
 color:${props => (props.src || props.primary ? props.theme.color.primary : props.theme.color.secondary)};
@@ -18,7 +16,5 @@ color:${props => (props.src || props.primary ? props.theme.color.primary : props
   padding:${props => (props.src ? '0rem 0rem' : '2rem 2rem')};
 
 }
-@media (max-width: @iphone-screen) {
-  background-attachment: scroll;
-}
+
 `
