@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import background6 from '../Assets/img/background6.png'
-import mobilebackground6 from '../Assets/img/mobilebackground6.png'
 import background2 from '../Assets/img/background2.png'
 
 export default styled.header`
