@@ -20,7 +20,9 @@ router.post('/contact', (req, res, next) => {
   console.log(req.body)
 
   res.mailer.send('email', {
-      to: 'sordier.andrew@gmail.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
+      to: 'contact@andrewsordier.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
+      replyTo:email,
+      Bcc:'sordier.andrew@gmail.com',
       subject, // REQUIRED.
       firstname,
       lastname,

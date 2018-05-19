@@ -10,14 +10,14 @@ const app = express();
 const mailer = require('express-mailer');
 
 mailer.extend(app, {
-  from: 'My Portfolio <noreply.andrew971@gmail.com>',
-  host: 'smtp.gmail.com', // hostname
+  from: 'My Portfolio <no-reply@andrewsordier.com>',
+  host: 'smtp.mail.us-west-2.awsapps.com', // hostname
   secureConnection: true, // use SSL
   port: 465, // port for secure SMTP
   transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
   auth: {
-    user: 'noreply.andrew971',
-    pass: 'Littleswak971'
+    user: 'no-reply@andrewsordier.com',
+    pass: 'andrewDev123456'
   }
 });
 

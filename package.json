@@ -6,7 +6,7 @@
   "homepage": "http://localhost:8080/api/",
   "scripts": {
     "start": "node ./server/bin/www",
-    "server": "REACT_APP_NAME2=test2 nodemon ./server/bin/www",
+    "server": "nodemon ./server/bin/www",
     "staging": "yarn build && NODE_ENV=staging nodemon ./server/bin/www",
     "prod": "yarn build && NODE_ENV=production nodemon ./server/bin/www",
     "client": "cd client && yarn start",
