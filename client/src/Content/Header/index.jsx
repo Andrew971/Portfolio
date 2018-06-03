@@ -1,27 +1,21 @@
-import React, {Component} from "react";
-import {HeaderEn} from './en'
-import {HeaderFr} from './fr'
-import {withRouter} from 'react-router-dom'
-import {connect} from 'react-redux';
+import React from "react";
+import Button from '../../Components/Button'
+import Mask from '../../Components/Mask'
+import HeadTitle from '../../Components/HeadTitle'
+import {UIAction} from '../../Modules/UI'
 
-class HeaderContent extends Component {
-
-  render() {
-    const { history,Language,dispatch} = this.props;
-    switch (Language) {
-      case 'En':
-        return (<HeaderEn history={history} dispatch={dispatch}/>)
-      case 'Fr':
-        return (<HeaderFr history={history} dispatch={dispatch}/>)
-      default:
-        return (<HeaderEn history={history} dispatch={dispatch}/>);
-    }
-  }
-}
-
-const mapStateToProps = (state) => {
-
-  return {Language: state.UI.Language}
-
-}
-export default withRouter(connect(mapStateToProps)(HeaderContent));
+ const HeaderContent = ({history,dispatch,data}) =>{ 
+  const { button , title} = data
+  return(
+  <Mask className="row" noneed>
+        <HeadTitle className="col-12">{title.text}</HeadTitle>
+      <div className="col-12" align="center">
+        {button.field.map((button,n)=>
+          <Button key={n} onClick={() => {
+            dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:button.name}}))
+         }} primary={n ===0?true:false}>{button.text}</Button>
+        )}
+        </div>
+  </Mask>
+)};
+export default HeaderContent

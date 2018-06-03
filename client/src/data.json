@@ -1,0 +1,105 @@
+{"lang-en": {
+    "websitePage": [
+      "page 1",
+      "page 2",
+      "page 3"
+    ],
+    "contentType": [
+      {
+        "name": "Header",
+        "description": "Header",
+        "field": [
+          {
+            "name": "type your name here",
+            "description": "this is just for app use",
+            "placement": "",
+            "option": []
+          }
+        ]
+      },
+      {
+        "name": "Section",
+        "description": "section",
+        "field": [
+          {
+            "name": "type your Section name here",
+            "description": "this is just for app use",
+            "placement": "",
+            "option": []
+          }
+        ]
+      }
+    ],
+    "contentOption": [
+      {
+        "name": "Button",
+        "description": "description",
+        "field": [
+          {
+            "name": "Button Name",
+            "text": "Button text",
+            "url": "Button url",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "name": "Background",
+        "description": "description",
+        "field": [
+          {
+            "name": "Background Name",
+            "text": "Background Text",
+            "color": "test",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "name": "Image",
+        "description": "description",
+        "field": [
+          {
+            "name": "Image name",
+            "url": "Image url",
+            "path": "Image path",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "name": "Title",
+        "description": "description",
+        "field": [
+          {
+            "name": "Title name",
+            "text": "Title text",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "name": "Sub-Title",
+        "description": "description",
+        "field": [
+          {
+            "name": "Sub-Title name",
+            "text": "Sub-Title text",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "name": "Paragraph",
+        "description": "description",
+        "field": [
+          {
+            "name": "Paragraph name",
+            "paragraph": "Paragraph p",
+            "order": 1
+          }
+        ]
+      }
+    ]
+  }
+}

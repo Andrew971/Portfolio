@@ -1,9 +1,10 @@
-import React, {Component} from "react";
-import {NavContentEn} from './en'
-import {NavContentFr} from './fr'
+import React, {Component,Fragment} from "react";
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
-
+import NavItem from "../../Components/NavLink";
+import {NavLink} from "react-router-dom";
+import {UIAction} from "../../Modules/UI";
+import Icon from '../../Components/icon'
 class NavContent extends Component {
   constructor(props) {
     super(props);
@@ -17,16 +18,39 @@ class NavContent extends Component {
     })
   }
   render() {
-    const {Language,dispatch} = this.props
+    const {dispatch,data} = this.props
+    const {iconFlag} = this.state
+    let {link,langIcon} = data
 
-    switch (Language) {
-      case 'En':
-        return (<NavContentEn dispatch={dispatch} Language={Language} icon={this.state.iconFlag} iconToggle={this.iconToggle}/>)
-      case 'Fr':
-        return (<NavContentFr dispatch={dispatch} Language={Language} icon={this.state.iconFlag} iconToggle={this.iconToggle}/>)
-      default:
-        return (<NavContentEn dispatch={dispatch} Language={Language} icon={this.state.iconFlag} iconToggle={this.iconToggle}/>);
-    }
+    return(
+      <NavItem>
+      <ul>
+        {link.field.map((link,n)=>
+          <li key={n}>
+            <NavLink to={link.url}>{link.text}</NavLink>
+          </li>
+        )}
+          <li style={{float:'right'}} onClick={() => {
+              this.iconToggle()
+            }} >
+          <Icon/>
+              {iconFlag && 
+              <Fragment>
+            <div className="dropdown-content">
+            {langIcon.field.map((lang,n)=>
+              <span onClick={e => {
+                  dispatch(UIAction({type: "CHANGE_LANG", payload: lang.code}));
+                }} key={n}>{lang.text}</span>
+              )}
+            </div>
+          </Fragment>
+              }
+          </li>
+          
+        </ul>
+    
+      </NavItem>
+    )
   }
 }
 

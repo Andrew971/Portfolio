@@ -12,7 +12,9 @@ export default styled.div`
   font-size:1.2em;
   align-content: center;
   align-items: center;
-  flex: wrap;
+  display: inline-flex;
+  flex-flow: row nowrap;
+
 
 
     @media (max-width: 840px) {

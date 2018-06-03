@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import './styles.css'
 import Main from './Main';
 // import Ads from './Ads';
-import Footer from './Footer';
+import FooterContainer from './Footer';
 import Header from './Header';
 import Nav from './Nav';
 import {ThemeProvider} from 'styled-components';
@@ -23,7 +23,7 @@ class Containers extends Component {
             // <Ads/>
         }
           <Main/>
-          <Footer/>
+          <FooterContainer/>
             {modalDisplay && <Portal>
               <Modal />
             </Portal> }

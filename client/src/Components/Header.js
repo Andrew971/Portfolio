@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import background6 from '../Assets/img/background6.png'
-import background2 from '../Assets/img/background2.png'
 
 export default styled.header`
 width: 100%;
 height: 100vh;
-background-image: ${props =>(props.location ==='/'?`url(${background6})`:`url(${background2})`)};
+background: ${props =>(props.src ?`url(${props.src})`:'grey')};
 background-position: center center;
 background-size: cover;
 h1{

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component,Fragment} from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import NavBar from "../../Components/NavBar";
@@ -6,7 +6,6 @@ import DesktopView from "../../Components/DesktopView";
 import MobileView from "../../Components/MobileView";
 import BrandTitle from "../../Components/BrandTitle";
 import MobileNav from "../../Components/MobileNav";
-import logo from '../../Assets/img/logo.svg';
 import NavContent from '../../Content/NavLink'
 import MobileNavLink from '../../Content/MobileNavLink';
 
@@ -25,17 +24,27 @@ toggleHide=()=>{
   this.setState({visible:false, width:0})
 }
   render() {
-    const {visible,Language,dispatch} = this.props
-    return (<NavBar className="row align-content-center">
-      <BrandTitle to="/" className="col-10 col-md-2">
+    const {visible,Language,dispatch,data} = this.props
+    const Nav = data.Nav.field.map(nav=>
+      (nav.placement === 'page 1')
+      ? nav.option
+      :[]
+    )
+    return (
+      <NavBar>
+      {Nav.map((nav,n)=>{
+        const {logo} = nav
+        return(
+          <Fragment key={n}>
+          <BrandTitle to={logo.url} >
         {
-          logo
-            ? <img src={logo} className="App-logo" alt="logo"/>
-            : 'AS'
+          logo.img_src
+            ? <img src={logo.img_src} className="App-logo" alt="logo"/>
+            : logo.text
         }
       </BrandTitle>
       <DesktopView className="col-sm col-md">
-        <NavContent />
+        <NavContent   data={nav}/>
       </DesktopView>
       <MobileView className="col-2" align="right">
         <div style={{fontSize:'3rem'}} onClick={()=>{
@@ -43,15 +52,21 @@ toggleHide=()=>{
             }}><i className={(visible)?"fa fa-window-close":"fa fa-bars"}></i></div>
 
         <MobileNav width={this.state.width}>
-<MobileNavLink Language={Language} dispatch={dispatch} toggleHide={this.toggleHide}/>
+        <MobileNavLink Language={Language} dispatch={dispatch} toggleHide={this.toggleHide} data={nav}/>
         </MobileNav>
 
       </MobileView>
-    </NavBar>);
+          </Fragment>
+      )})}
+    </NavBar>
+    );
   }
 }
 const mapStateToProps = state => {
-  return {Language: state.UI.Language};
+  return {Language: state.UI.Language,
+    data: state.UI.websiteContent
+
+  };
 };
 
 export default withRouter(connect(mapStateToProps)(Nav));

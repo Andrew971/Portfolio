@@ -1,4 +1,5 @@
 import theme from '../../js/theme'
+import Data from '../../js/Data'
 
 // Initial state of the feature
 const initialState = {
@@ -7,14 +8,18 @@ const initialState = {
   modalDisplay: false,
   Modal:"Contact",
   modalSAtatus:null,
+  websiteContent:Data['En']
 };
 
 export function UIReducer(state = initialState, action) {
   switch (action.type) {
       case 'CHANGE_LANG':
-          return  {
+
+      return  {
               ...state,
-              Language: action.payload
+              Language: action.payload,
+              websiteContent: Data[action.payload]
+
           };
       case 'CHANGE_THEME':
           return  {
