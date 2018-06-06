@@ -1,16 +1,17 @@
 import logo from '../Assets/img/logo.svg';
-import Default from '../Assets/img/default.png';
+import Default from '../Assets/img/default.webp';
+import lang from '../Assets/img/lang.webp';
 import sales from '../Assets/img/sales.svg';
 import sales0 from '../Assets/img/salesO.svg';
 import marketing from '../Assets/img/marketing.svg';
 import marketing0 from '../Assets/img/marketingO.svg';
 import code from '../Assets/img/code.svg';
 import code0 from '../Assets/img/codeO.svg';
-import pandahug from '../Assets/img/pandahug.png';
-import profile from '../Assets/img/profile.jpg'
-import background6 from '../Assets/img/background6.png'
-import background2 from '../Assets/img/background2.png'
-import background4 from '../Assets/img/background4.png'
+import pandahug from '../Assets/img/pandahug.webp';
+import profile from '../Assets/img/profile.webp'
+import background6 from '../Assets/img/background8.webp'
+import background2 from '../Assets/img/background10.webp'
+import background4 from '../Assets/img/background9.webp'
 import react from '../Assets/img/react.png';
 import redux from '../Assets/img/redux.png';
 import socket from '../Assets/img/socket.png';
@@ -72,13 +73,15 @@ export default {
                 {
                   name: 'English',
                   text: 'English',
+                  icon:lang,
                   code: 'En',
                   order: 1
                 }, {
                   name: 'French',
                   text: 'French',
+                  icon:react,
                   code: 'Fr',
-                  order: 1
+                  order: 2
                 }
               ]
             }
@@ -566,6 +569,80 @@ export default {
               ]
             },
           }
+        },
+        {
+          name: 'type your name here',
+          description: 'this is just for app use',
+          placement: '/skills',
+          option: {
+            logo: {
+              name: 'Logo',
+              text: 'AS',
+              description: '',
+              img_src: logo,
+              url: '/'
+            },
+            title: {
+              name: 'Title',
+              description: 'description',
+              text: `If at first you don’t succeed;
+              call it version 1.0`
+            },
+            subtitle: {
+              name: 'Sub-Title',
+              description: 'description',
+              text: 'Try and change Theme'
+            },
+            button: {
+              name: 'Button',
+              description: 'description',
+              field: [
+                {
+                  name: 'Contact',
+                  text: 'Need a website',
+                  url: 'Button url',
+                  order: 1
+                }, {
+                  name: 'Hire',
+                  text: 'Looking to hire?',
+                  url: 'Button url',
+                  order: 2
+                }
+              ]
+            },
+            background: {
+              name: 'Background',
+              description: 'description',
+              path: background4
+            },
+            link: {
+              name: 'link',
+              description: 'description',
+              field: [
+                {
+                  name: 'LinkedIn',
+                  text: '',
+                  icon: 'fab fa-linkedin-in',
+                  url: 'https://www.linkedin.com/in/andrewsordier/',
+                  order: 1
+                },
+                 {
+                  name: 'GitHub',
+                  text: '',
+                  icon: 'fab fa-github-alt',
+                  url: 'https://github.com/Andrew971',
+                  order: 2
+                },
+                 {
+                  name: 'Skype',
+                  text: '',
+                  icon: 'fab fa-skype',
+                  url: 'skype:littledavis971?call',
+                  order: 3
+                }
+              ]
+            },
+          }
         }
       ]
     }
@@ -612,10 +689,12 @@ export default {
                   name: 'English',
                   text: 'Anglais',
                   code: 'En',
+                  icon:lang,
                   order: 1
                 }, {
                   name: 'French',
                   text: 'Français',
+                  icon:react,
                   code: 'Fr',
                   order: 1
                 }
@@ -1029,6 +1108,79 @@ export default {
           name: 'type your name here',
           description: 'this is just for app use',
           placement: '/',
+          option: {
+            logo: {
+              name: 'Logo',
+              text: 'AS',
+              description: '',
+              img_src: logo,
+              url: '/'
+            },
+            title: {
+              name: 'Title',
+              description: 'description',
+              text: `Il y a toujours de la place pour l'amélioration.`
+            },
+            subtitle: {
+              name: 'Sub-Title',
+              description: 'description',
+              text: 'Essaye et change de Theme'
+            },
+            button: {
+              name: 'Button',
+              description: 'description',
+              field: [
+                {
+                  name: 'Contact',
+                  text: `Besoin d'un site?`,
+                  url: 'Button url',
+                  order: 1
+                }, {
+                  name: 'Hire',
+                  text: `Vous voulez embaucher?`,
+                  url: 'Button url',
+                  order: 2
+                }
+              ]
+            },
+            background: {
+              name: 'Background',
+              description: 'description',
+              path: background4
+            },
+            link: {
+              name: 'link',
+              description: 'description',
+              field: [
+                {
+                  name: 'LinkedIn',
+                  text: '',
+                  icon: 'fab fa-linkedin-in',
+                  url: 'https://www.linkedin.com/in/andrewsordier/',
+                  order: 1
+                },
+                 {
+                  name: 'GitHub',
+                  text: '',
+                  icon: 'fab fa-github-alt',
+                  url: 'https://github.com/Andrew971',
+                  order: 2
+                },
+                 {
+                  name: 'Skype',
+                  text: '',
+                  icon: 'fab fa-skype',
+                  url: 'skype:littledavis971?call',
+                  order: 3
+                }
+              ]
+            },
+          }
+        },
+        {
+          name: 'type your name here',
+          description: 'this is just for app use',
+          placement: '/skills',
           option: {
             logo: {
               name: 'Logo',

@@ -7,7 +7,8 @@ import MobileView from "../../Components/MobileView";
 import BrandTitle from "../../Components/BrandTitle";
 import MobileNav from "../../Components/MobileNav";
 import NavContent from '../../Content/NavLink'
-import MobileNavLink from '../../Content/MobileNavLink';
+import Spacer from '../../Components/Spacer';
+import Hamburger from '../../Components/Icon/hamburger';
 
 class Nav extends Component {
 constructor(props) {
@@ -17,21 +18,31 @@ constructor(props) {
     width:0,
   };
 }
+// componentDidMount = () => {
+//   window.addEventListener("click", this.clickOut);
+// };
+// clickOut=(e)=>{
+//   const { visible}= this.state
+//   // let test = e.target.id || "try me";
+//   // console.log(test)
+//   // if(test==="clickIn"&&visible){this.toggleHide()}
+// }
 toggleShow=()=>{
-  this.setState({visible:true, width:250})
+  this.setState({visible:true, width:80})
 }
 toggleHide=()=>{
   this.setState({visible:false, width:0})
 }
   render() {
-    const {visible,Language,dispatch,data} = this.props
+    const {data} = this.props
+    const {visible} = this.state
     const Nav = data.Nav.field.map(nav=>
       (nav.placement === 'page 1')
       ? nav.option
       :[]
     )
     return (
-      <NavBar>
+      <NavBar open={visible}>
       {Nav.map((nav,n)=>{
         const {logo} = nav
         return(
@@ -43,16 +54,17 @@ toggleHide=()=>{
             : logo.text
         }
       </BrandTitle>
-      <DesktopView className="col-sm col-md">
-        <NavContent   data={nav}/>
+      <Spacer />
+      <DesktopView>
+        <NavContent   data={nav} toggleHide={this.toggleHide}/>
       </DesktopView>
-      <MobileView className="col-2" align="right">
-        <div style={{fontSize:'3rem'}} onClick={()=>{
-              this.toggleShow()
-            }}><i className={(visible)?"fa fa-window-close":"fa fa-bars"}></i></div>
-
-        <MobileNav width={this.state.width}>
-        <MobileNavLink Language={Language} dispatch={dispatch} toggleHide={this.toggleHide} data={nav}/>
+      <MobileView>
+        <div onClick={()=>{
+          visible? this.toggleHide() : this.toggleShow()
+            }}><Hamburger open={visible}/></div>
+        <MobileNav width={this.state.width} onBlure={e => this.clickOut(e)}
+        id="clickIn">
+        <NavContent   data={nav} toggleHide={this.toggleHide}/>
         </MobileNav>
 
       </MobileView>

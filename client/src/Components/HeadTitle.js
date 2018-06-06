@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
-
-export default styled.h1`
+export default styled.div `
   text-align: center;
+  font-weight:1.04px;
   color: white;
-  margin-bottom: 5rem;
-  @media (max-width: 740px) {
-  color:white;
+  align-items:center
   align-content: center;
-  font-size: 2.5em;
+  font-size: 2.5em;  
+  display:flex;
+  justify-content: space-around;
 
+  @media (min-width: 770px) {
+    font-size: 3rem;  
   }
 `;

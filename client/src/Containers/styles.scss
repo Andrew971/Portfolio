@@ -2,25 +2,16 @@
 
 body{
   margin:0;
+  width:100%;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .App-logo {
   // animation: App-logo-spin infinite 20s linear;
   height: 60px;
 }
-.container-fluid{
-  padding-right:0;
-  padding-left: 0;
-}
-.row{
-  margin:0;
 
-}
-
-.card-img-top{
-  width:5rem;
-  height:5rem;
-}
 
 form{
   textarea,select,input{

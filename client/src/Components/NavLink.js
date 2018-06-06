@@ -1,23 +1,36 @@
 import styled from "styled-components";
 
-export default styled.div`
-  width: 100%;
-  color: white;
-  font-size: 1.2em;
+export default styled.div `
+display: inline-flex;
+width: 100%;
+min-height:5vh;
+background-color: transparent;
+color: rgb(52,52,52);
+padding: 12px 24px;
+margin: 0;
+border: 0;
+position: relative;
+box-sizing: border-box;
+text-align: left;
+align-items: center;
+justify-content: flex-start;
+vertical-align: middle;
+text-decoration: none;
+cursor: pointer;
+outline: none;
+user-select: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+-webkit-tap-highlight-color: transparent;
 
-  ul {
-    float: right;
-    margin: auto;
-  }
 
-  li {
-    display: inline-block;
-    padding: 4rem 2rem;
-  }
-  li .dropdown-content {
-      display: block;
-  }
+&[id="icon"]:hover .dropdown, &[id="icon"]:focus .dropdown{
+       display:block;
+     }
+
+
   a {
+    display:block;
     color: white;
     text-decoration: none;
   }
@@ -25,19 +38,19 @@ export default styled.div`
   a:hover {
     text-decoration: none;
   }
-    .dropdown-content {
-         display: none;
+    .dropdown {
+        display:none;
          position: absolute;
          background-color: #f1f1f1;
-         top:7rem;
-         right:-2rem;
+         top:100%;
+         left:-50%;
+         right:-50%;
          min-width: 160px;
          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-         // border-radius: 25%;
          z-index: 1;
      }
-
-     .dropdown-content span {
+     
+     .dropdown span {
          color: black;
          padding: 12px 16px;
          text-decoration: none;
@@ -45,7 +58,7 @@ export default styled.div`
          cursor:pointer;
      }
 
-     .dropdown-content span:hover {
+     .dropdown span:hover {
        background-color: #ddd
      }
 
@@ -53,8 +66,20 @@ export default styled.div`
     @media (max-width: 740px) {
       height: auto;
       flex-direction: column;
+     .dropdown {
+       position:absolute;
+      left:35%;
+        right:;
+        background-color: transparent;
+         span {
+         color: white;
+     }
+     span:hover {
+       background-color: transparent
+     }
+     }
     }
-  }
+  
   @media (max-width: 840px) {
 
 li{
@@ -62,7 +87,7 @@ li{
 }
 .dropdown-content {
 
-     top:3.3rem;
+     top:100%;
 
  }
 }

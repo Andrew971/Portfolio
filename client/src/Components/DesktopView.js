@@ -6,7 +6,5 @@ display: none;
 @media (min-width: 750px) {
 
   display: flex;
-  flex-wrap: wrap;
-
 }
   `;

@@ -1,11 +1,14 @@
 import React, {PureComponent, Fragment} from "react";
 import Card from "../../Components/Card";
-import Button from "../../Components/Button";
+import {StyleLink} from "../../Components/Button";
 import Title from "../../Components/Title";
 import Avatar from "../../Components/Avatar";
 import Headlines from "../../Components/Headlines";
 import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
+import Layout from '../../Components/Grid/Layout'
+import Image from '../../Components/Image'
+
 
 const sort_by = (order, value) => {
   if (order === 'ASC') {
@@ -19,19 +22,12 @@ const Biography = ({data}) => {
   const {title, subtitle, paragraph, image, background} = data
   return (
     <Card
-      className="row align-items-center justify-content-center"
+      className=""
       primary="primary"
       src={background.path}>
-
-      <div
-        className="col-12 order-first order-lg-last col-lg-5"
-        style={{
-        margin: "auto"
-      }}
-        align="center">
-        <Avatar src={image.field[0].path}/>
-      </div>
-      <div className="col-12 col-lg-7">
+      <Layout container lg xl direction="row-reverse" alignItems="center">
+        <Avatar src={image.field[0].path_1}/>   
+      <Layout items>
         <Headlines>
           <h1>{title.text}</h1>
           <h3>
@@ -47,7 +43,8 @@ const Biography = ({data}) => {
               )
             })}
         </Headlines>
-      </div>
+      </Layout>
+      </Layout>
     </Card>
   )
 };
@@ -55,34 +52,28 @@ const Expertise = ({Theme, data}) => {
   const {image,title} = data
   return (
     <Card>
-      <Title className="col-12">{title.text}</Title>
-      <div className="row" style={{
-        margin: "2rem 0rem"
-      }}>
+      <Title>{title.text}</Title>
+      <Layout container md lg xl direction="row" justify="space-around">
         {image
           .field
           .sort(sort_by('DESC', 'order'))
           .map((services, n) =>
-            <Fragment key={n}>
-              <div className="col-md-4" align="center">
-                <div className="row">
-                  <div className="col-md-12">
-                    <img
-                      className="img-fluid card-img-top"
+          <Layout items key={n}>
+              <Layout items>
+                    <Image size={5}
                       src={Theme.label === "Main"
                       ? services.path_2
                       : services.path_1}
                       alt="Card cap"/>
-                  </div>
-                  <div className="col-md-12 card-body">
-                    <h2 className="card-title">{services.name}</h2>
+                      </Layout>
+                      <Layout items xs md text="center">
+                    <h2>{services.name}</h2>
                     <p>{services.text}</p>
-                  </div>
-                </div>
-              </div>
-            </Fragment>
+                  </Layout>
+                  </Layout>
+
           )}
-      </div>
+          </Layout>
     </Card>
   )
 };
@@ -91,9 +82,9 @@ const MyWork = ({data}) => {
   let {project,title} = data
   return (
     <Card
-      className="row align-items-center justify-content-center"
-      primary="primary">
-      <Title className="col-12" primary="primary">{title.text}</Title>
+      primary>
+      <Title  primary>{title.text}</Title>
+      <Layout container md lg xl direction="row" alignItems="center" justify="space-around">
 
      
         {project
@@ -101,35 +92,27 @@ const MyWork = ({data}) => {
       .sort(sort_by('DESC', 'order'))
       .map((project,n) => (
           <Fragment key={n}>
-          <div className="row align-items-center" >
-            <div
-              className={n % 2
-              ? "col-md-6 order-md-last"
-              : "col-md-6"}
-              style={{
-              margin: "2rem 0"
-            }}>
-              <img className="img-fluid card-img" src={project.img} alt="Card cap"/>
-            </div>
-            <div className="col-md-6 card-body" align="center">
+            <Layout items>
+            <Image size={30} src={project.img} alt="Card cap"/>
+            </Layout>
+            <Layout items xs md text="center">
               <h2 className="card-title">{project.name}</h2>
               <h6 className="card-text">{project.sub}</h6>
               <p>{project.description}</p>
               {project.link.url && (
-                <Button
+                <StyleLink
                   onClick={() => {
                   window.open(project.link.url, "_blank");
                 }}
                   primary="primary">
                   {project.link.text}
-                </Button>
+                </StyleLink>
          )}
       
-            </div>
-          </div>
+            </Layout>
           </Fragment>
         ))}
-
+</Layout>
     </Card>
 )};
 
@@ -137,42 +120,38 @@ const Lab = ({data}) => {
   let {project,title} = data
 
   return (
-  <Card className="row align-items-center justify-content-center">
+  <Card>
     <Title className="col-12">
       {title.text}
     </Title>
+    <Layout container md lg xl direction="row" alignItems="center" justify="space-around">
     {project
       .field
       .sort(sort_by('DESC', 'order'))
       .map((project,n)=> (
-        <div className="row align-items-center" key={n}>
-          <div
-            className={n % 2
-            ? "col-md-6 order-md-last"
-            : "col-md-6"}
-            style={{
-            margin: "2rem 0"
-          }}>
-            <img className="img-fluid card-img" src={project.img} alt="Card cap"/>
-          </div>
-          <div className="col-md-6 card-body" align="center">
+        <Fragment key={n}>
+        <Layout items>
+            <Image size={30} src={project.img} alt="Card cap"/>
+          </Layout>
+          <Layout items>
             <h2 className="card-title">{project.name}</h2>
             <h6 className="card-text">{project.sub}</h6>
             <p>{project.description}</p>
             {project.link.url && (
-              <Button
+              <StyleLink
                 onClick={() => {
                 console.log(window.location);
                 window.open(project.link.url, "_blank");
               }}
                 primary="primary">
                 {project.link.text}
-              </Button>
+              </StyleLink>
         )}
 
-          </div>
-        </div>
+          </Layout>
+        </Fragment>
       ))}
+      </Layout>
 
   </Card>
 )};
@@ -182,6 +161,8 @@ export class HomeEn extends PureComponent {
     super(props);
     this.state = {}
   }
+ 
+
 
   render() {
     const {Theme,data} = this.props;

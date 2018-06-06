@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export default styled.button`
+export const Button= styled.button`
+  display:inline-flex;
   background: ${props => (props.primary ? props.theme.primary : 'white')};
   color: ${props => (props.primary ? props.theme.color.primary : props.theme.color.secondary)};
   font-size: 1.5rem;
@@ -18,5 +19,13 @@ export default styled.button`
     padding: 0.15em .5em;
 
   }
-}
+
 `;
+
+export const StyleLink = Button.withComponent('a')
+
+
+
+
+
+export default Button

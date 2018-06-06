@@ -8,7 +8,7 @@ class HeaderContainer extends Component {
 
   render() {
     const {pathname} = this.props.location
-    const { data }  = this.props
+    const { data,dispatch }  = this.props
     const headerData = data.Header.field.filter(header=>(header.placement === pathname)).map(header=>header.option)
 
     return (<Fragment>
@@ -16,7 +16,7 @@ class HeaderContainer extends Component {
       const {background} = header
       return(
     <StyledHeader key={n} src={background.path}>
-    <HeaderContent data={header}/>
+    <HeaderContent data={header} dispatch={dispatch}/>
     </StyledHeader>
   )})}
       </Fragment>

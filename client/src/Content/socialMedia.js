@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import Layout from '../Components/Grid/Layout'
 
 const sort_by = (order, value) => {
   if (order === 'ASC') {
@@ -11,26 +12,20 @@ const sort_by = (order, value) => {
 export const SocialMedia = ({data}) => {
   const {link} = data
 
-  return (<Fragment>
-
-  <div className="col order-md-last col-md-5" style={{margin:'1rem 0'}}>
-  <div className="row">
+  return (<Layout items xs md lg xl display="inline-flex" direction="row" justify="space-around" width="20rem">
   {link
   .field
 .sort(sort_by('DESC', 'order'))
 .map((link,n)=>
-    <div className="col" key={n}>
+     <Fragment key={n}>
     <a href={link.url} alt={link.name} target="_blank" rel="noopener noreferrer"><i className={link.icon} style={{
         fontSize: '1.5rem',
         color:'white',
         margin:'auto',
       }}></i></a>
-    </div>
+    </Fragment>
   )}
-    </div>
-    </div>
-
-  </Fragment>
+  </Layout>
 );
 
 }

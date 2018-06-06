@@ -3,6 +3,9 @@ import Card from "../../Components/Card";
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
 import Title from "../../Components/Title";
+import Layout from '../../Components/Grid/Layout'
+import Grid from '../../Components/Grid/Grid'
+import Image from '../../Components/Image'
 
 const sort_by = (order, value) => {
   if (order === 'ASC') {
@@ -15,49 +18,45 @@ const sort_by = (order, value) => {
 const Focus = ({data}) => {
   const {image,title} = data
 return (
-<Card  className="row justify-content-center">
-  <Title className="col-12">{title.text}</Title>
+<Card>
+  <Title>{title.text}</Title>
+  <Layout container md lg xl direction="row" justify="space-around">
   {
     image
     .field   
     .sort(sort_by('DESC', 'order'))
     .map((focus,n) =>
-      <Fragment key={n}>
-        <div className="col-md-3" align="center">
-      <div className="col-md-12">
-      <img className="img-fluid card-img-top" src={focus.path_1} alt="Card cap"/>
-    </div>
-    <div className="col-md-12 card-body">
-      <h2 className="card-title">{focus.name}</h2>
-    </div>
-  </div>
-  </Fragment>
+      <Layout items key={n} padding="0">
+      <Layout items>
+      <Image height={5} src={focus.path_1} alt="Card cap"/>
+      </Layout>
+      <Layout items>
+      <h2>{focus.name}</h2>
+      </Layout>
+  </Layout>
     )
   }
+  </Layout>  
 </Card>
 )};
 const Knowledge = ({data}) => {
   const {image,title} = data
 return (
-<Card  className="row justify-content-center" primary>
-  <Title className="col-12" primary>{title.text}</Title>
+<Card primary>
+  <Title primary>{title.text}</Title>
+  <Grid container>
   {
     image
     .field   
     .sort(sort_by('DESC', 'order'))
     .map((other,n) =>
-      <Fragment key={n}>
-        <div className="col-md-3" align="center">
-      <div className="col-md-12">
-      <img className="img-fluid card-img-top" src={other.path_1} alt="Card cap"/>
-    </div>
-    <div className="col-md-12 card-body">
-      <h2 className="card-title">{other.name}</h2>
-    </div>
-  </div>
-  </Fragment>
+      <Grid items key={n} >
+      <Image src={other.path_1} alt="Card cap"/>
+      <h4>{other.name}</h4>
+      </Grid>
     )
   }
+  </Grid>
 </Card>
 )};
 

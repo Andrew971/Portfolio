@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import profile from '../Assets/img/profile.jpg'
 
 export default styled.div`
-width:25rem;
-height:25rem;
+display:flex;
+flex-flow:column nowrap;
+align-self: center;
+max-width:20rem;
+width:100%;
+height:20rem;
+margin: 2rem;
 border-radius:50%;
 border: ${props=>(props.theme.label==='Main'?'0.5em solid #B6D8FF':'0.5em solid #FFD9B6')};
-background-image: url(${profile});
+background-image: ${props=>props.src&&`url(${props.src})`};
 background-position: center;
 background-size: cover;
 
-    @media (max-width: 740px) {
-      width:15rem;
-      height:15rem;
-    }
   `;

@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
 export default styled.div`
+/* display:flex; */
+/* flex-flow: column wrap; */
+/* align-content:center; */
+/* align-items:center; */
+/* justify-items:center; */
 font-size:1.3rem;
 text-align:justify;
-margin: 4rem 0;
+/* margin: 1rem 1rem; */
 h1,h2,h3{
   text-align:left;
   margin-bottom:1rem;

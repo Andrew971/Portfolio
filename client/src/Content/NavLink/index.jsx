@@ -18,38 +18,42 @@ class NavContent extends Component {
     })
   }
   render() {
-    const {dispatch,data} = this.props
-    const {iconFlag} = this.state
+    const {dispatch,data,toggleHide,Language} = this.props
     let {link,langIcon} = data
 
     return(
-      <NavItem>
-      <ul>
-        {link.field.map((link,n)=>
-          <li key={n}>
-            <NavLink to={link.url}>{link.text}</NavLink>
-          </li>
+      <Fragment>
+      {link.field.map((link,n)=>
+        <NavItem key={n}>
+            <NavLink to={link.url} onClick={() => {
+      toggleHide()
+    }}>{link.text}</NavLink>
+          </NavItem>
         )}
-          <li style={{float:'right'}} onClick={() => {
+        <NavItem id="icon">
+        {langIcon
+        .field
+        .filter(icon=>icon.code === Language)
+        .map((lang,n)=>
+          <Icon onClick={() => {
               this.iconToggle()
-            }} >
-          <Icon/>
-              {iconFlag && 
-              <Fragment>
-            <div className="dropdown-content">
-            {langIcon.field.map((lang,n)=>
+            }} src={lang.icon} key={n}/>
+          )}
+            <div className="dropdown" onClick={() => {
+      toggleHide()
+    }}>
+            {langIcon
+            .field
+            .map((lang,n)=>
               <span onClick={e => {
                   dispatch(UIAction({type: "CHANGE_LANG", payload: lang.code}));
                 }} key={n}>{lang.text}</span>
               )}
             </div>
-          </Fragment>
-              }
-          </li>
-          
-        </ul>
+              
+          </NavItem>
     
-      </NavItem>
+      </Fragment>
     )
   }
 }

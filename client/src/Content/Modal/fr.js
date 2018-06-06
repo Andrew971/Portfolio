@@ -1,21 +1,19 @@
 import React, {Component} from "react";
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
-import {UIAction} from '../../Modules/UI'
-import {contactAction} from '../../Modules/Contact'
-import ModalWrapper from '../../Components/ModalWrapper'
-import ModalContent from '../../Components/ModalContent'
-import ModalClose from '../../Components/ModalClose'
-import ModalHeader from '../../Components/ModalHeader'
-import ModalFooter from '../../Components/ModalFooter'
-import ModalButton from '../../Components/ModalButton'
-import ModalError from '../../Components/ModalError'
-import ModalConfirm from '../../Components/ModalConfirm'
+import ModalWrapper from '../../Components/Modal/ModalWrapper'
+import ModalContent from '../../Components/Modal/ModalContent'
+import ModalClose from '../../Components/Modal/ModalClose'
+import ModalHeader from '../../Components/Modal/ModalHeader'
+import ModalFooter from '../../Components/Modal/ModalFooter'
+import ModalButton from '../../Components/Modal/ModalButton'
+import ModalError from '../../Components/Modal/ModalError'
+import ModalConfirm from '../../Components/Modal/ModalConfirm'
 
 export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
   <ModalContent>
     <ModalClose onClick={() => {
-        dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
+        dispatch(({type: "MODAL_HIDE", payload: false}))
       }}>&times;</ModalClose>
 
     <ModalHeader>
@@ -62,7 +60,7 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
     <ModalFooter className="row">
       <div className="col-12 col-md-6" align="center">
         <ModalButton onClick={() => {
-            dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
+            dispatch({type: "MODAL_HIDE", payload: false})
           }}>&times; Fermez</ModalButton>
       </div>
       <div className="col-12 col-md-6" align="center">
@@ -76,7 +74,7 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
               message
             } = this.contactForm;
 
-            dispatch(contactAction({
+            dispatch({
               type: 'SEND_CONTACT_INFO',
               payload: {
                 subject: "I want a website",
@@ -87,7 +85,7 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
                 language: language.value,
                 message: message.value
               }
-            }))
+            })
 
           }} primary="primary">Envoyer</ModalButton>
       </div>
@@ -102,7 +100,7 @@ export const ContactFr = ({dispatch, modalSAtatus}) => (<ModalWrapper>
 export const HireFr = ({dispatch,modalSAtatus}) => (<ModalWrapper>
   <ModalContent>
     <ModalClose onClick={() => {
-        dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
+        dispatch({type: "MODAL_HIDE", payload: false})
       }}>&times;</ModalClose>
 
     <ModalHeader>
@@ -153,7 +151,7 @@ export const HireFr = ({dispatch,modalSAtatus}) => (<ModalWrapper>
     <ModalFooter className="row">
       <div className="col-12 col-md-6" align="center">
         <ModalButton onClick={() => {
-            dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
+            dispatch({type: "MODAL_HIDE", payload: false})
           }}>&times; Fermer</ModalButton>
       </div>
       <div className="col-12 col-md-6" align="center">
@@ -168,7 +166,7 @@ export const HireFr = ({dispatch,modalSAtatus}) => (<ModalWrapper>
               company
             } = this.contactForm;
 
-            dispatch(contactAction({
+            dispatch({
               type: 'SEND_CONTACT_INFO',
               payload: {
                 subject: "I want to hire",
@@ -180,7 +178,7 @@ export const HireFr = ({dispatch,modalSAtatus}) => (<ModalWrapper>
                 message: message.value,
                 company: company.value
               }
-            }))
+            })
 
           }} primary="primary">Envoyer</ModalButton>
       </div>
@@ -200,7 +198,7 @@ export const Confirmation = ({dispatch}) => (<ModalWrapper>
     </ModalConfirm>
     <div className="col-12" align="center">
       <ModalButton onClick={() => {
-          dispatch(UIAction({type: "MODAL_HIDE", payload: false}))
+          dispatch({type: "MODAL_HIDE", payload: false})
         }}>&times; Fermer</ModalButton>
     </div>
   </ModalContent>
