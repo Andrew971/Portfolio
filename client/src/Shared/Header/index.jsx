@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
-import HeaderContent from '../../Content/Header'
+import HeaderContent from './Content'
 import StyledHeader from '../../Components/Header'
 
 class HeaderContainer extends Component {

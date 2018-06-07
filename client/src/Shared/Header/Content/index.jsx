@@ -1,8 +1,7 @@
 import React from "react";
-import Button from '../../Components/Button'
-import Mask from '../../Components/Mask'
-import HeadTitle from '../../Components/HeadTitle'
-import {UIAction} from '../../Modules/UI'
+import Button from '../../../Components/Button'
+import Mask from '../../../Components/Mask'
+import HeadTitle from '../../../Components/HeadTitle'
 
   const HeaderContent = ({history,dispatch,data}) =>{ 
   const { button , title} = data
@@ -12,7 +11,7 @@ import {UIAction} from '../../Modules/UI'
       <div  align="center">
         {button.field.map((button,n)=>
           <Button key={n} onClick={() => {
-            dispatch(UIAction({type: "MODAL_DISPLAY", payload: {flag:true,type:button.name}}))
+            dispatch({type: "MODAL_DISPLAY", payload: {flag:true,type:button.name}})
          }} primary={n ===0?true:false}>{button.text}</Button>
         )}
         </div>

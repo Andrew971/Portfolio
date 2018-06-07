@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import Containers from './Containers';
+import App from './Shared';
 import Providers from './js/Providers';
 import {Route} from 'react-router-dom';
 
-ReactDOM.render(<Providers><Route path="/" component={Containers} />
+ReactDOM.render(<Providers><Route path="/" component={App} />
 </Providers>, document.getElementById('root'));
 
 registerServiceWorker();

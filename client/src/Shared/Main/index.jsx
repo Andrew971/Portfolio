@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Skills from '../../Content/Skills';
 import Home from '../../Content/Home';
 import {withRouter, Switch, Route} from 'react-router-dom'
-import {connect} from 'react-redux';
 
 class MainContainer extends Component {
 
@@ -18,10 +17,6 @@ class MainContainer extends Component {
     </main>)
   }
 }
-const mapStateToProps = (state) => {
 
-  return {}
 
-}
-
-export default withRouter(connect(mapStateToProps)(MainContainer));
+export default withRouter(MainContainer);

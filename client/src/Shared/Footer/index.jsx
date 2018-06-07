@@ -1,10 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
-import {SocialMedia} from '../../Content/socialMedia'
 import FooterContent from '../../Content/Footer'
 import {withRouter} from 'react-router-dom'
-import Footer from '../../Components/Footer'
-import Layout from '../../Components/Grid/Layout'
+import Copyright from './Copyright'
 class FooterContainer extends Component {
 
   render() {
@@ -19,14 +17,7 @@ class FooterContainer extends Component {
       <Fragment>
         {footerData.map((footer, n) => <Fragment key={n}>
           <FooterContent data={footer}/>
-          <Footer>
-            <Layout container md lg xl direction="row-reverse" justify="space-between" alignItems="center">
-              <SocialMedia data={footer}/>
-              <Layout item width="40%">
-                <h6>Copyright © 2018 "Andrew Sordier". All rights reserved</h6>
-                </Layout>
-            </Layout>
-          </Footer>
+          <Copyright data={footer}/>
         </Fragment>)}
 
       </Fragment>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default styled.div`
+export default styled.nav`
   width: 100%;
   height: 7vh;
   margin-left: ${props=>(props.open?'-80vw':0)}

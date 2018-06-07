@@ -9,7 +9,7 @@ import {ThemeProvider} from 'styled-components';
 import Modal from '../Content/Modal'
 import Portal from '../js/portal'
 
-class Containers extends Component {
+class App extends Component {
 
  
   render() {
@@ -37,4 +37,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Containers);
+export default connect(mapStateToProps)(App);

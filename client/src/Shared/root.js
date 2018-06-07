@@ -11,7 +11,7 @@ import {UIReducer} from './UI';
 
 //List of Watchers
 import {Watcher} from './UI/saga';
-import {contactWatcher} from './Contact/saga';
+import {contactWatcher} from '../Modules/Modal/saga';
 
 
 export function rootReducer(asyncReducers) {

@@ -68,14 +68,16 @@ user-select: none;
       flex-direction: column;
      .dropdown {
        position:absolute;
-      left:35%;
-        right:;
+        left:0;
+        right:0;
         background-color: transparent;
          span {
          color: white;
+         text-align: center;
+
      }
      span:hover {
-       background-color: transparent
+       background-color: rgba(50,50,50,0.5);
      }
      }
     }
@@ -85,6 +87,7 @@ user-select: none;
 li{
   padding:0 2rem;
 }
+
 .dropdown-content {
 
      top:100%;
