@@ -6,7 +6,7 @@ import FooterContainer from './Footer';
 import Header from './Header';
 import Nav from './Nav';
 import {ThemeProvider} from 'styled-components';
-import Modal from '../Content/Modal'
+import Modal from '../Modules/Modal'
 import Portal from '../js/portal'
 
 class App extends Component {

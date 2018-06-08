@@ -2,7 +2,6 @@ import React, {Component, Fragment} from "react";
 import Button from '../../Components/Button'
 import Mask from '../../Components/Mask'
 import HeadTitle from '../../Components/HeadTitle'
-import {UIAction} from '../../Modules/UI'
 import Card from "../../Components/Card";
 import Image from "../../Components/Image";
 import {withRouter} from 'react-router-dom'
@@ -22,13 +21,13 @@ const Contact = ({dispatch, data}) => {
             .map((button, n) => <Button
               key={n}
               onClick={() => {
-              dispatch(UIAction({
+              dispatch({
                 type: "MODAL_DISPLAY",
                 payload: {
                   flag: true,
                   type: button.name
                 }
-              }))
+              })
             }}
               primary={n === 0
               ? true
@@ -44,7 +43,7 @@ const Contact = ({dispatch, data}) => {
           <div align="center">
             <select
               onChange={e => {
-              dispatch(UIAction({type: "CHANGE_THEME", payload: e.target.value}));
+              dispatch({type: "CHANGE_THEME", payload: e.target.value});
             }}
               style={{
               backgroundColor: 'white',

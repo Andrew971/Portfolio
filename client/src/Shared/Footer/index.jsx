@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
-import FooterContent from '../../Content/Footer'
+import FooterContent from '../../Modules/Footer'
 import {withRouter} from 'react-router-dom'
 import Copyright from './Copyright'
 class FooterContainer extends Component {

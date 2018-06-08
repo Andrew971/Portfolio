@@ -5,8 +5,8 @@ import Icon from '../../../Components/icon'
 
 export default ({dispatch,data,toggleHide,Language}) => {
   let {link,langIcon} = data
-  console.log(Language)
-    return(
+
+  return(
       <Fragment>
       {link.field.map((link,n)=>
         <NavItem key={n}>

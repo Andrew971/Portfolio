@@ -1,17 +1,17 @@
 import logo from '../Assets/img/logo.svg';
-import Default from '../Assets/img/default.webp';
-import lang from '../Assets/img/lang.webp';
+import Default from '../Assets/img/project/default.png';
+import lang from '../Assets/img/icon/lang.png';
 import sales from '../Assets/img/sales.svg';
 import sales0 from '../Assets/img/salesO.svg';
 import marketing from '../Assets/img/marketing.svg';
 import marketing0 from '../Assets/img/marketingO.svg';
 import code from '../Assets/img/code.svg';
 import code0 from '../Assets/img/codeO.svg';
-import pandahug from '../Assets/img/pandahug.webp';
-import profile from '../Assets/img/profile.webp'
-import background6 from '../Assets/img/background8.webp'
-import background2 from '../Assets/img/background10.webp'
-import background4 from '../Assets/img/background9.webp'
+import pandahug from '../Assets/img/project/pandahug.png';
+import profile from '../Assets/img/avatar/profile.jpg'
+import headerHomex1 from '../Assets/img/header/headerHomex1.jpg'
+import headerSkillsx1 from '../Assets/img/header/headerSkillsx1.jpg'
+import background4 from '../Assets/img/background/background9.jpg'
 import react from '../Assets/img/react.png';
 import redux from '../Assets/img/redux.png';
 import socket from '../Assets/img/socket.png';
@@ -124,7 +124,7 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: background6
+              path: headerHomex1
             }
           }
         }, {
@@ -158,7 +158,7 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: background2
+              path: headerSkillsx1
             }
           }
         }
@@ -738,7 +738,7 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: background6
+              path: headerHomex1
             }
           }
         }, {
@@ -771,7 +771,7 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: background2
+              path: headerSkillsx1
             }
           }
         }

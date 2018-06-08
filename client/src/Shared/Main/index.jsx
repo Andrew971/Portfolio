@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import Skills from '../../Content/Skills';
-import Home from '../../Content/Home';
 import {withRouter, Switch, Route} from 'react-router-dom'
+import MyLoadable from '../../js/MyLoadable'
+
+const AsyncHome = MyLoadable(() => import('../../Modules/Home'));
+const AsyncSkills = MyLoadable(() => import('../../Modules/Skills'));
 
 class MainContainer extends Component {
 
@@ -10,9 +12,9 @@ class MainContainer extends Component {
 
       <Switch>
         <Route exact path='/' render={(routeProps) =>
-            <Home {...routeProps}/>}/>
+            <AsyncHome {...routeProps}/>}/>
         <Route path='/skills' render={(routeProps) =>
-            <Skills {...routeProps}/>}/>
+            <AsyncSkills {...routeProps}/>}/>
       </Switch>
     </main>)
   }
