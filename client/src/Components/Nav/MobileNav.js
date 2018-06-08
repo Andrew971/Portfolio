@@ -31,4 +31,5 @@ a:hover {
 @media (max-width: 660px) {
   padding-top: 15px;
    a {font-size: 18px;}
+}
   `;

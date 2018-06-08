@@ -1,11 +1,10 @@
 import React, {Component, Fragment} from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import NavBar from "../../Components/NavBar";
+import {NavBar,MobileNav} from "../../Components/Nav";
 import DesktopView from "../../Components/DesktopView";
 import MobileView from "../../Components/MobileView";
 import BrandTitle from "../../Components/BrandTitle";
-import MobileNav from "../../Components/MobileNav";
 import NavContent from './Content'
 import Spacer from '../../Components/Spacer';
 import Hamburger from '../../Components/Icon/hamburger';

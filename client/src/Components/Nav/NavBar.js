@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default styled.nav`
   width: 100%;
   height: 7vh;
-  margin-left: ${props=>(props.open?'-80vw':0)}
+  margin-left: ${props=>(props.open?'-80vw':0)};
   background:${props=>(props.theme.label==="Main"?'rgba(64,134,187,1)':'rgba(245,166,35,1)')};
   transition: margin-left 500ms;
   z-index: 1;

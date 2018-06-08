@@ -44,7 +44,7 @@ const Contact = ({dispatch, data}) => {
             <select
               onChange={e => {
               dispatch({type: "CHANGE_THEME", payload: e.target.value});
-            }}
+            }} 
               style={{
               backgroundColor: 'white',
               color: 'black',

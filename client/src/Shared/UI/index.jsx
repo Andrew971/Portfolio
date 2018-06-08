@@ -12,7 +12,8 @@ const initialState = {
 };
 
 export function UIReducer(state = initialState, action) {
-  switch (action.type) {
+
+    switch (action.type) {
       case 'CHANGE_LANG':
 
       return  {
@@ -24,7 +25,7 @@ export function UIReducer(state = initialState, action) {
       case 'CHANGE_THEME':
           return  {
               ...state,
-              Theme: action.payload
+              Theme: (action.payload === 'Main'&&theme.main) || (action.payload === 'Blue'&&theme.blue)
           };
       case 'MODAL_DISPLAY':
           return  {
@@ -61,11 +62,7 @@ export function UIAction(data) {
               type: data.type,
               payload: data.payload
           };
-      case 'CHANGE_THEME':
-          return  {
-              type: data.type,
-              payload: (data.payload === 'Main'&&theme.main) || (data.payload === 'Blue'&&theme.blue)
-          };
+
       case 'MODAL_DISPLAY':
           return  {
               type: data.type,

@@ -156,7 +156,7 @@ const Lab = ({data}) => {
   </Card>
 )};
 
-export class HomeEn extends PureComponent {
+export class Home extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {}
@@ -173,9 +173,9 @@ export class HomeEn extends PureComponent {
       .sort(sort_by('DESC', 'order'))
       .filter(section => section.placement === pathname)
 
-    return (
+      return (
       <Fragment>
-        {Section.map((section, n) => <Fragment key={n}>
+        {Section.map((section, n) => <Fragment key={n} >
           {section.type === 'biography' && <Biography data={section.option}/>}
           {section.type === 'services' && <Expertise data={section.option} Theme={Theme}/>}
           {section.type === 'project' && <MyWork data={section.option}/>}
@@ -193,4 +193,4 @@ const mapStateToProps = state => {
     data: state.UI.websiteContent
   };
 };
-export default withRouter(connect(mapStateToProps)(HomeEn));
+export default withRouter(connect(mapStateToProps)(Home));

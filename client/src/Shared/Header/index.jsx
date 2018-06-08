@@ -15,7 +15,7 @@ class HeaderContainer extends Component {
       {headerData.map((header,n)=>{
       const {background} = header
       return(
-    <StyledHeader key={n} src={background.path}>
+    <StyledHeader key={n} src={background.path} x2src={background.pathx2}>
     <HeaderContent data={header} dispatch={dispatch}/>
     </StyledHeader>
   )})}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default styled.header`
 width: 100%;
 height: 100vh;
-background: ${props =>(props.src ?`url(${props.src}),url(${props.src})`:'grey')};
+background: ${props =>(props.x2src ?`url(${props.x2src}),url(${props.x2src})`:'grey')};
 background-blend-mode: overlay;
 background-repeat: no-repeat;
 background-position: 47%;
@@ -16,6 +16,15 @@ h1{
   text-align: center;
   margin:auto;
 }
+
+@media (min-width: 740px) {
+  background: ${props =>(props.src ?`url(${props.src}),url(${props.src})`:'grey')};
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 47%;
+  background-blend-mode: overlay;
+
+    }
 
     @media (max-width: 740px) {
       padding: 3rem 0 0 0;

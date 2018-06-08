@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 import {NavLink} from "react-router-dom";
-import NavItem from "../../../Components/NavLink";
+import {NavItem} from "../../../Components/Nav";
 import Icon from '../../../Components/icon'
 
 export default ({dispatch,data,toggleHide,Language}) => {

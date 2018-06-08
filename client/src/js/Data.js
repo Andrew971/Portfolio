@@ -10,6 +10,7 @@ import code0 from '../Assets/img/codeO.svg';
 import pandahug from '../Assets/img/project/pandahug.png';
 import profile from '../Assets/img/avatar/profile.jpg'
 import headerHomex1 from '../Assets/img/header/headerHomex1.jpg'
+import headerHomex2 from '../Assets/img/header/headerHomex2.jpg'
 import headerSkillsx1 from '../Assets/img/header/headerSkillsx1.jpg'
 import background4 from '../Assets/img/background/background9.jpg'
 import react from '../Assets/img/react.png';
@@ -124,7 +125,8 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: headerHomex1
+              path: headerHomex1,
+              pathx2: headerHomex2
             }
           }
         }, {
