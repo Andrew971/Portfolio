@@ -8,6 +8,7 @@ import {withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import Layout from '../../Components/Grid/Layout'
 import Image from '../../Components/Image'
+import LazyLoad from 'react-lazyload';
 
 
 const sort_by = (order, value) => {
@@ -26,7 +27,9 @@ const Biography = ({data}) => {
       primary="primary"
       src={background.path}>
       <Layout container lg xl direction="row-reverse" alignItems="center">
-        <Avatar src={image.field[0].path_1}/>   
+      <LazyLoad height={200} offset={100}>
+        <Avatar src={image.field[0].path_1}/>  
+        </LazyLoad> 
       <Layout items>
         <Headlines>
           <h1>{title.text}</h1>
@@ -60,11 +63,13 @@ const Expertise = ({Theme, data}) => {
           .map((services, n) =>
           <Layout items key={n}>
               <Layout items>
+              <LazyLoad height={200} offset={100}>
                     <Image size={5}
                       src={Theme.label === "Main"
                       ? services.path_2
                       : services.path_1}
                       alt="Card cap"/>
+                      </LazyLoad>
                       </Layout>
                       <Layout items xs md text="center">
                     <h2>{services.name}</h2>
@@ -93,7 +98,9 @@ const MyWork = ({data}) => {
       .map((project,n) => (
           <Fragment key={n}>
             <Layout items>
+            <LazyLoad height={200} offset={100}>
             <Image size={30} src={project.img} alt="Card cap"/>
+            </LazyLoad>
             </Layout>
             <Layout items xs md text="center">
               <h2 className="card-title">{project.name}</h2>
@@ -131,7 +138,9 @@ const Lab = ({data}) => {
       .map((project,n)=> (
         <Fragment key={n}>
         <Layout items>
+        <LazyLoad height={200} offset={100}>
             <Image size={30} src={project.img} alt="Card cap"/>
+            </LazyLoad>
           </Layout>
           <Layout items>
             <h2 className="card-title">{project.name}</h2>
