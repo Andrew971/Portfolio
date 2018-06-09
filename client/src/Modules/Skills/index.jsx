@@ -6,6 +6,7 @@ import Title from "../../Components/Title";
 import Layout from '../../Components/Grid/Layout'
 import Grid from '../../Components/Grid/Grid'
 import Image from '../../Components/Image'
+import LazyLoad from 'react-lazyload';
 
 const sort_by = (order, value) => {
   if (order === 'ASC') {
@@ -28,7 +29,9 @@ return (
     .map((focus,n) =>
       <Layout items key={n} padding="0">
       <Layout items>
-      <Image height={5} src={focus.path_1} alt="Card cap"/>
+      <LazyLoad height={200} offset={100}>
+      <Image height={5} src={focus.path_1} alt="Card cap" />
+      </LazyLoad>
       </Layout>
       <Layout items>
       <h2>{focus.name}</h2>
@@ -51,7 +54,9 @@ return (
     .sort(sort_by('DESC', 'order'))
     .map((other,n) =>
       <Grid items key={n} >
+      <LazyLoad height={200} offset={100}>
       <Image src={other.path_1} alt="Card cap"/>
+      </LazyLoad>
       <h4>{other.name}</h4>
       </Grid>
     )

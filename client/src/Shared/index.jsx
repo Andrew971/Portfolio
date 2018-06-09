@@ -14,7 +14,7 @@ class App extends Component {
  
   render() {
     const {Theme,modalDisplay} =this.props
-    console.log(Theme)
+
     return (
       <ThemeProvider theme={Theme}>
         <Fragment>

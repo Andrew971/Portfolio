@@ -4,7 +4,7 @@ export default styled.div `
 background:${props => (props.noneed ? '' : 'rgba(6,6,6,.38)')};
 height:100%;
 width:100%;
-padding:${props => (props.primary ? '5rem 5rem' : '20vh 30vh')};
+padding:${props => (props.primary ? '5rem 5rem' : '20vh 2yarn0vh')};
 display:flex;
 align-content:center;
 flex-flow:column;

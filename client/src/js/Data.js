@@ -12,25 +12,26 @@ import profile from '../Assets/img/avatar/profile.jpg'
 import headerHomex1 from '../Assets/img/header/headerHomex1.jpg'
 import headerHomex2 from '../Assets/img/header/headerHomex2.jpg'
 import headerSkillsx1 from '../Assets/img/header/headerSkillsx1.jpg'
+import headerSkillsx2 from '../Assets/img/header/headerSkillsx2.jpg'
 import background4 from '../Assets/img/background/background9.jpg'
-import react from '../Assets/img/react.png';
-import redux from '../Assets/img/redux.png';
-import socket from '../Assets/img/socket.png';
-import graphql from '../Assets/img/graphql.png';
-import html from '../Assets/img/html.png';
-import css from '../Assets/img/css.png';
-import mongodb from '../Assets/img/mongodb.png';
-import postgresql from '../Assets/img/postgresql.png';
-import sass from '../Assets/img/sass.png';
-import node from '../Assets/img/node.png';
-import javascript from '../Assets/img/javascript.png';
-import bootstrap from '../Assets/img/bootstrap.png';
-import materialui from '../Assets/img/materialui.png';
-import styledComponents from '../Assets/img/styled-components.png';
-import aws from '../Assets/img/aws.png';
-import heroku from '../Assets/img/heroku.png';
-import git from '../Assets/img/git.svg';
-import github from '../Assets/img/github.svg';
+import react from '../Assets/img/skills/react.png';
+import redux from '../Assets/img/skills/redux.png';
+import socket from '../Assets/img/skills/socket.png';
+import graphql from '../Assets/img/skills/graphql.png';
+import html from '../Assets/img/skills/html.png';
+import css from '../Assets/img/skills/css.png';
+import mongodb from '../Assets/img/skills/mongodb.png';
+import postgresql from '../Assets/img/skills/postgresql.png';
+import sass from '../Assets/img/skills/sass.png';
+import node from '../Assets/img/skills/node.png';
+import javascript from '../Assets/img/skills/javascript.png';
+import bootstrap from '../Assets/img/skills/bootstrap.png';
+import materialui from '../Assets/img/skills/materialui.png';
+import styledComponents from '../Assets/img/skills/styled-components.png';
+import aws from '../Assets/img/skills/aws.png';
+import heroku from '../Assets/img/skills/heroku.png';
+import git from '../Assets/img/skills/git.svg';
+import github from '../Assets/img/skills/github.svg';
 
 export default {
   En : {
@@ -160,7 +161,8 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: headerSkillsx1
+              path: headerSkillsx1,
+              pathx2: headerSkillsx2
             }
           }
         }
