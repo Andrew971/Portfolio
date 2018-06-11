@@ -17,7 +17,7 @@ export default class Marketing extends Component {
   render() {
     return (
       <StyledSvg width="500px" height="500px" viewBox="0 0 500 500" version="1.1">
-    <title>Artboard</title>
+    <title>Marketing Icon</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <polygon id="Shape" points="231 500 148 500 158.268762 445 220.72048 445"></polygon>

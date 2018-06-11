@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default styled.ul `
+export default styled.span `
 display: inline-flex;
 width: 100%;
 min-height:5vh;
@@ -80,7 +80,7 @@ user-select: none;
   
   @media (max-width: 840px) {
 
-li{
+span{
   padding:0 2rem;
 }
 
