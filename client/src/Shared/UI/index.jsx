@@ -4,7 +4,7 @@ import Data from '../../js/Data'
 // Initial state of the feature
 const initialState = {
   Language: 'En',
-  Theme: theme.main,
+  Theme: theme['SkyBlue'],
   modalDisplay: false,
   Modal:"Contact",
   modalSAtatus:null,
@@ -25,7 +25,7 @@ export function UIReducer(state = initialState, action) {
       case 'CHANGE_THEME':
           return  {
               ...state,
-              Theme: (action.payload === 'Main'&&theme.main) || (action.payload === 'Blue'&&theme.blue)
+              Theme: theme[action.payload]
           };
       case 'MODAL_DISPLAY':
           return  {

@@ -8,6 +8,7 @@ export default styled.div`
 /* justify-items:center; */
 font-size:1.3rem;
 text-align:justify;
+/* padding:0 2rem; */
 /* margin: 1rem 1rem; */
 h1,h2,h3{
   text-align:left;
@@ -18,7 +19,7 @@ h3{
 
 }
     @media (max-width: 740px) {
-      text-align:center;
+      text-align:justify;
       h1,h2,h3{
         text-align:center;
         margin-bottom:1rem;

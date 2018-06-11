@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default styled.div `
+export default styled.ul `
 display: inline-flex;
 width: 100%;
 min-height:5vh;
@@ -23,7 +23,6 @@ user-select: none;
 -webkit-appearance: none;
 -webkit-tap-highlight-color: transparent;
 
-
 &[id="icon"]:hover .dropdown, &[id="icon"]:focus .dropdown{
        display:block;
      }
@@ -41,28 +40,25 @@ user-select: none;
     .dropdown {
         display:none;
          position: absolute;
-         background-color: #f1f1f1;
+         background-color: ${props => (props.theme.secondary)};
          top:100%;
          left:-50%;
          right:-50%;
          min-width: 160px;
          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
          z-index: 1;
-     }
-     
-     .dropdown span {
-         color: black;
+        color:white;
+    span {
          padding: 12px 16px;
          text-decoration: none;
          display: block;
          cursor:pointer;
+
+    &:hover {
+       background-color: ${props => (props.theme.primary)};
      }
-
-     .dropdown span:hover {
-       background-color: #ddd
-     }
-
-
+}
+    }
     @media (max-width: 740px) {
       height: auto;
       flex-direction: column;

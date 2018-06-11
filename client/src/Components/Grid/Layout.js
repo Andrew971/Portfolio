@@ -28,6 +28,7 @@ flex-wrap: nowrap;
 flex-direction:column;
 align-items: flex-start;
 justify-content:space-evenly;
+flex:1 1 auto;
 
 ${props=>props.xs&&ContainerDevice('phone')}
 ${props=>props.md&&ContainerDevice('tablet')}

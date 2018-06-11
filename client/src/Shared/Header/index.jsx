@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
 import HeaderContent from './Content'
-import StyledHeader from '../../Components/Header'
+import {HeroCard} from '../../Components/Cards'
 
 class HeaderContainer extends Component {
 
@@ -15,9 +15,9 @@ class HeaderContainer extends Component {
       {headerData.map((header,n)=>{
       const {background} = header
       return(
-    <StyledHeader key={n} src={background.path} x2src={background.pathx2}>
+    <HeroCard key={n} src={background.path} x2src={background.pathx2}>
     <HeaderContent data={header} dispatch={dispatch}/>
-    </StyledHeader>
+    </HeroCard>
   )})}
       </Fragment>
     )

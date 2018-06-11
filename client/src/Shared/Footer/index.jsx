@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
-import FooterContent from '../../Modules/Footer'
+import FooterSection from '../../Modules/Footer'
 import {withRouter} from 'react-router-dom'
 import Copyright from './Copyright'
-class FooterContainer extends Component {
+class Footer extends Component {
 
   render() {
     const {pathname} = this.props.location
@@ -16,7 +16,7 @@ class FooterContainer extends Component {
     return (
       <Fragment>
         {footerData.map((footer, n) => <Fragment key={n}>
-          <FooterContent data={footer}/>
+          <FooterSection data={footer}/>
           <Copyright data={footer}/>
         </Fragment>)}
 
@@ -28,4 +28,4 @@ const mapStateToProps = (state) => {
   return {Theme: state.UI.Theme, data: state.UI.websiteContent};
 };
 
-export default withRouter(connect(mapStateToProps)(FooterContainer));
+export default withRouter(connect(mapStateToProps)(Footer));

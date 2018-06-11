@@ -1,37 +1,44 @@
-import logo from '../Assets/img/logo.svg';
-import Default from '../Assets/img/project/default.png';
-import lang from '../Assets/img/icon/lang.png';
-import sales from '../Assets/img/sales.svg';
-import sales0 from '../Assets/img/salesO.svg';
-import marketing from '../Assets/img/marketing.svg';
-import marketing0 from '../Assets/img/marketingO.svg';
-import code from '../Assets/img/code.svg';
-import code0 from '../Assets/img/codeO.svg';
-import pandahug from '../Assets/img/project/pandahug.png';
-import profile from '../Assets/img/avatar/profile.jpg'
-import headerHomex1 from '../Assets/img/header/headerHomex1.jpg'
-import headerHomex2 from '../Assets/img/header/headerHomex2.jpg'
-import headerSkillsx1 from '../Assets/img/header/headerSkillsx1.jpg'
-import headerSkillsx2 from '../Assets/img/header/headerSkillsx2.jpg'
-import background4 from '../Assets/img/background/background9.jpg'
-import react from '../Assets/img/skills/react.png';
-import redux from '../Assets/img/skills/redux.png';
-import socket from '../Assets/img/skills/socket.png';
-import graphql from '../Assets/img/skills/graphql.png';
-import html from '../Assets/img/skills/html.png';
-import css from '../Assets/img/skills/css.png';
-import mongodb from '../Assets/img/skills/mongodb.png';
-import postgresql from '../Assets/img/skills/postgresql.png';
-import sass from '../Assets/img/skills/sass.png';
-import node from '../Assets/img/skills/node.png';
-import javascript from '../Assets/img/skills/javascript.png';
-import bootstrap from '../Assets/img/skills/bootstrap.png';
-import materialui from '../Assets/img/skills/materialui.png';
-import styledComponents from '../Assets/img/skills/styled-components.png';
-import aws from '../Assets/img/skills/aws.png';
-import heroku from '../Assets/img/skills/heroku.png';
-import git from '../Assets/img/skills/git.svg';
-import github from '../Assets/img/skills/github.svg';
+import dataImages from '../utils/constImage'
+
+const {
+  logo,
+  lang,
+  sales,
+  sales0,
+  marketing,
+  marketing0,
+  code,
+  code0
+} = dataImages.icon
+
+const {profilex1, profilex2} = dataImages.avatar
+
+const {headerHomex1, headerHomex2, headerSkillsx1, headerSkillsx2} = dataImages.header
+
+const {footerx1, footerx2} = dataImages.background
+
+const {Default, pandahug} = dataImages.project
+
+const {
+  react,
+  redux,
+  socket,
+  graphql,
+  html,
+  css,
+  mongodb,
+  postgresql,
+  sass,
+  node,
+  javascript,
+  bootstrap,
+  materialui,
+  styledComponents,
+  aws,
+  heroku,
+  git,
+  github
+} = dataImages.skills
 
 export default {
   En : {
@@ -48,6 +55,7 @@ export default {
               name: 'Logo',
               text: 'AS',
               description: '',
+              icon:'logo',
               img_src: logo,
               url: '/'
             },
@@ -75,13 +83,13 @@ export default {
                 {
                   name: 'English',
                   text: 'English',
-                  icon:lang,
+                  icon: lang,
                   code: 'En',
                   order: 1
                 }, {
                   name: 'French',
                   text: 'French',
-                  icon:react,
+                  icon: react,
                   code: 'Fr',
                   order: 2
                 }
@@ -190,18 +198,21 @@ export default {
               field: [
                 {
                   name: 'Sales',
+                  icon:'sales',
                   path_1: sales0,
                   path_2: sales,
                   text: 'Because a website is the key for your business development',
                   order: 1
                 }, {
                   name: 'Marketing',
+                  icon:'marketing',
                   path_1: marketing0,
                   path_2: marketing,
                   text: 'An unique and customized/perfectly adapted content to show your wonderful ideas',
                   order: 2
                 }, {
                   name: 'Code',
+                  icon:'code',
                   path_1: code0,
                   path_2: code,
                   text: 'Clean code, creativity and learning are my keywords',
@@ -257,8 +268,8 @@ export default {
               field: [
                 {
                   name: 'Image name',
-                  path_1: profile,
-                  path_2: '',
+                  path: profilex1,
+                  pathx2: profilex2,
                   text: ''
                 }
               ]
@@ -291,11 +302,11 @@ export default {
                   url: 'https://pandahug.ca',
                   img: pandahug,
                   description: `Prepare. Apply. Succeed.Aspire for Happiness in Education. Find your dream school. Hit the ground running. Lead with excellence.`,
-                    order: 1,
-                    link:{
-                      url: 'https://pandahug.ca',
-                      text:'Visit the website'
-                    }
+                  order: 1,
+                  link: {
+                    url: 'https://pandahug.ca',
+                    text: 'Visit the website'
+                  }
                 }
               ]
             }
@@ -322,16 +333,15 @@ export default {
                   img: Default,
                   description: 'Project in progress...',
                   order: 1,
-                  link:{
+                  link: {
                     url: '',
-                    text:'Visit the website'
+                    text: 'Visit the website'
                   }
                 }
               ]
             }
           }
-        },
-        {
+        }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
           type: 'focus',
@@ -359,15 +369,13 @@ export default {
                   path_2: '',
                   text: '',
                   order: 2
-                }, 
-                {
+                }, {
                   name: 'Socket.io',
                   path_1: socket,
                   path_2: '',
                   text: '',
                   order: 3
-                },
-                {
+                }, {
                   name: 'GraphQL',
                   path_1: graphql,
                   path_2: '',
@@ -377,8 +385,7 @@ export default {
               ]
             }
           }
-        },
-        {
+        }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
           type: 'other-skills',
@@ -406,50 +413,43 @@ export default {
                   path_2: '',
                   text: '',
                   order: 2
-                }, 
-                {
+                }, {
                   name: 'Javascript',
                   path_1: javascript,
                   path_2: '',
                   text: '',
                   order: 3
-                },
-                {
+                }, {
                   name: 'Sass',
                   path_1: sass,
                   path_2: '',
                   text: '',
                   order: 4
-                },
-                 {
+                }, {
                   name: 'Bootstrap',
                   path_1: bootstrap,
                   path_2: '',
                   text: '',
-                  order:5
-                }, 
-                {
+                  order: 5
+                }, {
                   name: 'Material UI',
                   path_1: materialui,
                   path_2: '',
                   text: '',
                   order: 6
-                },
-                {
+                }, {
                   name: 'Styled-Components',
                   path_1: styledComponents,
                   path_2: '',
                   text: '',
                   order: 7
-                },
-                {
+                }, {
                   name: 'PostgreSQL',
                   path_1: postgresql,
                   path_2: '',
                   text: '',
                   order: 8
-                },
-                {
+                }, {
                   name: 'MongoDb',
                   path_1: mongodb,
                   path_2: '',
@@ -461,39 +461,35 @@ export default {
                   path_2: '',
                   text: '',
                   order: 10
-                }, 
-                {
+                }, {
                   name: 'AWS',
                   path_1: aws,
                   path_2: '',
                   text: '',
                   order: 11
-                },
-                {
+                }, {
                   name: 'Heroku',
                   path_1: heroku,
                   path_2: '',
                   text: '',
                   order: 12
-                },
-                 {
+                }, {
                   name: 'Git',
                   path_1: git,
                   path_2: '',
                   text: '',
-                  order:13
-                }, 
-                {
+                  order: 13
+                }, {
                   name: 'GitHub',
                   path_1: github,
                   path_2: '',
                   text: '',
                   order: 14
-                },
+                }
               ]
             }
           }
-        },
+        }
       ]
     },
     Footer: {
@@ -509,6 +505,7 @@ export default {
               name: 'Logo',
               text: 'AS',
               description: '',
+              icon:'logo',
               img_src: logo,
               url: '/'
             },
@@ -543,7 +540,8 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: background4
+              path: footerx1,
+              pathx2: footerx2
             },
             link: {
               name: 'link',
@@ -555,15 +553,13 @@ export default {
                   icon: 'fab fa-linkedin-in',
                   url: 'https://www.linkedin.com/in/andrewsordier/',
                   order: 1
-                },
-                 {
+                }, {
                   name: 'GitHub',
                   text: '',
                   icon: 'fab fa-github-alt',
                   url: 'https://github.com/Andrew971',
                   order: 2
-                },
-                 {
+                }, {
                   name: 'Skype',
                   text: '',
                   icon: 'fab fa-skype',
@@ -571,10 +567,9 @@ export default {
                   order: 3
                 }
               ]
-            },
+            }
           }
-        },
-        {
+        }, {
           name: 'type your name here',
           description: 'this is just for app use',
           placement: '/skills',
@@ -583,6 +578,7 @@ export default {
               name: 'Logo',
               text: 'AS',
               description: '',
+              icon:'logo',
               img_src: logo,
               url: '/'
             },
@@ -617,7 +613,8 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: background4
+              path: footerx1,
+              pathx2: footerx2
             },
             link: {
               name: 'link',
@@ -629,15 +626,13 @@ export default {
                   icon: 'fab fa-linkedin-in',
                   url: 'https://www.linkedin.com/in/andrewsordier/',
                   order: 1
-                },
-                 {
+                }, {
                   name: 'GitHub',
                   text: '',
                   icon: 'fab fa-github-alt',
                   url: 'https://github.com/Andrew971',
                   order: 2
-                },
-                 {
+                }, {
                   name: 'Skype',
                   text: '',
                   icon: 'fab fa-skype',
@@ -645,7 +640,7 @@ export default {
                   order: 3
                 }
               ]
-            },
+            }
           }
         }
       ]
@@ -665,6 +660,7 @@ export default {
               name: 'Logo',
               text: 'AS',
               description: '',
+              icon:'logo',
               img_src: logo,
               url: '/'
             },
@@ -693,12 +689,12 @@ export default {
                   name: 'English',
                   text: 'Anglais',
                   code: 'En',
-                  icon:lang,
+                  icon: lang,
                   order: 1
                 }, {
                   name: 'French',
                   text: 'Français',
-                  icon:react,
+                  icon: react,
                   code: 'Fr',
                   order: 1
                 }
@@ -742,7 +738,8 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: headerHomex1
+              path: headerHomex1,
+              pathx2: headerHomex2
             }
           }
         }, {
@@ -775,7 +772,8 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: headerSkillsx1
+              path: headerSkillsx1,
+              pathx2: headerSkillsx2
             }
           }
         }
@@ -803,20 +801,17 @@ export default {
               field: [
                 {
                   name: 'Commerce',
-                  path_1: sales0,
-                  path_2: sales,
+                  icon:'sales',
                   text: `Un bon site internet est la clé pour le developpement de votre Business.`,
                   order: 1
                 }, {
                   name: 'Marketing',
-                  path_1: marketing0,
-                  path_2: marketing,
+                  icon:'marketing',
                   text: `Un contenu unique et personalisé, parfaitement adapté pour partager vos idées.`,
                   order: 2
                 }, {
                   name: 'Code',
-                  path_1: code0,
-                  path_2: code,
+                  icon:'code',
                   text: `Code quality, créativité et apprentissage sont mes mots-clés.`,
                   order: 3
                 }
@@ -865,8 +860,8 @@ export default {
               field: [
                 {
                   name: 'Image name',
-                  path_1: profile,
-                  path_2: '',
+                  path: profilex1,
+                  pathx2: profilex2,
                   text: ''
                 }
               ]
@@ -899,9 +894,9 @@ export default {
                   img: pandahug,
                   description: `reparer. S'inscrir. Réussir. Aspir au bonheur dans l'education.Trouve l'université de tes rêves. Cours vers l'excellence.`,
                   order: 1,
-                  link:{
+                  link: {
                     url: 'https://pandahug.ca',
-                    text:'Visiter le site'
+                    text: 'Visiter le site'
                   }
                 }
               ]
@@ -930,16 +925,15 @@ export default {
                   img: Default,
                   description: 'Project en cours...',
                   order: 1,
-                  link:{
+                  link: {
                     url: '',
-                    text:'Visiter le site'
+                    text: 'Visiter le site'
                   }
                 }
               ]
             }
           }
-        },
-        {
+        }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
           type: 'focus',
@@ -967,15 +961,13 @@ export default {
                   path_2: '',
                   text: '',
                   order: 2
-                }, 
-                {
+                }, {
                   name: 'Socket.io',
                   path_1: socket,
                   path_2: '',
                   text: '',
                   order: 3
-                },
-                {
+                }, {
                   name: 'GraphQL',
                   path_1: graphql,
                   path_2: '',
@@ -985,8 +977,7 @@ export default {
               ]
             }
           }
-        },
-        {
+        }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
           type: 'other-skills',
@@ -1014,50 +1005,43 @@ export default {
                   path_2: '',
                   text: '',
                   order: 2
-                }, 
-                {
+                }, {
                   name: 'Javascript',
                   path_1: javascript,
                   path_2: '',
                   text: '',
                   order: 3
-                },
-                {
+                }, {
                   name: 'Sass',
                   path_1: sass,
                   path_2: '',
                   text: '',
                   order: 4
-                },
-                 {
+                }, {
                   name: 'Bootstrap',
                   path_1: bootstrap,
                   path_2: '',
                   text: '',
-                  order:5
-                }, 
-                {
+                  order: 5
+                }, {
                   name: 'Material UI',
                   path_1: materialui,
                   path_2: '',
                   text: '',
                   order: 6
-                },
-                {
+                }, {
                   name: 'Styled-Components',
                   path_1: styledComponents,
                   path_2: '',
                   text: '',
                   order: 7
-                },
-                {
+                }, {
                   name: 'PostgreSQL',
                   path_1: postgresql,
                   path_2: '',
                   text: '',
                   order: 8
-                },
-                {
+                }, {
                   name: 'MongoDb',
                   path_1: mongodb,
                   path_2: '',
@@ -1069,39 +1053,35 @@ export default {
                   path_2: '',
                   text: '',
                   order: 10
-                }, 
-                {
+                }, {
                   name: 'AWS',
                   path_1: aws,
                   path_2: '',
                   text: '',
                   order: 11
-                },
-                {
+                }, {
                   name: 'Heroku',
                   path_1: heroku,
                   path_2: '',
                   text: '',
                   order: 12
-                },
-                 {
+                }, {
                   name: 'Git',
                   path_1: git,
                   path_2: '',
                   text: '',
-                  order:13
-                }, 
-                {
+                  order: 13
+                }, {
                   name: 'GitHub',
                   path_1: github,
                   path_2: '',
                   text: '',
                   order: 14
-                },
+                }
               ]
             }
           }
-        },
+        }
       ]
     },
     Footer: {
@@ -1150,7 +1130,8 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: background4
+              path: footerx1,
+              pathx2: footerx1
             },
             link: {
               name: 'link',
@@ -1162,15 +1143,13 @@ export default {
                   icon: 'fab fa-linkedin-in',
                   url: 'https://www.linkedin.com/in/andrewsordier/',
                   order: 1
-                },
-                 {
+                }, {
                   name: 'GitHub',
                   text: '',
                   icon: 'fab fa-github-alt',
                   url: 'https://github.com/Andrew971',
                   order: 2
-                },
-                 {
+                }, {
                   name: 'Skype',
                   text: '',
                   icon: 'fab fa-skype',
@@ -1178,10 +1157,9 @@ export default {
                   order: 3
                 }
               ]
-            },
+            }
           }
-        },
-        {
+        }, {
           name: 'type your name here',
           description: 'this is just for app use',
           placement: '/skills',
@@ -1223,7 +1201,8 @@ export default {
             background: {
               name: 'Background',
               description: 'description',
-              path: background4
+              path: footerx1,
+              pathx2: footerx1
             },
             link: {
               name: 'link',
@@ -1235,15 +1214,13 @@ export default {
                   icon: 'fab fa-linkedin-in',
                   url: 'https://www.linkedin.com/in/andrewsordier/',
                   order: 1
-                },
-                 {
+                }, {
                   name: 'GitHub',
                   text: '',
                   icon: 'fab fa-github-alt',
                   url: 'https://github.com/Andrew971',
                   order: 2
-                },
-                 {
+                }, {
                   name: 'Skype',
                   text: '',
                   icon: 'fab fa-skype',
@@ -1251,7 +1228,7 @@ export default {
                   order: 3
                 }
               ]
-            },
+            }
           }
         }
       ]

@@ -4,14 +4,19 @@ export default styled.div`
 display:flex;
 flex-flow:column nowrap;
 align-self: center;
-max-width:20rem;
-width:100%;
-height:20rem;
+width:70%;
 margin: 2rem;
 border-radius:50%;
-border: ${props=>(props.theme.label==='Main'?'0.5em solid #B6D8FF':'0.5em solid #FFD9B6')};
+border: ${props=>(`1px solid ${props.theme.primary}`)};
 background-image: ${props=>props.src&&`url(${props.src})`};
 background-position: center;
 background-size: cover;
+box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+::after{
+  content:'';
+  display: block;
+  padding-bottom:100%;
+}
+
 
   `;

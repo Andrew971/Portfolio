@@ -1,5 +1,5 @@
 import React, {PureComponent, Fragment} from "react";
-import Card from "../../Components/Card";
+import {SectionCard} from "../../Components/Cards";
 import {withRouter,} from 'react-router-dom'
 import {connect} from 'react-redux';
 import Title from "../../Components/Title";
@@ -19,7 +19,7 @@ const sort_by = (order, value) => {
 const Focus = ({data}) => {
   const {image,title} = data
 return (
-<Card>
+<SectionCard>
   <Title>{title.text}</Title>
   <Layout container md lg xl direction="row" justify="space-around">
   {
@@ -30,7 +30,7 @@ return (
       <Layout items key={n} padding="0">
       <Layout items>
       <LazyLoad height={200} offset={100}>
-      <Image height={5} src={focus.path_1} alt="Card cap" />
+      <Image src={focus.path_1} alt="Card cap" />
       </LazyLoad>
       </Layout>
       <Layout items>
@@ -40,12 +40,12 @@ return (
     )
   }
   </Layout>  
-</Card>
+</SectionCard>
 )};
 const Knowledge = ({data}) => {
   const {image,title} = data
 return (
-<Card primary>
+<SectionCard primary>
   <Title primary>{title.text}</Title>
   <Grid container>
   {
@@ -62,7 +62,7 @@ return (
     )
   }
   </Grid>
-</Card>
+</SectionCard>
 )};
 
 

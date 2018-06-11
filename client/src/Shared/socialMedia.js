@@ -22,7 +22,7 @@ export const SocialMedia = ({data}) => {
         fontSize: '1.5rem',
         color:'white',
         margin:'auto',
-      }}></i></a>
+      }} alt={link.name}></i></a>
     </Fragment>
   )}
   </Layout>

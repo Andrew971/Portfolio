@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import './styles.css'
 import Main from './Main';
-import FooterContainer from './Footer';
+import Footer from './Footer';
 import Header from './Header';
 import Nav from './Nav';
 import {ThemeProvider} from 'styled-components';
@@ -21,7 +21,7 @@ class App extends Component {
           <Nav/>
           <Header/>
           <Main/>
-          <FooterContainer/>
+          <Footer/>
             {modalDisplay && <Portal>
               <Modal />
             </Portal> }

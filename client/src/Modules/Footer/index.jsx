@@ -1,18 +1,16 @@
 import React, {Component, Fragment} from "react";
 import Button from '../../Components/Button'
-import Mask from '../../Components/Mask'
 import HeadTitle from '../../Components/HeadTitle'
-import Card from "../../Components/Card";
-import Image from "../../Components/Image";
+import {SectionCard} from "../../Components/Cards";
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
+import IconLoad from '../../Components/SvgIcon/'
 
 const Contact = ({dispatch, data}) => {
   const {background, title, subtitle, button, logo} = data
   return (
-    <Card src={background.path}>
-      <Mask primary>
-        <Image size={10} src={logo.img_src} alt="logo"/>
+    <SectionCard src={background.path}>
+        <IconLoad size={10} icon={logo.icon} alt="logo"/>
         <HeadTitle>
           {title.text}</HeadTitle>
         <div align="center">
@@ -39,7 +37,7 @@ const Contact = ({dispatch, data}) => {
           color: 'white'
         }}
           align="center">
-          <h5>{subtitle.text}</h5>
+          <label>{subtitle.text}</label>
           <div align="center">
             <select
               onChange={e => {
@@ -50,17 +48,18 @@ const Contact = ({dispatch, data}) => {
               color: 'black',
               textAlign: 'center'
             }}>
-              <option value="Main">SkyBlue</option>
-              <option value="Blue">OrangeWild</option>
+              <option>...</option>
+              <option value="SkyBlue">SkyBlue</option>
+              <option value="OrangeWild">OrangeWild</option>
+              <option value="PowerRed">PowerRed</option>
             </select>
           </div>
         </div>
-      </Mask>
-    </Card>
+    </SectionCard>
   )
 };
 
-export class FooterEn extends Component {
+export class FooterSection extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -80,4 +79,4 @@ const mapStateToProps = (state) => {
   return {Modal: state.UI.Modal, modalSAtatus: state.UI.modalSAtatus, Theme: state.UI.Theme}
 
 }
-export default withRouter(connect(mapStateToProps)(FooterEn));
+export default withRouter(connect(mapStateToProps)(FooterSection));

@@ -2,12 +2,11 @@ import React, {Component, Fragment} from "react";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {NavBar,MobileNav} from "../../Components/Nav";
-import DesktopView from "../../Components/DesktopView";
-import MobileView from "../../Components/MobileView";
 import BrandTitle from "../../Components/BrandTitle";
 import NavContent from './Content'
 import Spacer from '../../Components/Spacer';
-import Hamburger from '../../Components/Icon/hamburger';
+import IconLoad from '../../Components/SvgIcon/'
+import HiddenView from '../../Components/HiddenView/'
 
 class Nav extends Component {
   constructor(props) {
@@ -41,26 +40,26 @@ class Nav extends Component {
           return (
             <Fragment key={n}>
               <BrandTitle to={logo.url}>
-                {logo.img_src
-                  ? <img src={logo.img_src} className="App-logo" alt="logo"/>
+                {logo.img_src || logo.icon
+                  ? <IconLoad icon={logo.icon}/>
                   : logo.text
 }
               </BrandTitle>
               <Spacer/>
-              <DesktopView>
+              <HiddenView xs>
                 <NavContent
                   data={nav}
                   toggleHide={this.toggleHide}
                   dispatch={dispatch}
                   Language={Language}/>
-              </DesktopView>
-              <MobileView>
+              </HiddenView>
+              <HiddenView md lg xl>
                 <div
                   onClick={() => {
                   visible
                     ? this.toggleHide()
                     : this.toggleShow()
-                }}><Hamburger open={visible}/></div>
+                }}><IconLoad icon={'hamburger'} open={visible}/></div>
                 <MobileNav
                   width={this.state.width}
                   onBlure={e => this.clickOut(e)}
@@ -72,7 +71,7 @@ class Nav extends Component {
                     Language={Language}z/>
                 </MobileNav>
 
-              </MobileView>
+              </HiddenView>
             </Fragment>
           )
         })}

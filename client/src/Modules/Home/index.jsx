@@ -1,5 +1,5 @@
 import React, {PureComponent, Fragment} from "react";
-import Card from "../../Components/Card";
+import {SectionCard} from "../../Components/Cards";
 import {StyleLink} from "../../Components/Button";
 import Title from "../../Components/Title";
 import Avatar from "../../Components/Avatar";
@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 import Layout from '../../Components/Grid/Layout'
 import Image from '../../Components/Image'
 import LazyLoad from 'react-lazyload';
-
+import IconLoad from '../../Components/SvgIcon'
 
 const sort_by = (order, value) => {
   if (order === 'ASC') {
@@ -19,16 +19,17 @@ const sort_by = (order, value) => {
   }
 }
 
+
 const Biography = ({data}) => {
   const {title, subtitle, paragraph, image, background} = data
   return (
-    <Card
+    <SectionCard
       className=""
       primary="primary"
       src={background.path}>
       <Layout container lg xl direction="row-reverse" alignItems="center">
       <LazyLoad height={200} offset={100}>
-        <Avatar src={image.field[0].path_1}/>  
+        <Avatar src={image.field[0].path} srcx2={image.field[0].pathx2}/>  
         </LazyLoad> 
       <Layout items>
         <Headlines>
@@ -48,13 +49,13 @@ const Biography = ({data}) => {
         </Headlines>
       </Layout>
       </Layout>
-    </Card>
+    </SectionCard>
   )
 };
 const Expertise = ({Theme, data}) => {
   const {image,title} = data
   return (
-    <Card>
+    <SectionCard>
       <Title>{title.text}</Title>
       <Layout container md lg xl direction="row" justify="space-around">
         {image
@@ -64,11 +65,7 @@ const Expertise = ({Theme, data}) => {
           <Layout items key={n}>
               <Layout items>
               <LazyLoad height={200} offset={100}>
-                    <Image size={5}
-                      src={Theme.label === "Main"
-                      ? services.path_2
-                      : services.path_1}
-                      alt="Card cap"/>
+                  <IconLoad  icon={services.icon||'hamburger'}/>
                       </LazyLoad>
                       </Layout>
                       <Layout items xs md text="center">
@@ -79,14 +76,14 @@ const Expertise = ({Theme, data}) => {
 
           )}
           </Layout>
-    </Card>
+    </SectionCard>
   )
 };
 
 const MyWork = ({data}) => {
   let {project,title} = data
   return (
-    <Card
+    <SectionCard
       primary>
       <Title  primary>{title.text}</Title>
       <Layout container md lg xl direction="row" alignItems="center" justify="space-around">
@@ -120,14 +117,14 @@ const MyWork = ({data}) => {
           </Fragment>
         ))}
 </Layout>
-    </Card>
+    </SectionCard>
 )};
 
 const Lab = ({data}) => {
   let {project,title} = data
 
   return (
-  <Card>
+  <SectionCard>
     <Title className="col-12">
       {title.text}
     </Title>
@@ -162,7 +159,7 @@ const Lab = ({data}) => {
       ))}
       </Layout>
 
-  </Card>
+  </SectionCard>
 )};
 
 export class Home extends PureComponent {
