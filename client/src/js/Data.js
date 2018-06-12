@@ -354,7 +354,7 @@ export default {
         }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
-          type: 'side_project',
+          type: 'lab',
           placement: '/',
           order: 4,
           option: {
@@ -894,7 +894,7 @@ export default {
         }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
-          type: 'side_project',
+          type: 'lab',
           placement: '/',
           order: 4,
           option: {

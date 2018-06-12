@@ -11,3 +11,5 @@ Sales,
 Hamburger,
 Logo,
 }
+
+export const iconComponents = [Code, Marketing, Sales, Hamburger, Logo];

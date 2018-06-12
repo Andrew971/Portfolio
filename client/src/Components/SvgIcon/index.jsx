@@ -1,7 +1,6 @@
 import React, {Component} from "react";
-import {Code, Marketing, Sales, Hamburger, Logo} from './export'
+import {iconComponents} from './export'
 
-const iconComponents = [Code, Marketing, Sales, Hamburger, Logo];
 export default class IconLoad extends Component {
   constructor(props) {
     super(props);

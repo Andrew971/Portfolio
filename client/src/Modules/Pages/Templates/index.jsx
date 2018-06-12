@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import Loading from '../../../utils/loading'
-// const templateComponents = [Code, Marketing, Sales, Hamburger, Logo];
-
+import {templateComponents} from './export'
  export default class TemplateLoad  extends Component {
     constructor(props) {
       super(props);
@@ -12,16 +11,16 @@ import React, { Component } from "react";
     }
 
     async componentDidMount() {
+      const {type} = this.props
+      templateComponents
+    .filter(res=>type.toUpperCase()=== res.name.toUpperCase())
+    .map(res=> this.setState({component: res}))
 
-    //   templateComponents
-    // .filter(res=>icon.toUpperCase()=== res.name.toUpperCase())
-    // .map(res=> this.setState({component: res}))
-
-      const res = await import(`./${this.props.type}`)
-        const { default: component } =  res;
-        this.setState({
-          component: component
-        });
+      // const res = await import(`./${this.props.type}`)
+      //   const { default: component } =  res;
+      //   this.setState({
+      //     component: component
+      //   });
       
     }
 

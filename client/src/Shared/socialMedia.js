@@ -4,7 +4,6 @@ import {sort_by} from '../utils/constMethod'
 
 
 export const SocialMedia = ({data}) => {
-console.log(data)
   return (<Layout items xs md lg xl display="inline-flex" direction="row" justify="space-around" width="20rem" padding="0">
   {data
   .field

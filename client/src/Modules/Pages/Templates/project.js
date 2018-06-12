@@ -7,7 +7,7 @@ import LazyLoad from 'react-lazyload';
 import {sort_by} from '../../../utils/constMethod'
 import {StyleLink} from "../../../Components/Button";
 
-const MyWork = ({data}) => {
+const Project = ({data}) => {
   let {project,title} = data
   return (
     <SectionCard
@@ -46,4 +46,4 @@ const MyWork = ({data}) => {
 </Layout>
     </SectionCard>
 )};
-export default MyWork
+export default Project
