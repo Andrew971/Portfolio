@@ -1,5 +1,6 @@
 import logo from '../Assets/img/logo.svg';
-import lang from '../Assets/img/icon/lang.png';
+import english from '../Assets/img/icon/lang.png';
+import french from '../Assets/img/icon/french.png';
 import sales from '../Assets/img/sales.svg';
 import sales0 from '../Assets/img/salesO.svg';
 import marketing from '../Assets/img/marketing.svg';
@@ -40,13 +41,14 @@ import github from '../Assets/img/skills/github.svg';
 const dataImages = {
   icon:{
     logo,
-    lang,
+    english,
     sales,
     sales0,
     marketing,
     marketing0,
     code,
-    code0
+    code0,
+    french
   },
   avatar:{
     profilex1,

@@ -8,7 +8,8 @@ const initialState = {
   modalDisplay: false,
   Modal:"Contact",
   modalSAtatus:null,
-  websiteContent:Data['En']
+  websiteContent:Data['En'],
+  sharedContent:Data.sharedContent
 };
 
 export function UIReducer(state = initialState, action) {

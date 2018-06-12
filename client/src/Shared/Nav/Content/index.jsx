@@ -2,13 +2,16 @@ import React, {Fragment} from "react";
 import {NavLink} from "react-router-dom";
 import {NavItem} from "../../../Components/Nav";
 import Icon from '../../../Components/icon'
+import {sort_by} from '../../../utils/constMethod'
 
-export default ({dispatch,data,toggleHide,Language}) => {
-  let {link,langIcon} = data
+export default ({dispatch,Link,LangIcon,toggleHide,Language,}) => {
 
   return(
       <Fragment>
-      {link.field.map((link,n)=>
+      {Link
+      .field
+      .sort(sort_by('DESC','order'))
+      .map((link,n)=>
         <NavItem key={n}>
             <NavLink to={link.url} onClick={() => {
       toggleHide()
@@ -16,8 +19,9 @@ export default ({dispatch,data,toggleHide,Language}) => {
           </NavItem>
         )}
         <NavItem id="icon">
-        {langIcon
+        {LangIcon
         .field
+        .sort(sort_by('DESC','order'))
         .filter(icon=>icon.code === Language)
         .map((lang,n)=>
           <Icon src={lang.icon} key={n}/>
@@ -25,8 +29,9 @@ export default ({dispatch,data,toggleHide,Language}) => {
             <div className="dropdown" onClick={() => {
       toggleHide()
     }}>
-            {langIcon
+            {LangIcon
             .field
+            .sort(sort_by('DESC','order'))
             .map((lang,n)=>
               <span onClick={e => {
                   dispatch({type: "CHANGE_LANG", payload: lang.code});

@@ -2,7 +2,8 @@ import dataImages from '../utils/constImage'
 
 const {
   logo,
-  lang,
+  english,
+  french,
   sales,
   sales0,
   marketing,
@@ -41,63 +42,62 @@ const {
 } = dataImages.skills
 
 export default {
+  sharedContent : {
+    name: '',
+    description: '',
+    option: {
+      langIcon: {
+        name: 'LangIcon',
+        description: '',
+        field: [
+          {
+            name: 'English',
+            text: 'English',
+            icon: english,
+            code: 'En',
+            order: 1
+          }, {
+            name: 'French',
+            text: 'Français',
+            icon: french,
+            code: 'Fr',
+            order: 2
+          }
+        ]
+      }
+    }
+  },
   En : {
     Nav: {
       name: 'Naven',
       description: '',
-      field: [
-        {
-          name: 'nav',
-          description: 'Nav for page one',
-          placement: 'page 1',
-          option: {
-            logo: {
-              name: 'Logo',
-              text: 'AS',
-              description: '',
-              icon:'logo',
-              img_src: logo,
-              url: '/'
-            },
-            link: {
-              name: 'Link',
-              description: '',
-              field: [
-                {
-                  name: 'Home link',
-                  text: 'Portfolio',
-                  url: '/',
-                  order: 1
-                }, {
-                  name: 'Skills Link',
-                  text: 'Skills',
-                  url: '/skills',
-                  order: 2
-                }
-              ]
-            },
-            langIcon: {
-              name: 'LangIcon',
-              description: '',
-              field: [
-                {
-                  name: 'English',
-                  text: 'English',
-                  icon: lang,
-                  code: 'En',
-                  order: 1
-                }, {
-                  name: 'French',
-                  text: 'French',
-                  icon: react,
-                  code: 'Fr',
-                  order: 2
-                }
-              ]
+      option: {
+        logo: {
+          name: 'Logo',
+          text: 'AS',
+          description: '',
+          icon: 'logo',
+          img_src: logo,
+          url: '/'
+        },
+        link: {
+          name: 'Link',
+          description: '',
+          field: [
+            {
+              name: 'Home link',
+              text: 'Portfolio',
+              url: '/',
+              order: 1
+            }, {
+              name: 'Skills Link',
+              text: 'Skills',
+              url: '/skills',
+              order: 2
             }
-          }
+          ]
         }
-      ]
+      }
     },
     Header: {
       name: 'header',
@@ -198,21 +198,21 @@ export default {
               field: [
                 {
                   name: 'Sales',
-                  icon:'sales',
-                  path_1: sales0,
-                  path_2: sales,
+                  icon: 'sales',
+                  path: sales0,
+                  pathx2: sales,
                   text: 'Because a website is the key for your business development',
-                  order: 1
+                  order: 2
                 }, {
                   name: 'Marketing',
-                  icon:'marketing',
+                  icon: 'marketing',
                   path_1: marketing0,
                   path_2: marketing,
                   text: 'An unique and customized/perfectly adapted content to show your wonderful ideas',
-                  order: 2
+                  order: 1
                 }, {
                   name: 'Code',
-                  icon:'code',
+                  icon: 'code',
                   path_1: code0,
                   path_2: code,
                   text: 'Clean code, creativity and learning are my keywords',
@@ -314,7 +314,7 @@ export default {
         }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
-          type: 'side-project',
+          type: 'side_project',
           placement: '/',
           order: 4,
           option: {
@@ -388,7 +388,7 @@ export default {
         }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
-          type: 'other-skills',
+          type: 'knowledge',
           placement: '/skills',
           order: 1,
           option: {
@@ -505,7 +505,7 @@ export default {
               name: 'Logo',
               text: 'AS',
               description: '',
-              icon:'logo',
+              icon: 'logo',
               img_src: logo,
               url: '/'
             },
@@ -578,7 +578,7 @@ export default {
               name: 'Logo',
               text: 'AS',
               description: '',
-              icon:'logo',
+              icon: 'logo',
               img_src: logo,
               url: '/'
             },
@@ -650,59 +650,33 @@ export default {
     Nav: {
       name: 'Nav',
       description: '',
-      field: [
-        {
-          name: 'nav',
-          description: 'Nav for page one',
-          placement: 'page 1',
-          option: {
-            logo: {
-              name: 'Logo',
-              text: 'AS',
-              description: '',
-              icon:'logo',
-              img_src: logo,
-              url: '/'
-            },
-            link: {
-              name: 'Link',
-              description: '',
-              field: [
-                {
-                  name: 'Home link',
-                  text: 'Portfolio',
-                  url: '/',
-                  order: 1
-                }, {
-                  name: 'Skills Link',
-                  text: 'Compétences',
-                  url: '/skills',
-                  order: 2
-                }
-              ]
-            },
-            langIcon: {
-              name: 'LangIcon',
-              description: '',
-              field: [
-                {
-                  name: 'English',
-                  text: 'Anglais',
-                  code: 'En',
-                  icon: lang,
-                  order: 1
-                }, {
-                  name: 'French',
-                  text: 'Français',
-                  icon: react,
-                  code: 'Fr',
-                  order: 1
-                }
-              ]
+      option: {
+        logo: {
+          name: 'Logo',
+          text: 'AS',
+          description: '',
+          icon: 'logo',
+          img_src: logo,
+          url: '/'
+        },
+        link: {
+          name: 'Link',
+          description: '',
+          field: [
+            {
+              name: 'Home link',
+              text: 'Portfolio',
+              url: '/',
+              order: 1
+            }, {
+              name: 'Skills Link',
+              text: 'Compétences',
+              url: '/skills',
+              order: 2
             }
-          }
+          ]
         }
-      ]
+      }
     },
     Header: {
       name: 'header',
@@ -801,17 +775,17 @@ export default {
               field: [
                 {
                   name: 'Commerce',
-                  icon:'sales',
+                  icon: 'sales',
                   text: `Un bon site internet est la clé pour le developpement de votre Business.`,
                   order: 1
                 }, {
                   name: 'Marketing',
-                  icon:'marketing',
+                  icon: 'marketing',
                   text: `Un contenu unique et personalisé, parfaitement adapté pour partager vos idées.`,
                   order: 2
                 }, {
                   name: 'Code',
-                  icon:'code',
+                  icon: 'code',
                   text: `Code quality, créativité et apprentissage sont mes mots-clés.`,
                   order: 3
                 }
@@ -905,7 +879,7 @@ export default {
         }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
-          type: 'side-project',
+          type: 'side_project',
           placement: '/',
           order: 4,
           option: {
@@ -980,7 +954,7 @@ export default {
         }, {
           name: 'type your Section name here',
           description: 'this is just for app use',
-          type: 'other-skills',
+          type: 'knowledge',
           placement: '/skills',
           order: 1,
           option: {

@@ -15,6 +15,7 @@ export const StyledNavBar = styled.nav`
   align-content: center;
   align-items: center;
   flex-flow: row nowrap;
+  justify-content:space-between;
   box-shadow: ${props=>(props.flag?`0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)`:0)};
   display: flex;
   flex: 1 0 auto;

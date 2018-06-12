@@ -1,21 +1,23 @@
 import React, {Component, Fragment} from "react";
 import Button from '../../Components/Button'
-import HeadTitle from '../../Components/HeadTitle'
+import {Title} from '../../Components/Text'
 import {SectionCard} from "../../Components/Cards";
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
 import IconLoad from '../../Components/SvgIcon/'
+import {sort_by} from '../../utils/constMethod'
 
 const Contact = ({dispatch, data}) => {
   const {background, title, subtitle, button, logo} = data
   return (
     <SectionCard src={background.path}>
         <IconLoad size={10} icon={logo.icon} alt="logo"/>
-        <HeadTitle>
-          {title.text}</HeadTitle>
+        <Title>
+          {title.text}</Title>
         <div align="center">
           {button
             .field
+            .sort(sort_by('DESC','order'))
             .map((button, n) => <Button
               key={n}
               onClick={() => {

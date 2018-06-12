@@ -1,6 +1,6 @@
 import React from 'react'
 import {SectionCard} from '../../../Components/Cards'
-import Layout from '../../../Components/Grid/Layout'
+import {Layout} from '../../../Components/Grid/'
 import {SocialMedia} from '../../socialMedia'
 
 export default ({data}) => {
