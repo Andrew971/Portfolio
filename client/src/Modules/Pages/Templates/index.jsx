@@ -12,8 +12,6 @@ import {templateComponents} from './export'
 
     async componentDidMount() {
       const {type} = this.props
-      console.log(type)
-      console.log(templateComponents)
     templateComponents
     .filter(res=>type.toUpperCase()=== res.name.toUpperCase())
     .map(res=> this.setState({component: res.component}))
@@ -21,7 +19,6 @@ import {templateComponents} from './export'
 
     render() {
       const C = this.state.component;
-      console.log(C)
       return C ? <C {...this.props} /> : null;
     }
   }
