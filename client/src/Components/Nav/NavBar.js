@@ -40,9 +40,10 @@ export default class NavBar extends Component {
   }
   
   componentDidMount=()=>{
-    window.addEventListener('scroll',(e)=>{
-      let scroll = e.target.scrollingElement.scrollTop
-      let clientHeight = e.target.scrollingElement.clientHeight
+    document.addEventListener('scroll',(e)=>{
+      console.log(e)
+      let scroll = e.target.documentElement.scrollTop || e.target.body.scrollTop
+      let clientHeight = e.target.documentElement.clientHeight||e.target.body.clientHeight
       let show = clientHeight - 100
       if(scroll >= show){
         this.setState({flag:true})
