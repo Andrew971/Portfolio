@@ -7,25 +7,26 @@ class Footer extends Component {
 
   render() {
     const {pathname} = this.props.location
-    const {data} = this.props
+    const {data,share} = this.props
     const footerData = data
       .Footer
       .field
       .filter(footer => (footer.placement === pathname))
       .map(footer => footer.option)
+      const{socialLink} = share.option
     return (
       <Fragment>
         {footerData.map((footer, n) => <Fragment key={n}>
           <FooterSection data={footer}/>
-          <Copyright data={footer}/>
         </Fragment>)}
-
+        <Copyright data={socialLink}/>
       </Fragment>
     );
   }
 }
 const mapStateToProps = (state) => {
-  return {Theme: state.UI.Theme, data: state.UI.websiteContent};
+  return {Theme: state.UI.Theme, data: state.UI.websiteContent,    share: state.UI.sharedContent,
+  };
 };
 
 export default withRouter(connect(mapStateToProps)(Footer));

@@ -1,19 +1,12 @@
 import React, {Fragment} from 'react';
 import Layout from '../Components/Grid/Layout'
+import {sort_by} from '../utils/constMethod'
 
-const sort_by = (order, value) => {
-  if (order === 'ASC') {
-    return (a, b) => b[value] - a[value]
-  } else if (order === 'DESC') {
-    return (a, b) => a[value] - b[value]
-  }
-}
 
 export const SocialMedia = ({data}) => {
-  const {link} = data
-
-  return (<Layout items xs md lg xl display="inline-flex" direction="row" justify="space-around" width="20rem">
-  {link
+console.log(data)
+  return (<Layout items xs md lg xl display="inline-flex" direction="row" justify="space-around" width="20rem" padding="0">
+  {data
   .field
 .sort(sort_by('DESC', 'order'))
 .map((link,n)=>
