@@ -5,7 +5,7 @@ import {SocialMedia} from '../../socialMedia'
 
 export default ({data}) => {
   return (
-    <SectionCard primary alignItems="flex-start">
+    <SectionCard primary alignItems="flex-start" style={{padding:'2rem'}}>
             <Layout container md lg xl direction="row-reverse" justify="space-between" alignItems="center">
               <SocialMedia data={data}/>
               <Layout item width="40%">

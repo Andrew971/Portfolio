@@ -27,10 +27,10 @@ padding: 2rem 2rem;
 `}
 ${media.laptop`
 background-attachment: fixed;
-padding: 2rem 5rem;
+padding: 5rem 5rem;
 `}
 ${media.desktop`
-padding: 2rem 5rem;
+padding: 5rem 5rem;
 background-attachment: fixed;
 `}
 `;

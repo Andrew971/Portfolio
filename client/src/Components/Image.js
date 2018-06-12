@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export default styled.img`
+const Image = styled.img`
     background-position: center;
     background-size: cover;
     background-image: ${props =>(props.src ?`url(${props.src})`:'grey')};
+    background-size:cover;
     width:100%;
     max-width: ${props =>(props.size ?`${props.size}rem`:'5rem')};
     margin:auto;
@@ -16,3 +17,7 @@ export default styled.img`
 
     }
   `;
+
+export const ImgageDiv = Image.withComponent('img')
+
+export default Image
