@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {media} from './breakpoint'
 
 export default styled.span `
 display: inline-flex;
@@ -27,16 +28,15 @@ user-select: none;
        display:block;
      }
 
-
   a {
     display:block;
     color: white;
     text-decoration: none;
-  }
-
-  a:hover {
+  &:hover {
     text-decoration: none;
   }
+}
+
     .dropdown {
         display:none;
          position: absolute;
@@ -59,8 +59,9 @@ user-select: none;
      }
 }
     }
-    @media (max-width: 740px) {
-      height: auto;
+
+    ${media.phone `
+    height: auto;
       flex-direction: column;
      .dropdown {
        position:absolute;
@@ -70,24 +71,11 @@ user-select: none;
          span {
          color: white;
          text-align: center;
-
-     }
-     span:hover {
+     :hover {
        background-color: rgba(50,50,50,0.5);
      }
      }
     }
-  
-  @media (max-width: 840px) {
+`}
 
-span{
-  padding:0 2rem;
-}
-
-.dropdown-content {
-
-     top:100%;
-
- }
-}
 `;
