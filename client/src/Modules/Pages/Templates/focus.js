@@ -11,7 +11,7 @@ const Focus = ({data}) => {
 return (
 <SectionCard>
   <Title primary>{title.text}</Title>
-  <Grid container md lg xl direction="row" justify="space-around">
+  <Grid container md lg xl direction="row" justify="space-around" autoFit>
   {
     image
     .field   
