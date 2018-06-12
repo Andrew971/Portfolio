@@ -15,13 +15,6 @@ import {templateComponents} from './export'
       templateComponents
     .filter(res=>type.toUpperCase()=== res.name.toUpperCase())
     .map(res=> this.setState({component: res}))
-
-      // const res = await import(`./${this.props.type}`)
-      //   const { default: component } =  res;
-      //   this.setState({
-      //     component: component
-      //   });
-      
     }
 
     render() {
