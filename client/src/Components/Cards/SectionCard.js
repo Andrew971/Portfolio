@@ -19,7 +19,7 @@ transition : background-color 300ms ease-in-out
 
 
 ${media.phone`
-padding: 2rem 2rem;
+padding: 5rem 2rem;
 `}
 
 ${media.tablet`
