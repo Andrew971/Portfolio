@@ -14,7 +14,7 @@ export default class IconLoad extends Component {
     const {icon} = this.props
     iconComponents
     .filter(res=>icon.toUpperCase()=== res.name.toUpperCase())
-    .map(res=> this.setState({component: res}))
+    .map(res=> this.setState({component: res.component}))
   }
 
   render() {

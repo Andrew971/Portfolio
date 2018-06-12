@@ -16,7 +16,7 @@ import {templateComponents} from './export'
       console.log(templateComponents)
     templateComponents
     .filter(res=>type.toUpperCase()=== res.name.toUpperCase())
-    .map(res=> this.setState({component: res}))
+    .map(res=> this.setState({component: res.component}))
     }
 
     render() {

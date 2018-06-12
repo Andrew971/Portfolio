@@ -5,4 +5,27 @@ import Project from './project'
 import Lab from './side_project'
 import Services from './services'
 
-export const templateComponents = [Biography, Focus, Knowledge, Project, Lab, Services];
+export const templateComponents = [
+  {
+    name: 'Biography',
+   component: Biography
+  }, {
+    name: 'Focus',
+    component:Focus
+  }, {
+    name: 'Knowledge',
+
+    component:Knowledge
+  }, {
+    name: 'Project',
+
+    component:Project
+  }, {
+    name: 'Lab',
+
+    Lab
+  }, {
+    name: 'Services',
+    component: Services
+  }
+];
