@@ -7,6 +7,14 @@ flex-wrap: ${props=>props.wrap?props.wrap:'nowrap'};
 flex-direction:${props=>props.direction?props.direction:'column'};
 align-items: ${props=>props.alignItems?props.alignItems:'flex-start'};
 justify-content:${props=>props.justify?props.justify:'space-evenly'};
+${props=>props.grid
+  ?css`
+  grid-template-columns:${props=>`repeat(${props.grid}, 1fr)`};
+`
+:css`
+grid-template-columns: ${props=>props.autoFit?'repeat(auto-fit, minmax(15rem, 1fr))':'repeat(auto-fill, minmax(20rem, 1fr))'} ;
+`
+}
 `}
 `;
 const ItemsDevice = (device) => css`
@@ -18,13 +26,22 @@ ${media[device]`
   align-items: ${props=>props.alignItems?props.alignItems:'flex-start'};
   justify-content:${props=>props.justify?props.justify:'center'};
   text-align:${props=>props.text?props.text:'justify'};
+  grid-column:${props=>props.span?`span ${props.span}`:'span 1'};
 `}
 `;
 
 const Container = css`
 display: grid;
 grid-gap: 3rem;
-grid-template-columns: ${props=>props.autoFit?'repeat(auto-fit, minmax(15rem, 1fr))':'repeat(auto-fill, minmax(15rem, 1fr))'} ;
+${props=>props.grid
+  ?css`
+  grid-template-columns:${props=>`repeat(1, 1fr)`};
+`
+:css`
+grid-template-columns: ${props=>props.autoFit?'repeat(auto-fit, minmax(15rem, 1fr))':'repeat(auto-fill, minmax(20rem, 1fr))'} ;
+`
+}
+
 justify-items: center;
 align-items: center;
 
@@ -45,6 +62,7 @@ align-items:center;
 justify-content:flex-start;
 width:100%;
 height:100%;
+grid-column:span 1;
 h1,h2,h3,h4,h5,h6{
   margin-top:2rem;
 }

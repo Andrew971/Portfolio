@@ -108,6 +108,22 @@ export default {
     }
   },
   En : {
+    Modal:{
+      name: 'Naven',
+      description: '',
+      field: [
+        {
+      name:"Contact",
+      description: '',
+      type:'contact',
+      option: {
+        title: {
+              text: `I need a website`
+            },
+      }
+    }
+    ]
+    },
     Nav: {
       name: 'Naven',
       description: '',

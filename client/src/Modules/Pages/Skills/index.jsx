@@ -29,8 +29,6 @@ class Skills extends PureComponent {
 const mapStateToProps = (state) => {
 
   return {
-    Modal: state.UI.Modal,
-    modalSAtatus: state.UI.modalSAtatus,
     data: state.UI.websiteContent,
     Theme: state.UI.Theme, 
   }

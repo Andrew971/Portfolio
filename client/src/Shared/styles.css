@@ -3,29 +3,3 @@ body {
   width: 100%;
   padding-right: 0;
   padding-left: 0; }
-
-.App-logo {
-  height: 60px; }
-
-form textarea, form select, form input {
-  display: block;
-  width: 100%;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
-  margin: 0.5rem 0;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
-
-form select {
-  height: calc(2.25rem + 2px); }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }

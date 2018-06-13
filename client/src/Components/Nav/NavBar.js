@@ -41,7 +41,7 @@ export default class NavBar extends Component {
   
   componentDidMount=()=>{
     document.addEventListener('scroll',(e)=>{
-      console.log(e)
+      // console.log(e)
       let scroll = e.target.documentElement.scrollTop || e.target.body.scrollTop
       let clientHeight = e.target.documentElement.clientHeight||e.target.body.clientHeight
       let show = clientHeight - 100

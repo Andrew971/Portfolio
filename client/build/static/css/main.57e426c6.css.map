@@ -1,0 +1,1 @@
+{"version":3,"sources":["Shared/styles.css"],"names":[],"mappings":"AAAA,KACE,SACA,WACA,gBACA,cAAgB","file":"static/css/main.57e426c6.css","sourcesContent":["body {\n  margin: 0;\n  width: 100%;\n  padding-right: 0;\n  padding-left: 0; }\n\n\n\n// WEBPACK FOOTER //\n// ./src/Shared/styles.css"],"sourceRoot":""}

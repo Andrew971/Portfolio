@@ -4,6 +4,7 @@ import {apiURL} from "../../js/api";
 
 
 export function* Worker(action) {
+  console.log(action)
   try {
     const res = yield call(axios.post, apiURL+'contact', action.payload);
     yield put({type:'CONTACT_INFO_RESULT', payload:res.data})
