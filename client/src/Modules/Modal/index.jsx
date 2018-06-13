@@ -1,28 +1,43 @@
-import React, {Component} from "react";
-import ModalEn from './en'
-// import {ModalTest} from './en'
-import ModalFr from './fr'
+import React, {Component,Fragment} from "react";
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
+import TemplateLoad from './Templates'
 
-class NavContent extends Component {
-
+  class Modal extends Component {
   render() {
-    const {Language} = this.props
-    switch (Language) {
-      case 'En':
-        return (<ModalEn counter={this.props.counter}/>)
-      case 'Fr':
-        return (<ModalFr counter={this.props.counter}/>)
-      default:
-        return (<ModalEn counter={this.props.counter}/>);
-    }
+    const { dispatch, modalSAtatus,data, ModalType} = this.props
+    let type = ModalType.toUpperCase() 
+    const ModalData = data
+      .Modal
+      .field
+      .filter(modal => modal.name.toUpperCase() === type)
+      .map(modal=>modal.option)
+
+      return (
+      <Fragment>
+        {
+          ModalData.map((data,n)=>
+          <Fragment key={n}>
+          <TemplateLoad  type={data.type} dispatch={dispatch} modalSAtatus={modalSAtatus} data={data}/>
+          </Fragment>
+          )
+        }
+
+      </Fragment>
+    )
   }
 }
 
+
 const mapStateToProps = (state) => {
 
-  return {Language: state.UI.Language}
+  return {
+    ModalType: state.UI.Modal, 
+  modalSAtatus: state.UI.modalSAtatus,
+  data: state.UI.websiteContent,
+  }
 
 }
-export default withRouter(connect(mapStateToProps)(NavContent));
+
+export default withRouter(connect(mapStateToProps)(Modal));
+

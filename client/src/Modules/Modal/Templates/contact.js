@@ -1,18 +1,18 @@
-import React from "react";
-
-import ModalWrapper from '../../../Components/Modal/ModalWrapper'
-import ModalContent from '../../../Components/Modal/ModalContent'
-import ModalClose from '../../../Components/Modal/ModalClose'
-import ModalHeader from '../../../Components/Modal/ModalHeader'
-import ModalFooter from '../../../Components/Modal/ModalFooter'
-import ModalButton from '../../../Components/Modal/ModalButton'
-import ModalError from '../../../Components/Modal/ModalError'
-// import {sort_by} from '../../utils/constMethod'
+import React, {Fragment} from "react";
+import { 
+ModalWrapper,
+ModalContent,
+ModalClose,
+ModalHeader,
+ModalFooter,
+ModalButton,
+ModalError} from '../../../Components/Modal'
+import {sort_by} from '../../../utils/constMethod'
 import {TextField} from '../../../Components/inputForm'
 import {Layout, Grid} from '../../../Components/Grid'
 
 const ContactForm = ({dispatch, modalSAtatus, data}) => {
-  // const {title} = data
+  const {title, input,errorMessage} = data
   return (
     <ModalWrapper>
       <ModalContent>
@@ -22,74 +22,90 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
         }}>&times;</ModalClose>
 
         <ModalHeader>
-          <h5> I Need a website</h5>
+          <h5>{title.text}</h5>
         </ModalHeader>
         <form ref={self => this.contactForm = self}>
           <Grid container md lg xl grid={2}>
-            <Grid Grid items>
-              <TextField
-                type="text"
-                label="First Name"
-                name="firstname"
-                placeholder="first name"
-                id="stmt"
-                autoComplete="given-name"/>
-            </Grid>
-            <Grid items>
-              <TextField
-                type="text"
-                label="Last Name"
-                name="lastname"
-                placeholder="Last name"
-                id="stmt"
-                autoComplete="family-name"/>
-            </Grid>
-            <Grid items>
-              <TextField
-                type="text"
-                label="Phone Number"
-                name="phone"
-                placeholder="Phone Number"
-                id="stmt"
-                autoComplete="tel-national"/>
+            {input
+              .field
+              .sort(sort_by('DESC', 'order'))
+              .map(
+              (field, n) =><Fragment key = {
+                n
+              } > {
+                field.fieldType === 'single' && <Grid
+                    Grid
+                    items
+                    span={n === (input.field.length - 1) || (n === (input.field.length - 2) && (n % 2 === 0))
+                    ? 2
+                    : 1}
+                    md
+                    lg
+                    xl>
+                    <TextField
+                      type={field.inputType}
+                      label={field.label}
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      id={field.id}
+                      autoComplete={field.autoComplete}
+                      rows={field.rows}
+                      multiline={(field.fieldType === "multiline")
+                      ? true
+                      : false}/>
+                  </Grid>
+              }
+              {
+                field.fieldType === 'multiline' && <Grid
+                    Grid
+                    items
+                    span={n === (input.field.length - 1)
+                    ? 2
+                    : 1}
+                    md
+                    lg
+                    xl>
+                    <TextField
+                      type={field.inputType}
+                      label={field.label}
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      id={field.id}
+                      autoComplete={field.autoComplete}
+                      rows={field.rows}
+                      multiline/>
+                  </Grid>
+              }
+              {
+                field.fieldType === 'select' && <Grid
+                    Grid
+                    items
+                    span={n === (input.field.length - 1)
+                    ? 2
+                    : 1}
+                    md
+                    lg
+                    xl>
+                    <TextField
+                      label={field.label}
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      id={field.id}
+                      autoComplete={field.autoComplete}
+                      select
+                      defaultValue="">
+                      <option disabled></option>
+                      {field
+                        .option
+                        .map((option, n) => <option value={option.value} key={n}>{option.text}</option>)
+}
+                    </TextField>
+                  </Grid>
+              } </Fragment>)}
 
-            </Grid>
-            <Grid items>
-              <TextField
-                label="Prefered Language"
-                name="language"
-                id="stmt"
-                autoComplete="language"
-                select
-                defaultValue="">
-                <option disabled></option>
-                <option value="English">English</option>
-                <option value="french">French</option>
-              </TextField>
-            </Grid>
-            <Grid items md lg xl span={2}>
-              <TextField
-                type="text"
-                label="E-mail"
-                name="email"
-                placeholder="exemple@xxxx.com"
-                id="stmt"
-                autoComplete="email"/>
-            </Grid>
-            <Grid items md lg xl span={2}>
-              <TextField
-                label="Message"
-                name="message"
-                rows="4"
-                placeholder="Tell me the headlines of your project."
-                id="stmt"
-                autoComplete="tel-national"
-                multiline/>
-            </Grid>
             {modalSAtatus === false && <Grid items md lg xl span={2}>
               <ModalError>
-                Sorry...A problem occured when we tried to send your email. Please check your
-                internet connection and try again.
+                {errorMessage}
               </ModalError>
             </Grid>
 }
@@ -108,26 +124,23 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
             <Layout items>
               <ModalButton
                 onClick={() => {
-                const {
-                  firstname,
-                  lastname,
-                  email,
-                  phone,
-                  language,
-                  message
-                } = this.contactForm;
-                dispatch({
-                  type: 'SEND_CONTACT_INFO',
-                  payload: {
-                    subject: "I want a website",
-                    firstname: firstname.value,
-                    lastname: lastname.value,
-                    email: email.value,
-                    phone: phone.value,
-                    language: language.value,
-                    message: message.value
-                  }
-                })
+                let info = {}
+                 const test = Object.values(this.contactForm)
+                  .filter(input => input.value !== undefined)
+                  .map(async (input) => {
+                    Object.defineProperty(info, input.name, {
+                      value: input.value,
+                      writable: false
+                    });
+                    info.subject = title.text
+                    return info;
+                  })
+                  Promise.all(test).then(()=>{
+                    dispatch({
+                    type: 'SEND_CONTACT_INFO',
+                    payload: info
+                  })                  
+                  })
               }}
                 primary="primary">Send</ModalButton>
             </Layout>

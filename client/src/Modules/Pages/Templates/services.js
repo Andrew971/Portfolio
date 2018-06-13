@@ -8,7 +8,6 @@ import {sort_by} from '../../../utils/constMethod'
 
 const Services = ({data}) => {
   const {image,title} = data
-  console.log(data)
   return (
     <SectionCard>
       <Title primary>{title.text}</Title>
