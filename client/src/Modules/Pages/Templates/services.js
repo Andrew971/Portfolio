@@ -6,8 +6,9 @@ import IconLoad from '../../../Components/SvgIcon'
 import LazyLoad from 'react-lazyload';
 import {sort_by} from '../../../utils/constMethod'
 
-const Services = ({Theme, data}) => {
+const Services = ({data}) => {
   const {image,title} = data
+  console.log(data)
   return (
     <SectionCard>
       <Title primary>{title.text}</Title>

@@ -12,7 +12,7 @@ import {TextField} from '../../../Components/inputForm'
 import {Layout, Grid} from '../../../Components/Grid'
 
 const ContactForm = ({dispatch, modalSAtatus, data}) => {
-  const {title} = data
+  // const {title} = data
   return (
     <ModalWrapper>
       <ModalContent>
@@ -22,7 +22,7 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
         }}>&times;</ModalClose>
 
         <ModalHeader>
-          <h5>{title.text}</h5>
+          <h5> I Need a website</h5>
         </ModalHeader>
         <form ref={self => this.contactForm = self}>
           <Grid container md lg xl grid={2}>
@@ -86,9 +86,7 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
                 autoComplete="tel-national"
                 multiline/>
             </Grid>
-            {modalSAtatus === false && <Grid items style={{
-              gridColumn: 'span 2'
-            }}>
+            {modalSAtatus === false && <Grid items md lg xl span={2}>
               <ModalError>
                 Sorry...A problem occured when we tried to send your email. Please check your
                 internet connection and try again.

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-// import ModalEn from './en'
-import {ModalTest} from './en'
+import ModalEn from './en'
+// import {ModalTest} from './en'
 import ModalFr from './fr'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
@@ -11,11 +11,11 @@ class NavContent extends Component {
     const {Language} = this.props
     switch (Language) {
       case 'En':
-        return (<ModalTest counter={this.props.counter}/>)
+        return (<ModalEn counter={this.props.counter}/>)
       case 'Fr':
         return (<ModalFr counter={this.props.counter}/>)
       default:
-        return (<ModalTest counter={this.props.counter}/>);
+        return (<ModalEn counter={this.props.counter}/>);
     }
   }
 }

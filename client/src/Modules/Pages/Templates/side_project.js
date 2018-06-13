@@ -10,7 +10,6 @@ import {StyleLink} from "../../../Components/Button";
 
  const Lab = ({data}) => {
   let {project,title} = data
-
   return (
   <SectionCard>
     <Title primary>

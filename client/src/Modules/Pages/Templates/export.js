@@ -8,24 +8,21 @@ import Services from './services'
 export const templateComponents = [
   {
     name: 'Biography',
-   component: Biography
+    component: Biography
   }, {
     name: 'Focus',
-    component:Focus
+    component: Focus
   }, {
     name: 'Knowledge',
-
-    component:Knowledge
+    component: Knowledge
   }, {
     name: 'Project',
-
-    component:Project
+    component: Project
   }, {
     name: 'Lab',
-
-    Lab
+    component: Lab
   }, {
-    name: 'Services',
+    name: 'services',
     component: Services
   }
 ];

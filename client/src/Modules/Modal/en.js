@@ -16,7 +16,7 @@ import {Layout, Grid} from '../../Components/Grid'
 
 
 const HireForm = ({dispatch, modalSAtatus, data}) => {
-  const {title} = data
+  // const {title} = data
   return (
     <ModalWrapper>
       <ModalContent>
@@ -26,7 +26,7 @@ const HireForm = ({dispatch, modalSAtatus, data}) => {
         }}>&times;</ModalClose>
 
         <ModalHeader>
-          <h5>{title.text}</h5>
+          <h5>Looking to hire</h5>
         </ModalHeader>
         <form ref={self => this.contactForm = self}>
           <Grid container md lg xl grid={2}>
@@ -129,7 +129,8 @@ const HireForm = ({dispatch, modalSAtatus, data}) => {
                   email,
                   phone,
                   language,
-                  message
+                  message,
+                  company
                 } = this.contactForm;
                 dispatch({
                   type: 'SEND_CONTACT_INFO',
@@ -140,7 +141,8 @@ const HireForm = ({dispatch, modalSAtatus, data}) => {
                     email: email.value,
                     phone: phone.value,
                     language: language.value,
-                    message: message.value
+                    message: message.value,
+                    company: company.value
                   }
                 })
               }}
