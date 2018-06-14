@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div `
+font-family:  Optima, sans-serif	;;
   text-align: center;
   font-weight:1.04px;
   color: white;
