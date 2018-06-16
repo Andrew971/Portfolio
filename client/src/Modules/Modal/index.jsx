@@ -5,9 +5,9 @@ import TemplateLoad from './Templates'
 
   class Modal extends Component {
   render() {
-    const { dispatch, modalSAtatus,data, ModalType} = this.props
+    const { dispatch, modalSAtatus,Data, ModalType} = this.props
     let type = ModalType.toUpperCase() 
-    const ModalData = data
+    const ModalData = Data
       .Modal
       .field
       .filter(modal => modal.name.toUpperCase() === type)
@@ -32,9 +32,9 @@ import TemplateLoad from './Templates'
 const mapStateToProps = (state) => {
 
   return {
-    ModalType: state.UI.Modal, 
-  modalSAtatus: state.UI.modalSAtatus,
-  data: state.UI.websiteContent,
+    ModalType: state.Share.Modal, 
+  modalSAtatus: state.Share.modalSAtatus,
+  Data: state.Share.websiteContent,
   }
 
 }

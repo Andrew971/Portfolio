@@ -3,7 +3,7 @@ import {SectionCard} from "../../../Components/Cards";
 import Avatar from "../../../Components/Avatar";
 import {Layout} from '../../../Components/Grid'
 import {Headlines} from "../../../Components/Text";
-import {sort_by} from '../../../utils/constMethod'
+import {sort_by} from '../../../Utils/constants/constMethod'
 import LazyLoad from 'react-lazyload';
 
 
@@ -20,7 +20,7 @@ import LazyLoad from 'react-lazyload';
         </LazyLoad> 
       <Layout items>
         <Headlines>
-          <h1>{title.text}</h1>
+          <h2>{title.text}</h2>
           <h3>
             {subtitle.text}</h3>
           {paragraph

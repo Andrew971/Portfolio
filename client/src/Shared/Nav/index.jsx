@@ -27,7 +27,7 @@ class Nav extends Component {
     const {data,share, dispatch, Language} = this.props
     const {visible} = this.state
     const {logo, link} = data.Nav.option
-    const {langIcon} = share.option
+    const {langIcon} = share
 
     return (
       <NavBar open={visible}>
@@ -72,9 +72,9 @@ class Nav extends Component {
 }
 const mapStateToProps = state => {
   return {
-    data: state.UI.websiteContent, 
-    share: state.UI.sharedContent,
-     Language: state.UI.Language};
+    data: state.Share.websiteContent, 
+    share: state.Share.sharedContent,
+     Language: state.Share.Language};
 };
 
 export default withRouter(connect(mapStateToProps)(Nav));

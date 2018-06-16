@@ -4,7 +4,7 @@ import {Layout} from '../../../Components/Grid'
 import {Title} from "../../../Components/Text";
 import Image from '../../../Components/Image'
 import LazyLoad from 'react-lazyload';
-import {sort_by} from '../../../utils/constMethod'
+import {sort_by} from '../../../Utils/constants/constMethod'
 import {StyleLink} from "../../../Components/Button";
 
 
@@ -33,7 +33,6 @@ import {StyleLink} from "../../../Components/Button";
             {project.link.url && (
               <StyleLink
                 onClick={() => {
-                console.log(window.location);
                 window.open(project.link.url, "_blank");
               }}
                 primary="primary">

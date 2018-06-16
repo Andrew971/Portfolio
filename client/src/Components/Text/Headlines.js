@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default styled.div`
 font-size:1.3rem;
 text-align:justify;
-
+text-justify: distribute;
 
 h1,h2,h3{
   text-align:left;

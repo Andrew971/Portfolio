@@ -6,7 +6,7 @@ ModalConfirm,
 ModalButton
 } from '../../../Components/Modal'
 import {Layout} from '../../../Components/Grid'
-import {sort_by} from '../../../utils/constMethod'
+import {sort_by} from '../../../Utils/constants/constMethod'
 
  const Confirmation = ({dispatch , data}) =>{
    const  { title, paragraph, } = data

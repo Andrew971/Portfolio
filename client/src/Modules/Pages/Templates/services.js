@@ -1,10 +1,10 @@
 import React from 'react'
 import {SectionCard} from "../../../Components/Cards";
-import {Grid} from '../../../Components/Grid'
+import {Grid,Layout} from '../../../Components/Grid'
 import {Title} from "../../../Components/Text";
 import IconLoad from '../../../Components/SvgIcon'
 import LazyLoad from 'react-lazyload';
-import {sort_by} from '../../../utils/constMethod'
+import {sort_by} from '../../../Utils/constants/constMethod'
 
 const Services = ({data}) => {
   const {image,title} = data
@@ -17,15 +17,15 @@ const Services = ({data}) => {
           .sort(sort_by('DESC', 'order'))
           .map((services, n) =>
           <Grid items key={n}>
-              <Grid items>
+              <Layout items>
               <LazyLoad height={200} offset={100}>
                   <IconLoad  icon={services.icon||'hamburger'}/>
                       </LazyLoad>
-                      </Grid>
-                      <Grid items >
-                    <h2>{services.name}</h2>
+                      </Layout>
+                      <Layout items>
+                    <h3>{services.name}</h3>
                     <p>{services.text}</p>
-                  </Grid>
+                  </Layout>
                   </Grid>
 
           )}

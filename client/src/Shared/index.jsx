@@ -7,7 +7,7 @@ import Header from './Header';
 import Nav from './Nav';
 import {ThemeProvider} from 'styled-components';
 import Modal from '../Modules/Modal'
-import Portal from '../js/portal'
+import Portal from '../Utils/portal'
 
 class App extends Component {
 
@@ -33,8 +33,8 @@ class App extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    Theme: state.UI.Theme,
-    modalDisplay: state.UI.modalDisplay,
+    Theme: state.Share.Theme,
+    modalDisplay: state.Share.modalDisplay,
   };
 };
 

@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {withRouter, Switch, Route} from 'react-router-dom'
-import MyLoadable from '../../js/MyLoadable'
+import MyLoadable from '../../Utils/MyLoadable'
+import NotFound from '../404'
 
-const AsyncHome = MyLoadable(() => import('../../Modules/Pages/Home'));
-const AsyncSkills = MyLoadable(() => import('../../Modules/Pages/Skills'));
+const AsyncHome = MyLoadable(() => import('../../Modules/Pages/index'));
+const AsyncSkills = MyLoadable(() => import('../../Modules/Pages/index'));
 
 class MainContainer extends Component {
 
@@ -15,6 +16,8 @@ class MainContainer extends Component {
             <AsyncHome {...routeProps}/>}/>
         <Route path='/skills' render={(routeProps) =>
             <AsyncSkills {...routeProps}/>}/>
+        <Route render={(routeProps) =>
+            <NotFound {...routeProps}/>}/>
       </Switch>
     </main>)
   }

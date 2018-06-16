@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 import {NavLink} from "react-router-dom";
 import {NavItem} from "../../../Components/Nav";
 import Icon from '../../../Components/icon'
-import {sort_by} from '../../../utils/constMethod'
+import {sort_by} from '../../../Utils/constants/constMethod'
 
 export default ({dispatch,Link,LangIcon,toggleHide,Language,}) => {
 

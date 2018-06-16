@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div `
-font-family:  Optima, sans-serif	;;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-align: center;
   font-weight:1.04px;
   color: white;
@@ -10,8 +10,8 @@ font-family:  Optima, sans-serif	;;
   font-size: 2.5em;  
   display:flex;
   justify-content: space-around;
-
-  @media (min-width: 770px) {
+  margin-bottom:2rem;
+  /* @media (min-width: 770px) {
     font-size: 3rem;  
-  }
+  } */
 `;

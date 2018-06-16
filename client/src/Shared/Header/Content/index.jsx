@@ -1,7 +1,7 @@
 import React,{Fragment} from "react";
 import Button from '../../../Components/Button'
 import {HeadTitle} from '../../../Components/Text'
-import {sort_by} from '../../../utils/constMethod'
+import {sort_by} from '../../../Utils/constants/constMethod'
 
   const HeaderContent = ({history,dispatch,data}) =>{ 
   const { button , title} = data

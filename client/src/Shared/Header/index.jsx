@@ -25,7 +25,7 @@ class HeaderContainer extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    data: state.UI.websiteContent
+    data: state.Share.websiteContent
   };
 };
 

@@ -4,7 +4,7 @@ import {Title} from "../../../Components/Text";
 import {Grid} from '../../../Components/Grid'
 import {ImgageDiv} from '../../../Components/Image'
 import LazyLoad from 'react-lazyload';
-import {sort_by} from '../../../utils/constMethod'
+import {sort_by} from '../../../Utils/constants/constMethod'
 
 const Focus = ({data}) => {
   const {image,title} = data

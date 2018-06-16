@@ -7,7 +7,7 @@ ModalHeader,
 ModalFooter,
 ModalButton,
 ModalError} from '../../../Components/Modal'
-import {sort_by} from '../../../utils/constMethod'
+import {sort_by} from '../../../Utils/constants/constMethod'
 import {TextField} from '../../../Components/inputForm'
 import {Layout, Grid} from '../../../Components/Grid'
 

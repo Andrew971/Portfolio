@@ -7,9 +7,9 @@ export default styled.h1`
   align-content:center;
   justify-content:space-around;
   font-size: 3.5em;
-  font-family:  Optima, sans-serif	;;
+  font-family:  lato, sans-serif	;;
   text-align: center;
-  font-weight:1.04px;
+  font-weight:1.54px;
   color: ${props => (props.primary ?props.theme.primary:props.theme.color.primary)};
   margin-bottom: 5rem;
 

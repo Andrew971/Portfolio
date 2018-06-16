@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import Layout from '../Components/Grid/Layout'
-import {sort_by} from '../utils/constMethod'
+import {sort_by} from '../Utils/constants/constMethod'
 
 
 export const SocialMedia = ({data}) => {

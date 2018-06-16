@@ -1,32 +1,32 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
-import FooterSection from '../../Modules/Footer'
+import TemplateLoad from './Templates'
 import {withRouter} from 'react-router-dom'
 import Copyright from './Copyright'
 class Footer extends Component {
 
   render() {
-    const {pathname} = this.props.location
-    const {data,share} = this.props
-    const footerData = data
-      .Footer
-      .field
-      .filter(footer => (footer.placement === pathname))
-      .map(footer => footer.option)
-      const{socialLink} = share.option
+    const {data, share, dispatch} = this.props
+    const {background, button, logo, subtitle, title} = data.Footer.option
+
+    const {socialLink} = share
     return (
       <Fragment>
-        {footerData.map((footer, n) => <Fragment key={n}>
-          <FooterSection data={footer}/>
-        </Fragment>)}
+          <TemplateLoad
+            type="contact"
+            dispatch={dispatch}
+            background={background}
+            button={button}
+            logo={logo}
+            subtitle={subtitle}
+            title={title}/>
         <Copyright data={socialLink}/>
       </Fragment>
     );
   }
 }
 const mapStateToProps = (state) => {
-  return {Theme: state.UI.Theme, data: state.UI.websiteContent,    share: state.UI.sharedContent,
-  };
+  return {Theme: state.Share.Theme, data: state.Share.websiteContent, share: state.Share.sharedContent};
 };
 
 export default withRouter(connect(mapStateToProps)(Footer));
