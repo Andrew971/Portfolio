@@ -13,6 +13,7 @@ const Image = styled.img`
   display: block;
   padding-bottom:100%;
 }
+
     @media (max-width: 670px) {
 
     }

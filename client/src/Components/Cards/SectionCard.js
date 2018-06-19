@@ -35,12 +35,16 @@ h2{
 }
 
 h3{
+  font-size:1.7em;
+}
+h4{
   font-size:1.5em;
 }
 
 p{
   margin: 1.5rem 0;
 }
+
 
 
 ${media.phone`

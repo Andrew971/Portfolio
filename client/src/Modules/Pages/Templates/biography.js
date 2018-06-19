@@ -5,7 +5,7 @@ import {Layout} from '../../../Components/Grid'
 import {Headlines} from "../../../Components/Text";
 import {sort_by} from '../../../Utils/constants/constMethod'
 import LazyLoad from 'react-lazyload';
-
+import Effects from '../../../Utils/HOC/animation'
 
  const Biography = ({data}) => {
   const {title, subtitle, paragraph, image, background} = data
@@ -16,9 +16,12 @@ import LazyLoad from 'react-lazyload';
       src={background.path}>
       <Layout container lg xl direction="row-reverse" alignItems="center">
       <LazyLoad height={200} offset={100}>
-        <Avatar src={image.field[0].path} srcx2={image.field[0].pathx2}/>  
+        <Effects effect="animation">
+        <Avatar src={image.field[0].path} srcx2={image.field[0].pathx2}/> 
+        </Effects> 
         </LazyLoad> 
       <Layout items>
+      <Effects effect="animation">
         <Headlines>
           <h2>{title.text}</h2>
           <h3>
@@ -34,6 +37,7 @@ import LazyLoad from 'react-lazyload';
               )
             })}
         </Headlines>
+        </Effects> 
       </Layout>
       </Layout>
     </SectionCard>

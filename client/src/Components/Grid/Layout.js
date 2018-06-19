@@ -29,7 +29,6 @@ flex-direction:column;
 align-items: flex-start;
 justify-content:space-evenly;
 flex:1 1 auto;
-
 ${props=>props.xs&&ContainerDevice('phone')}
 ${props=>props.md&&ContainerDevice('tablet')}
 
@@ -46,6 +45,7 @@ const Items = css`
   justify-content:center;
   padding:${props=>props.padding?props.padding:'1.5rem'};
   text-align:left;
+  /* margin:1.5rem; */
 
 ${props=>props.xs&&ItemsDevice('phone')}
 ${props=>props.md&&ItemsDevice('tablet')}

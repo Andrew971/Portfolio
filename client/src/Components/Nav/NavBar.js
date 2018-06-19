@@ -19,6 +19,8 @@ export const StyledNavBar = styled.nav`
   box-shadow: ${props=>(props.flag?`0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)`:0)};
   display: flex;
   flex: 1 0 auto;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
   transition : background 300ms ease-in-out,margin-left 500ms ease-in-out;
   z-index:1;
     @media (max-width: 840px) {

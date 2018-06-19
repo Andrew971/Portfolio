@@ -4,6 +4,12 @@ export default styled.div`
 font-size:1.3rem;
 text-align:justify;
 text-justify: distribute;
+transform:translateX(-90vh);
+
+&.animation{
+transform:translateX(0);
+transition:transform 500ms;
+}
 
 h1,h2,h3{
   text-align:left;

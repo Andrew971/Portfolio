@@ -22,7 +22,7 @@ const Project = ({data}) => {
       .map((project,n) => (
           <Fragment key={n}>
             <Layout items>
-            <LazyLoad height={200} offset={100}>
+            <LazyLoad height={200} offset={100} scroll>
             <Image size={30} src={project.img} alt="Card cap"/>
             </LazyLoad>
             </Layout>
