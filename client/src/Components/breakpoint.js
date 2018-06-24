@@ -52,3 +52,21 @@ export const minMedia = {
     ${ css(...args) }
   }`
 }
+export const maxMedia = {
+  phone: (...args) => css`
+   @media  (max-width: ${Convert.phone}em) {
+      ${ css(...args) }
+    }`,
+  tablet: (...args) => css`
+  @media  (max-width: ${Convert.tablet}em) {
+    ${ css(...args) }
+  }`,
+  laptop: (...args) => css`
+  @media  (max-width: ${Convert.laptop}em) {
+    ${ css(...args) }
+  }`,
+  desktop: (...args) => css`
+  @media (max-width: ${Convert.desktop}em) {
+    ${ css(...args) }
+  }`
+}

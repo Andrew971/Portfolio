@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {media} from './breakpoint'
 
 export default styled.span `
-display: inline-flex;
+display: flex;
 width: 100%;
 min-height:5vh;
 background-color: transparent;

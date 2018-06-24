@@ -28,7 +28,7 @@ class Nav extends Component {
     const {visible} = this.state
     const {logo, link} = data.Nav.option
     const {langIcon} = share
-
+    
     return (
       <NavBar open={visible}>
         <BrandTitle to={logo.url}>

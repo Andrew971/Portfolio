@@ -22,12 +22,12 @@ export default {
           name: 'Home link',
           text: 'Portfolio',
           url: '/',
-          order: 1
+          order: 2
         }, {
           name: 'Skills Link',
           text: 'Skills',
           url: '/skills',
-          order: 2
+          order: 1
         }
       ]
     }

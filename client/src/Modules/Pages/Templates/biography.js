@@ -12,16 +12,16 @@ import Effects from '../../../Utils/HOC/animation'
   return (
     <SectionCard
       className=""
-      primary="primary"
+      primary
       src={background.path}>
       <Layout container lg xl direction="row-reverse" alignItems="center">
       <LazyLoad height={200} offset={100}>
-        <Effects effect="animation">
+      <Effects In="animation" Out="out">
         <Avatar src={image.field[0].path} srcx2={image.field[0].pathx2}/> 
         </Effects> 
         </LazyLoad> 
       <Layout items>
-      <Effects effect="animation">
+      <Effects In="animation" Out="out">
         <Headlines>
           <h2>{title.text}</h2>
           <h3>
@@ -32,6 +32,7 @@ import Effects from '../../../Utils/HOC/animation'
             .map((block, n) => {
               return (
                 <Fragment key={n}>
+                  
                   <p>{block.paragraph}</p>
                 </Fragment>
               )

@@ -10,9 +10,7 @@ export const Button= styled.button`
   border: ${props => (props.primary ? `2px solid ${props.theme.primary}` :`2px solid transparent`)};
   border-radius: 10rem;
   cursor:pointer;
-  &:hover{
-    border: ${props => (props.primary ? `2px solid ${props.theme.primary}` : `2px solid ${props.theme.color.primary}`)};
-  }
+
   @media (max-width: 740px) {
     font-size: 1.3rem;
     margin: 0.3em;

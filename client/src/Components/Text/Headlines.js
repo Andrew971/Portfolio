@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {slideIn,slideOut} from '../Animation'
 
 export default styled.div`
 font-size:1.3rem;
@@ -7,9 +8,13 @@ text-justify: distribute;
 transform:translateX(-90vh);
 
 &.animation{
-transform:translateX(0);
-transition:transform 500ms;
+  ${slideIn('right')}
 }
+
+&.out{
+  ${slideOut('left')}
+}
+
 
 h1,h2,h3{
   text-align:left;

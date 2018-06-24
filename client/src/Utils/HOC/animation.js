@@ -11,28 +11,40 @@ export default class Effects extends Component {
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.scrolling)
+
   }
 
   
   scrolling = (e) => {
-    const scroll = e.target.documentElement.scrollTop || e.target.body.scrollTop;
-    const start = this.isStyledComponent(scroll)
+    
+    const Top = this.isStyledComponent(e,'top');
+    const Bottom = this.isStyledComponent(e,'bottom');
+    const {In, Out}= this.props
+    // console.log(Bottom)
 
-    if (start) {
-      this.setState({className: this.props.effect})
-    } else {
-      // this.setState({className:''})
+    if (Top&&In) {
+      this.setState({className: In})
+    } else if (Bottom&&Out){
+      this.setState({className:Out})
+    }else{
+      this.setState({className:''})
     }
+ 
   }
 
-  isStyledComponent = (scroll) => {
-    const getElement = document.getElementsByClassName(this.props.children.type.componentStyle.lastClassName)[0],
-      getPositionOfElement = getElement.getBoundingClientRect(),
-      startEffect = scroll >= getPositionOfElement.top
-        ? true
-        : false;
-    // console.log(this.props.children)
-    return startEffect
+  isStyledComponent = (e,position) => {
+    const scroll = e.target.documentElement.scrollTop || e.target.body.scrollTop,
+     clientHeight = e.target.documentElement.clientHeight||e.target.body.clientHeight,
+     show = clientHeight /2;
+
+    const child = this.props.children.type.componentStyle.lastClassName,
+     getElement = document.getElementsByClassName(child)[0],
+     getPositionOfElement = getElement.getBoundingClientRect(),
+     In = (getPositionOfElement.top <= show && getPositionOfElement.bottom >= show) ,
+     Out = getPositionOfElement.bottom <= show; 
+    console.log(Out)
+  
+    return (position==="top")?In:Out;
   }
 
 
@@ -45,9 +57,15 @@ export default class Effects extends Component {
 
     return React.cloneElement(child, props);
   }
+
+  componentWillUnmount=()=>{
+    window.removeEventListener("scroll", this.scrolling)
+  }
   render() {
     const {children} = this.props
     return Children.map(children, (child) => this.modifyChildren(child))
 
   }
 }
+
+
