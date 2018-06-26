@@ -27,4 +27,4 @@ yarn-error.log*
 !.elasticbeanstalk/*.global.yml
 
 # Ebextensions file
-.Ebextensions/*
+.ebextensions/*
