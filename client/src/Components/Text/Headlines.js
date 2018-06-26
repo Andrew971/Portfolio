@@ -11,6 +11,7 @@ transform:translateX(-90vh);
   ${slideIn('right')}
 }
 
+
 &.out{
   ${slideOut('left')}
 }
