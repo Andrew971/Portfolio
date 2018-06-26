@@ -6,21 +6,22 @@ import {BrandTitle} from "../../Components/Text";
 import NavContent from './Content'
 import IconLoad from '../../Components/SvgIcon/'
 import HiddenView from '../../Components/HiddenView/'
+import Dragable from '../../Utils/HOC/Dragable'
 
 class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
       visible: false,
-      width: 0
+      width: 80
     };
   }
 
   toggleShow = () => {
-    this.setState({visible: true, width: 80})
+    this.setState({visible: true, width: 0})
   }
   toggleHide = () => {
-    this.setState({visible: false, width: 0})
+    this.setState({visible: false, width: 80})
   }
 
   render() {
@@ -52,7 +53,9 @@ class Nav extends Component {
               ? this.toggleHide()
               : this.toggleShow()
           }}><IconLoad icon={'hamburger'} open={visible}/></div>
+          <Dragable direction="left">
           <MobileNav
+            width2={(props)=>props.distanceX}
             width={this.state.width}
             onBlure={e => this.clickOut(e)}
             id="clickIn">
@@ -63,7 +66,7 @@ class Nav extends Component {
               dispatch={dispatch}
               Language={Language}z/>
           </MobileNav>
-
+          </Dragable>
         </HiddenView>
 
       </NavBar>

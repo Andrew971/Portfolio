@@ -21,7 +21,7 @@ export const StyledNavBar = styled.nav`
   flex: 1 0 auto;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-  transition : background 300ms ease-in-out,margin-left 500ms ease-in-out;
+  transition : background 300ms ease-in-out,margin-left 500ms ease-out;
   z-index:1;
     @media (max-width: 840px) {
       padding: 0 1rem;

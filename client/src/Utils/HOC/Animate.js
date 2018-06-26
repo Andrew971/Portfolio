@@ -1,6 +1,6 @@
 import React, {Component, Children} from 'react'
 
-export default class Effects extends Component {
+export default class AnimateOnScroll extends Component {
   constructor(props) {
     super(props)
 
@@ -20,7 +20,6 @@ export default class Effects extends Component {
     const Top = this.isStyledComponent(e,'top');
     const Bottom = this.isStyledComponent(e,'bottom');
     const {In, Out}= this.props
-    // console.log(Bottom)
 
     if (Top&&In) {
       this.setState({className: In})
@@ -33,8 +32,8 @@ export default class Effects extends Component {
   }
 
   isStyledComponent = (e,position) => {
-    const scroll = e.target.documentElement.scrollTop || e.target.body.scrollTop,
-     clientHeight = e.target.documentElement.clientHeight||e.target.body.clientHeight,
+    // const scroll = e.target.documentElement.scrollTop || e.target.body.scrollTop;
+    const clientHeight = e.target.documentElement.clientHeight||e.target.body.clientHeight,
      show = clientHeight /2;
 
     const child = this.props.children.type.componentStyle.lastClassName,
@@ -42,7 +41,6 @@ export default class Effects extends Component {
      getPositionOfElement = getElement.getBoundingClientRect(),
      In = (getPositionOfElement.top <= show && getPositionOfElement.bottom >= show) ,
      Out = getPositionOfElement.bottom <= show; 
-    console.log(Out)
   
     return (position==="top")?In:Out;
   }
