@@ -3,6 +3,7 @@ import {media} from './breakpoint'
 
 export default styled.section `
 display:flex;
+position: relative;
 flex-wrap: ${props=>props.wrap?props.wrap:'nowrap'};
 flex-direction:${props=>props.direction?props.direction:'column'};
 justify-content:${props=>props.justify?props.justify:'space-around'};

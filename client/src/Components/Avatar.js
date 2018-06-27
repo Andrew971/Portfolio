@@ -4,6 +4,7 @@ import {slideIn,slideOut} from './Animation'
 
 export default styled.div `
 align-self: center;
+position:absolute;
 width:70%;
 margin: 2rem;
 border: ${props => (`1px solid ${props.theme.primary}`)};
