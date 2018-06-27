@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 
 
 export const StyledNavBar = styled.nav`
-  width: 100%;
+  width: 100vw;
   height: 7vh;
   margin-left: ${props=>(props.open?'-80vw':0)};
   background:${props=>(props.flag?props.theme.secondary:'tranparent')};
@@ -20,7 +20,6 @@ export const StyledNavBar = styled.nav`
   display: flex;
   flex: 1 0 auto;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
   transition : background 300ms ease-in-out,margin-left 500ms ease-out;
   z-index:1;
     @media (max-width: 840px) {

@@ -4,7 +4,7 @@ import {sort_by} from '../Utils/constants/constMethod'
 
 
 export const SocialMedia = ({data}) => {
-  return (<Layout items xs md lg xl display="inline-flex" direction="row" justify="space-around" width="15rem" padding="0">
+  return (<Layout items xs md lg xl display="inline-flex" direction="row" justify="space-between" width="15rem" padding="0">
   {data
   .field
 .sort(sort_by('DESC', 'order'))

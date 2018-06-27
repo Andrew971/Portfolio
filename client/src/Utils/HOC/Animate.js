@@ -31,10 +31,9 @@ export default class AnimateOnScroll extends Component {
       const child = this.props.children.type.componentStyle.lastClassName,
         getElement = document.getElementsByClassName(child)[0],
         getPositionOfElement = getElement.getBoundingClientRect(),
-        outSide = getPositionOfElement.bottom <= (show/2),
+        outSide = getPositionOfElement.bottom <= (show),
         inSide = getPositionOfElement.top <= show && !outSide;
 
-        console.log(inSide)
       if (In && inSide) {
         this.setState({className: In})
       } else if (Out && outSide) {
@@ -75,7 +74,7 @@ export default class AnimateOnScroll extends Component {
       }
 
       componentWillUnmount = () => {
-        window.removeEventListener("scroll", this.scrolling)
+        window.removeEventListener("scroll", this.isScrolling)
       }
       render() {
         const {children} = this.props

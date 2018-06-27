@@ -6,7 +6,7 @@ import {BrandTitle} from "../../Components/Text";
 import NavContent from './Content'
 import IconLoad from '../../Components/SvgIcon/'
 import HiddenView from '../../Components/HiddenView/'
-import Dragable from '../../Utils/HOC/Dragable'
+// import Dragable from '../../Utils/HOC/Dragable'
 
 class Nav extends Component {
   constructor(props) {
@@ -53,7 +53,6 @@ class Nav extends Component {
               ? this.toggleHide()
               : this.toggleShow()
           }}><IconLoad icon={'hamburger'} open={visible}/></div>
-          <Dragable direction="left">
           <MobileNav
             width2={(props)=>props.distanceX}
             width={this.state.width}
@@ -66,7 +65,6 @@ class Nav extends Component {
               dispatch={dispatch}
               Language={Language}z/>
           </MobileNav>
-          </Dragable>
         </HiddenView>
 
       </NavBar>

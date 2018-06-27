@@ -18,13 +18,13 @@ const translateInit = {
 }
 
 const translateLeft = {
-  x:'100%',
+  x:'10vh',
   y:0,
   z:0
 }
 
 const translateRight = {
-  x:'-100%',
+  x:'-10vh',
   y:0,
   z:0
 }

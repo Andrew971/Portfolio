@@ -12,7 +12,7 @@ ${props=>props.grid
   grid-template-columns:${props=>`repeat(${props.grid}, 1fr)`};
 `
 :css`
-grid-template-columns: ${props=>props.autoFit?'repeat(auto-fit, minmax(15rem, 1fr))':'repeat(auto-fill, minmax(20rem, 1fr))'} ;
+grid-template-columns: ${props=>props.autoFit?'repeat(auto-fit, minmax(11rem, 1fr))':'repeat(auto-fill, minmax(11rem, 1fr))'} ;
 `
 }
 `}
@@ -38,7 +38,7 @@ ${props=>props.grid
   grid-template-columns:${props=>`repeat(1, 1fr)`};
 `
 :css`
-grid-template-columns: ${props=>props.autoFit?'repeat(auto-fit, minmax(15rem, 1fr))':'repeat(auto-fill, minmax(20rem, 1fr))'} ;
+grid-template-columns: ${props=>props.autoFit?'repeat(auto-fit, minmax(15rem, 1fr))':'repeat(auto-fill, minmax(15rem, 1fr))'} ;
 `
 }
 
