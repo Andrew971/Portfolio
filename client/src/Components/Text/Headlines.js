@@ -7,7 +7,7 @@ text-align:justify;
 text-justify: distribute;
 opacity:0;
 
-&.animation{
+  &.animation{
   ${slideIn('right')}
 }
 
@@ -15,6 +15,8 @@ opacity:0;
 &.out{
   ${slideOut('left')}
 }
+
+
 
 
 h1,h2,h3{

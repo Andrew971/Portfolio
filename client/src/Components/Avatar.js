@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {slideIn,slideOut} from './Animation'
 
 
+
 export default styled.div `
 align-self: center;
 width:70%;
@@ -13,16 +14,18 @@ background-size: cover;
 box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 border-radius:50%;
 opacity:0;
+transition:opacity 2s;
 
 &.animation{
   ${slideIn('left')}
-  /* opacity:1; */
-
 }
 
 &.out{
-  ${slideOut('right')}
+${slideOut('right')}
 }
+
+
+
 
 ::after{
   content:'';

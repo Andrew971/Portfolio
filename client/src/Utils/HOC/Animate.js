@@ -12,73 +12,80 @@ export default class AnimateOnScroll extends Component {
     window.addEventListener('scroll', this.isScrolling)
   }
 
-  isScrolling = (e) => {
-    const {children} = this.props
-
+  isScrolling = () => {
+    const {children,offSet={}} = this.props
+    
     if (typeof children.type === 'string') {
-      this.isElement(e)
+      this.isElement(children,offSet)
     } else {
-      this.isStyledComponent(e)
+      this.isStyledComponent(children,offSet)
     }
 
   }
 
-  isStyledComponent = (e) => {
+  isStyledComponent = (children,offSet) => {
+    const child = children.type.componentStyle.lastClassName,
+      getElement = document.getElementsByClassName(child)[0],
+      getPositionOfElement = getElement.getBoundingClientRect(), {bottom, height, top} = getPositionOfElement,
+      outSide = bottom <=(offSet.bottom||height)||(top >= (offSet.top||height)),
+      inSide = top <= (offSet.top||height)&& !outSide;
+
+    return this.addClass(inSide, outSide)
+
+  }
+
+  isElement = (children,offSet) => {
+    const child = children.props.id,
+      getElement = document.getElementById(child),
+      getPositionOfElement = getElement.getBoundingClientRect(), {bottom, height, top} = getPositionOfElement,
+      outSide = bottom <= offSet.bottom,
+      inSide = top <= offSet.top && !outSide ;
+    console.log('top:'+top)
+    console.log('bottom:'+bottom)
+    console.log('height:'+height)
+    return this.addClass(inSide, outSide)
+  }
+
+  addClass = (inSide, outSide) => {
     const {In, Out} = this.props
-      const clientHeight = e.target.documentElement.clientHeight || e.target.body.clientHeight,
-        show = clientHeight / 2;
 
-      const child = this.props.children.type.componentStyle.lastClassName,
-        getElement = document.getElementsByClassName(child)[0],
-        getPositionOfElement = getElement.getBoundingClientRect(),
-        outSide = getPositionOfElement.bottom <= (show),
-        inSide = getPositionOfElement.top <= show && !outSide;
-
-      if (In && inSide) {
-        this.setState({className: In})
-      } else if (Out && outSide) {
-        this.setState({className: Out})
-      } else {
-        this.setState({className: ''})
-      }
-    }
-
-    isElement = (e) => {
-      const {In, Out} = this.props
-        const clientHeight = e.target.documentElement.clientHeight || e.target.body.clientHeight,
-          show = clientHeight / 2;
-
-        const child = this.props.children.props.id,
-          getElement = document.getElementById(child),
-          getPositionOfElement = getElement.getBoundingClientRect(),
-          outSide = getPositionOfElement.bottom <= (show / 2),
-          inSide = getPositionOfElement.top <= show && !outSide;
-
-        if (inSide && In) {
-          this.setState({className: In})
-        } else if (Out && outSide) {
-          this.setState({className: Out})
-        } else {
-          this.setState({className: ''})
+    if (inSide && In) {
+      this.setState({className: In})
+    } else if (Out && outSide) {
+      this.setState((prevState) => {
+        let check = prevState
+          .className
+          .includes(In) || prevState
+          .className
+          .includes(Out);
+        return {
+          className: check
+            ? Out
+            : ''
         }
-      }
-
-      modifyChildren = (child) => {
-        const className = this.state.className
-
-        const props = {
-          className
-        };
-
-        return React.cloneElement(child, props);
-      }
-
-      componentWillUnmount = () => {
-        window.removeEventListener("scroll", this.isScrolling)
-      }
-      render() {
-        const {children} = this.props
-        return Children.map(children, (child) => this.modifyChildren(child))
-
-      }
+      })
+    } else {
+      this.setState({className: ''})
     }
+
+  }
+
+  modifyChildren = (child) => {
+    const {className} = this.state
+    // console.log(className)
+    const props = {
+      className
+    };
+
+    return React.cloneElement(child, props);
+  }
+
+  componentWillUnmount = () => {
+    window.removeEventListener("scroll", this.isScrolling)
+  }
+  render() {
+    const {children} = this.props
+    return Children.map(children, (child) => this.modifyChildren(child))
+
+  }
+}

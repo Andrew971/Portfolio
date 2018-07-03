@@ -7,26 +7,24 @@ import LazyLoad from 'react-lazyload';
 import {sort_by} from '../../../Utils/constants/constMethod'
 
 const Knowledge = ({data}) => {
-  const {image,title} = data
-return (
-<SectionCard primary>
-  <Title>{title.text}</Title>
-  <Grid container direction="row">
-  {
-    image
-    .field   
-    .sort(sort_by('DESC', 'order'))
-    .map((other,n) =>
-      <Grid items key={n} >
-      <LazyLoad height={200} offset={100}>
-      <Image src={other.path_1} alt="Card cap" size={0}/>
-      </LazyLoad>
-      <h4>{other.name}</h4>
+  const {image, title} = data
+  return (
+    <SectionCard primary>
+      <Title>{title.text}</Title>
+      <Grid container direction="row">
+        {image
+          .field
+          .sort(sort_by('DESC', 'order'))
+          .map((other, n) => <Grid items key={n}>
+            <LazyLoad height={200} offset={100}>
+              <Image src={other.path_1} alt="Card cap" size={0}/>
+            </LazyLoad>
+            <h4>{other.name}</h4>
+          </Grid>)
+          }
       </Grid>
-    )
-  }
-  </Grid>
-</SectionCard>
-)};
+    </SectionCard>
+  )
+};
 
 export default Knowledge
