@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {slideIn,slideOut} from './Animation'
 
 const Image = styled.img`
     background-position: center;
@@ -13,6 +14,19 @@ const Image = styled.img`
   display: block;
   padding-bottom:100%;
 }
+#test{
+  opacity:0;
+}
+  
+  &.animation{
+  ${slideIn('right')}
+}
+
+
+&.out{
+  ${slideOut('left')}
+}
+
 
     @media (max-width: 670px) {
 

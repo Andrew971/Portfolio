@@ -67,7 +67,7 @@ export default class AnimateOnScroll extends Component {
     } else {
       this.setState({className: ''})
     }
-
+    
   }
 
   modifyChildren = (child) => {

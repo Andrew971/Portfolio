@@ -6,6 +6,7 @@ import Image from '../../../Components/Image'
 import LazyLoad from 'react-lazyload';
 import {sort_by} from '../../../Utils/constants/constMethod'
 import {StyleLink} from "../../../Components/Button";
+import AnimateOnScroll from '../../../Utils/HOC/Animate'
 
 const Project = ({data}) => {
   let {project,title} = data
@@ -23,7 +24,9 @@ const Project = ({data}) => {
           <Fragment key={n}>
             <Layout items>
             <LazyLoad height={200} offset={100} scroll>
-            <Image size={30} src={project.img} alt="Card cap"/>
+            <AnimateOnScroll In="animation" Out="out">
+            <Image id="test" size={30} src={project.img} alt="Card cap"/>
+            </AnimateOnScroll> 
             </LazyLoad>
             </Layout>
             <Layout items xs md text="center">
