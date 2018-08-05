@@ -16,12 +16,12 @@ import AnimateOnScroll from '../../../Utils/HOC/Animate'
       src={background.path}>
       <Layout container lg xl direction="row-reverse" alignItems="center">
       <LazyLoad height={200} offset={100}>
-      <AnimateOnScroll In="animation" Out="out">
+      <AnimateOnScroll onEnter="slideIn" onLeave="slideOut" gsap>
         <Avatar src={image.field[0].path} srcx2={image.field[0].pathx2}/> 
         </AnimateOnScroll> 
         </LazyLoad> 
       <Layout items>
-      <AnimateOnScroll In="animation" Out="out">
+      <AnimateOnScroll onEnter="slideIn" onLeave="slideOut" gsap>
         <Headlines>
           <h2>{title.text}</h2>
           <h3>

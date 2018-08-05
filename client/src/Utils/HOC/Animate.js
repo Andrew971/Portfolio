@@ -1,9 +1,11 @@
-import React, {Component, Children} from 'react'
+import React, {PureComponent, Children} from 'react'
+import AnimationList from './animationLib'; //list of js animation ( eg GSAP)
 
-export default class AnimateOnScroll extends Component {
+export default class AnimateOnScroll extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
+      animationState: false,
       className: ''
     }
   }
@@ -13,79 +15,108 @@ export default class AnimateOnScroll extends Component {
   }
 
   isScrolling = () => {
-    const {children,offSet={}} = this.props
-    
-    if (typeof children.type === 'string') {
-      this.isElement(children,offSet)
-    } else {
-      this.isStyledComponent(children,offSet)
+    const {
+      children,
+      offSet = {}
+    } = this.props;
+
+    const childrenArray = Children.toArray(children);
+
+    childrenArray.length > 1
+      ? Children
+        .toArray(children)
+        .map(child => this.isComponentVisible(child, offSet))
+      : this.isComponentVisible(children, offSet)
+
+  }
+
+
+  isComponentVisible = (children, offSet) => {    
+    const child = children.props.id || children.type.componentStyle.lastClassName,
+    getElement = document.getElementById(child) || document.getElementsByClassName(child)[0];
+
+    const getPositionOfElement = getElement.getBoundingClientRect(), {bottom, height, top} = getPositionOfElement;
+
+    const leavingTop = (top >= (offSet.top || height));
+    const leavingBottom = bottom <= (offSet.bottom || height);
+    const enteringTop = top <= (offSet.top || height);
+
+    const leaving = leavingBottom || leavingTop,
+    entering = enteringTop && !leaving;
+
+    return this.addAnimation(getElement, entering, leaving)
+
     }
 
-  }
+    addAnimation = (element, entering, leaving) => {
+      const {onEnter, onLeave, gsap} = this.props;
 
-  isStyledComponent = (children,offSet) => {
-    const child = children.type.componentStyle.lastClassName,
-      getElement = document.getElementsByClassName(child)[0],
-      getPositionOfElement = getElement.getBoundingClientRect(), {bottom, height, top} = getPositionOfElement,
-      outSide = bottom <=(offSet.bottom||height)||(top >= (offSet.top||height)),
-      inSide = top <= (offSet.top||height)&& !outSide;
+      const getAnimation = (props) => AnimationList.find(effect => (props.toUpperCase() === effect.name.toUpperCase()));
 
-    return this.addClass(inSide, outSide)
+      const enteringAnimation = getAnimation(onEnter);
+      const leavingAnimation = getAnimation(onLeave);
 
-  }
+      const checkPrevClass = (prevState, onEnter, onLeave) => prevState
+        .className
+        .includes(onEnter) || prevState
+        .className
+        .includes(onLeave);
 
-  isElement = (children,offSet) => {
-    const child = children.props.id,
-      getElement = document.getElementById(child),
-      getPositionOfElement = getElement.getBoundingClientRect(), {bottom, height, top} = getPositionOfElement,
-      outSide = bottom <= offSet.bottom,
-      inSide = top <= offSet.top && !outSide ;
-    console.log('top:'+top)
-    console.log('bottom:'+bottom)
-    console.log('height:'+height)
-    return this.addClass(inSide, outSide)
-  }
+      const checkPrevAnimation = (prevState, animationState) => prevState.animationState !== animationState;
 
-  addClass = (inSide, outSide) => {
-    const {In, Out} = this.props
+      if (entering && onEnter) {
+        this.setState((prevState) => {
+          const checkingState = checkPrevAnimation(prevState, true)
+          checkingState && enteringAnimation && enteringAnimation.start(element)
+          return {
+            animationState: true,
+            className: !gsap
+              ? onEnter
+              : ''
+          }
+        })
 
-    if (inSide && In) {
-      this.setState({className: In})
-    } else if (Out && outSide) {
-      this.setState((prevState) => {
-        let check = prevState
-          .className
-          .includes(In) || prevState
-          .className
-          .includes(Out);
-        return {
-          className: check
-            ? Out
-            : ''
-        }
-      })
-    } else {
-      this.setState({className: ''})
+      } else if (leaving && onLeave) {
+
+        this.setState((prevState) => {
+          const checkingState = checkPrevAnimation(prevState, false)
+          checkingState && leavingAnimation && leavingAnimation.start(element)
+          return {
+            animationState: false,
+            className: checkPrevClass(prevState, onEnter, onLeave)
+              ? onLeave
+              : ''
+          }
+        })
+
+      } else {
+        this.setState({className: '', animationState: false});
+      }
+
     }
-    
-  }
 
-  modifyChildren = (child) => {
-    const {className} = this.state
-    // console.log(className)
-    const props = {
-      className
-    };
+    modifyChildren = (child) => {
+      const {className} = this.state
 
-    return React.cloneElement(child, props);
-  }
+      const props = {
+        className
+      };
 
-  componentWillUnmount = () => {
-    window.removeEventListener("scroll", this.isScrolling)
-  }
-  render() {
-    const {children} = this.props
-    return Children.map(children, (child) => this.modifyChildren(child))
+      return React.cloneElement(child, props);
+    }
 
+    componentWillUnmount = () => {
+      window.removeEventListener("scroll", this.isScrolling);
+    }
+
+    render() {
+      const {children} = this.props;
+      const {className} = this.state;
+      // console.log(this.state.animationState)
+
+      return className
+        ? Children.map(children, (child) => this.modifyChildren(child))
+        : children;
+
+    }
   }
-}

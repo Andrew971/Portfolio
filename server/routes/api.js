@@ -22,7 +22,7 @@ router.post('/contact', (req, res, next) => {
   res.mailer.send('email', {
       to: 'contact@andrewsordier.com', // REQUIRED. This can be a comma delimited string just like a normal email to field.
       replyTo:email,
-      Bcc:'sordier.andrew@gmail.com',
+      bcc:'sordier.andrew@gmail.com',
       subject, // REQUIRED.
       firstname,
       lastname,
@@ -31,15 +31,18 @@ router.post('/contact', (req, res, next) => {
       language,
       message,
       company // All additional properties are also passed to the template as local variables.
-    }, function (err) {
+    }, (err) => {
       if (err) {
         // handle error
-        console.log(err);
+        console.log(err );
         res.json({status:false});
         return;
       }
+      console.log('succes')
       res.json({status:true});
 })
+
+
 });
 
 module.exports = router;

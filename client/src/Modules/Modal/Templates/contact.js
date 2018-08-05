@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import { 
-ModalWrapper,
 ModalContent,
 ModalClose,
 ModalHeader,
@@ -11,10 +10,10 @@ import {sort_by} from '../../../Utils/constants/constMethod'
 import {TextField} from '../../../Components/inputForm'
 import {Layout, Grid} from '../../../Components/Grid'
 
-const ContactForm = ({dispatch, modalSAtatus, data}) => {
+const ContactForm = ({dispatch, modalStatus, data,handler}) => {
   const {title, input,errorMessage} = data
+// console.log(data)
   return (
-    <ModalWrapper>
       <ModalContent>
         <ModalClose
           onClick={() => {
@@ -26,7 +25,7 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
         </ModalHeader>
         <form ref={self => this.contactForm = self}>
           <Grid container md lg xl grid={2}>
-            {input
+            {input && input
               .field
               .sort(sort_by('DESC', 'order'))
               .map(
@@ -103,7 +102,7 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
                   </Grid>
               } </Fragment>)}
 
-            {modalSAtatus === false && <Grid items md lg xl span={2}>
+            {modalStatus === false && <Grid items md lg xl span={2}>
               <ModalError>
                 {errorMessage}
               </ModalError>
@@ -113,7 +112,7 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
 
         </form>
 
-        <ModalFooter>
+       <ModalFooter>
           <Layout container md lg xl direction="row">
             <Layout items>
               <ModalButton
@@ -126,15 +125,20 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
                 onClick={() => {
                 let info = {}
                  const test = Object.values(this.contactForm)
-                  .filter(input => input.value !== undefined)
+                  .filter(input =>{ 
+                    return  input.value !== undefined
+                  })
                   .map(async (input) => {
+
                     Object.defineProperty(info, input.name, {
                       value: input.value,
-                      writable: false
+                      writable: false,
+                      enumerable:true
                     });
                     info.subject = title.text
                     return info;
                   })
+
                   Promise.all(test).then(()=>{
                     dispatch({
                     type: 'SEND_CONTACT_INFO',
@@ -143,12 +147,13 @@ const ContactForm = ({dispatch, modalSAtatus, data}) => {
                   })
               }}
                 primary="primary">Send</ModalButton>
+              {modalStatus && handler(2)}
             </Layout>
           </Layout>
         </ModalFooter>
+      
       </ModalContent>
 
-    </ModalWrapper>
   )
 };
 

@@ -7,12 +7,12 @@ text-align:justify;
 text-justify: distribute;
 opacity:0;
 
-  &.animation{
+  &.slideIn{
   ${slideIn('right')}
 }
 
 
-&.out{
+&.slideOut{
   ${slideOut('left')}
 }
 

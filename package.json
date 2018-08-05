@@ -12,6 +12,7 @@
     "client": "cd client && yarn start",
     "build": "cd client && yarn build",
     "pre-d": " yarn build && git add . && git commit -m 'deployment' &&git push",
+    "s3": "cd client && aws s3 sync build/ s3://andrewsordier",
     "deploy": "yarn pre-d && eb deploy",
     "analyze": "cd ./client && yarn analyze",
     "client-i": "cd client && yarn install",

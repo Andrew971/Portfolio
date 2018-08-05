@@ -1,6 +1,5 @@
 import React from "react";
 import { 
-ModalWrapper,
 ModalContent,
 ModalConfirm,
 ModalButton
@@ -11,7 +10,7 @@ import {sort_by} from '../../../Utils/constants/constMethod'
  const Confirmation = ({dispatch , data}) =>{
    const  { title, paragraph, } = data
    console.log(data)
-   return (<ModalWrapper>
+   return (
 
 <ModalContent>
   <ModalConfirm>
@@ -33,6 +32,6 @@ import {sort_by} from '../../../Utils/constants/constMethod'
   </Layout>
 </ModalContent>
 
-</ModalWrapper>)};
+)};
 
 export default Confirmation;
