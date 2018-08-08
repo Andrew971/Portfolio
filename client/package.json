@@ -33,6 +33,7 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "analyze": "source-map-explorer build/static/js/main.*"
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "s3-deploy": "yarn build && aws s3 sync build/ s3://andrewsordier"
   }
 }
