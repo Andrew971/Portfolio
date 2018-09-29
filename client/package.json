@@ -2,6 +2,14 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "aws": {
+      "bucket": "s3://andrewsordier.com",
+      "source": "./build",
+      "region": "us-west-2",
+      "profile": "PortfolioDev"
+    }
+  },
   "devDependencies": {
     "node-sass-chokidar": "^1.2.2",
     "npm-run-all": "^4.1.2",
@@ -34,6 +42,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer build/static/js/main.*",
-    "s3-deploy": "yarn build && aws s3 sync build/ s3://andrewsordier"
+    "s3-deploy": "aws s3 sync $npm_package_config_aws_source $npm_package_config_aws_bucket --region $npm_package_config_aws_region --profile $npm_package_config_aws_profile"
   }
 }

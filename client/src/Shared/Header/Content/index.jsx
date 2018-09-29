@@ -6,6 +6,7 @@ import AnimateOnScroll from '../../../Utils/HOC/Animate'
 
 const HeaderContent = ({history, dispatch, data}) => {
   const {button, title} = data
+
   return (
     <Fragment>
       <AnimateOnScroll

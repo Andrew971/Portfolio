@@ -25,7 +25,7 @@ import {sort_by} from '../../../Utils/constants/constMethod'
   </ModalConfirm>
   <Layout container>
     <Layout items justify="center">
-    <ModalButton onClick={() => {
+    <ModalButton type="button" onClick={() => {
         dispatch({type: "MODAL_HIDE", payload: false})
       }}>&times; Close</ModalButton>
       </Layout>

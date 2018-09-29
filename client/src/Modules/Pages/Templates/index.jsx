@@ -10,8 +10,10 @@ import {templateComponents} from './export'
       };
     }
 
-    async componentDidMount() {
+     componentDidMount() {
+
       const {type} = this.props
+      // console.log('type : '+type)
     templateComponents
     .filter(res=>type.toUpperCase()=== res.name.toUpperCase())
     .map(res=> this.setState({component: res.component}))

@@ -115,7 +115,7 @@ const ContactForm = ({dispatch, modalStatus, data,handler}) => {
        <ModalFooter>
           <Layout container md lg xl direction="row">
             <Layout items>
-              <ModalButton
+              <ModalButton type="button"
                 onClick={() => {
                 dispatch({type: "MODAL_HIDE", payload: false})
               }}>&times; Close</ModalButton>

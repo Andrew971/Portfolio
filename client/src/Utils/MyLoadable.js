@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FetchData from './HOC/fetchData'
 // import Loading from '../utils/loading'
 
 export default function MyLoadable(importComponent) {
@@ -13,7 +14,7 @@ export default function MyLoadable(importComponent) {
 
     async componentDidMount() {
       const { default: component } = await importComponent();
-
+      console.log(importComponent().then(test=>test))
       this.setState({
         component: component
       });
@@ -22,7 +23,7 @@ export default function MyLoadable(importComponent) {
     render() {
       const C = this.state.component;
 
-      return C ? <C {...this.props} /> : null;
+      return C ? <FetchData><C {...this.props} /></FetchData> : null;
     }
   }
 

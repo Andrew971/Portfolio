@@ -1,20 +1,32 @@
 {
   "name": "portfolio-server",
-  "version": "0.0.0",
+  "version": "0.0.5",
   "private": true,
   "proxy": "http://localhost:8080/api/",
   "homepage": "http://localhost:8080/api/",
+  "config" : {
+    "aws": {
+      "bucket": "s3://andrewsordier-server-bucket",
+      "region": "canada-central-1"
+    },
+    "ssh":{
+      "instance":"ec2-user@35.182.164.154",
+      "key":"~/.ssh/node-js.pem",
+      "script":"/etc/myscrypt/server.sh"
+    },
+    "path":"/var/server/"
+  },
   "scripts": {
-    "start": "pm2 start ./bin/www && pm2 startup && pm2 save",
+    "start": "pm2 start ./bin/www",
     "server": "nodemon ./bin/www",
     "staging": "yarn build && NODE_ENV=staging nodemon ./bin/www",
     "prod": "yarn build && NODE_ENV=production nodemon ./bin/www",
-    "s3-deploy": "aws s3 sync ./ s3://andrewsordier-server-bucket --exclude 'node_modules/*",
-    "s3-download": "sudo aws s3 sync s3://andrewsordier-server-bucket /var/server/ && npm install",
-    "deploy": "yarn pre-d && eb deploy",
+    "deploy": "yarn zip-all && aws s3 sync ./version/ $npm_package_config_aws_bucket && yarn ssh-script",
     "analyze": "cd ./client && yarn analyze",
     "client-i": "cd client && yarn install",
-    "i-all": "yarn client-i && yarn install"
+    "i-all": "yarn client-i && yarn install",
+    "ssh-script":"ssh $npm_package_config_ssh_instance -i $npm_package_config_ssh_key -t $npm_package_config_ssh_script",
+    "zip-all":"zip -r ./version/server-v$npm_package_version.zip ./* -x 'node_modules/*' -x 'version/*'"
   },
   "dependencies": {
     "body-parser": "^1.18.2",

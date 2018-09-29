@@ -8,6 +8,9 @@ const AsyncSkills = MyLoadable(() => import('../../Modules/Pages/index'));
 
 class MainContainer extends Component {
 
+  componentDidMount =() =>{
+    window.scrollTo(0,0)
+  }
   render() {
     return (<main>
 
